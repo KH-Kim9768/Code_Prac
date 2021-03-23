@@ -21,7 +21,7 @@ print("연결에 성공했습니다.")
 # 카메라 생성
 with picamera.PiCamera() as camera:
     # 카메라 해상도 설정
-    camera.resolution(1024,768)
+    camera.resolution = (1024,768)
 
 select_mode = 0
 
