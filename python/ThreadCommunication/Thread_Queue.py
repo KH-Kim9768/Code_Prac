@@ -21,6 +21,7 @@ def sender(q):
     q.put(None)
     print('sender done')
 
+
 def receiver(q):
     while True:
         data = q.get()
