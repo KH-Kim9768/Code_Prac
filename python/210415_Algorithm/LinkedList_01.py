@@ -184,7 +184,8 @@ if __name__ == "__main__" :
         elif mode == "4":
             inputname = input("탐색할 연락처 이름을 입력하세요 : ")
             searchnode(inputname)
-
+            
+        # 전체 출력모드
         elif mode == "5":
             printNodes(head)
         
