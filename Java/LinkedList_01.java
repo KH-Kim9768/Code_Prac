@@ -3,26 +3,26 @@ package LinkedList;
 public class LinkedList_01 {
 	public static void main(String[] args) {
 		LinkedList L = new LinkedList();
-		System.out.println("1. °ø¹é ¸®½ºÆ®¿¡ ³ëµå 3°³ »ðÀÔ");
-		L.insertLastNode("¿ù");
-		L.insertLastNode("¼ö");
-		L.insertLastNode("ÀÏ");
+		System.out.println("1. ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ 3ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
+		L.insertLastNode("ï¿½ï¿½");
+		L.insertLastNode("ï¿½ï¿½");
+		L.insertLastNode("ï¿½ï¿½");
 		L.printList();
 		
-		System.out.println("2. ¼ö ³ëµå µÚ¿¡ ±Ý ³ëµå »ðÀÔÇÏ±â");
-		ListNode pre = L.searchNode("¼ö");
+		System.out.println("2. ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Ú¿ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½");
+		ListNode pre = L.searchNode("ï¿½ï¿½");
 		if (pre == null) {
-			System.out.println("°Ë»ö ½ÇÆÐ --> Ã£´Â µ¥ÀÌÅÍ°¡ ¾ø½À´Ï´Ù.");
+			System.out.println("ï¿½Ë»ï¿½ ï¿½ï¿½ï¿½ï¿½ --> Ã£ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 		} else {
-			L.insertMiddleNode(pre, "±Ý");
+			L.insertMiddleNode(pre, "ï¿½ï¿½");
 			L.printList();
 		}
 		
-		System.out.println("3. ¸®½ºÆ®ÀÇ ³ëµå¸¦ ¿ª¼øÀ¸·Î ¹Ù²Ù±â");
+		System.out.println("3. ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½å¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù²Ù±ï¿½");
 		L.reverseList();
 		L.printList();
 		
-		System.out.println("4. ¸®½ºÆ®ÀÇ ¸¶Áö¸· ³ëµå »èÁ¦ÇÏ±â");
+		System.out.println("4. ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï±ï¿½");
 		L.deleteLastNode();
 		L.printList();
 		
@@ -108,7 +108,6 @@ class LinkedList{
 			} else {
 				temp = temp.link;
 			}
-			
 		}
 		return temp;
 	}
