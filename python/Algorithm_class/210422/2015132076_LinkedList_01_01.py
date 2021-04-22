@@ -116,13 +116,7 @@ def deleteNode(name):
         print(name, " 삭제완료")
         return
 
-'''
-    else :
-        print("삭제모드 알 수 없는 오류발생")
-        return
-'''
     
-
 # 탐색 모드
 def searchNode(name):
     global head, current, pre
