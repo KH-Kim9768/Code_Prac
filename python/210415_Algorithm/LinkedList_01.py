@@ -16,20 +16,20 @@
 
 ## 클래스와 함수 선언 부분 ##
 class Node() :
-	def __init__ (self) :
-		self.data = None
-		self.link = None
+    def __init__ (self) :
+        self.data = None
+        self.link = None
 
 def printNodes(start) :
-	current = start
-	if current == None :
+    current = start
+    if current == None :
         print("연결리스트가 비어 있습니다.")
-		return
-	print(current.data, end = ' ')
-	while current.link != None:
-		current = current.link
-		print(current.data, end = ' ')
-	print()
+        return
+    print(current.data, end = ' ')
+    while current.link != None:
+        current = current.link
+        print(current.data, end = ' ')
+    print()
 
 def makeSimpleLinkedList(namePhone) :
 	global  head, current, pre
