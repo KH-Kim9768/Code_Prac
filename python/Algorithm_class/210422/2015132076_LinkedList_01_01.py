@@ -10,6 +10,26 @@
 
 자료의 저장은 예제를 응용해서 이름순으로 저장되는 단순 연결리스트로 해야 함
 
+
+210422 추가
+
+전화번호부 입력/수정/삭제/검색/종료 기능을 가진 프로그램작성
+
+
+- 입력/수정/삭제작업후 전체 전화번호부 내용 출력하기
+
+
+- 입력한 전화번호자료는 이름순으로 저장함
+
+
+- 수정/삭제/검색작업시 없는 이름은 에러 메시지 출력
+
+
+- 수정/삭제 작업 완료시 완료 메시지 출력
+
+
+- 코딩때 함수명은  작업내용에 맞게,  변수명은 갖는 자료에 맞게 적절하게 네이밍하기
+
 2015132076 김광희
 
 '''
@@ -30,6 +50,7 @@ def printNodes(start) :
         current = current.link
         print(current.data, end = ' ')
     print()
+
 
 def makeSimpleLinkedList(namePhone) :
 	global  head, current, pre
@@ -62,85 +83,69 @@ def makeSimpleLinkedList(namePhone) :
 
 
 # 수정모드
-def editnode(name):
+def editNode(name):
     global head
 
-    temp_node = Node()  # 빈 노드 생성
-    temp_node = head
+    temp_node = searchNode(name)
 
     if temp_node == None:
-        print("연결리스트가 비어 있습니다.")
         return
-
-    while temp_node != None:    # not null
-        if name == temp_node.data[0]:
-            break;
-        
-        else :
-            if temp_node.link == None:  # 노드의 link가 비어있으면 다음 노드가 없는것 이므로 해당 연락처가 없는 것
-                print("해당 연락처를 찾을 수 없습니다.(수정모드)")
-                return
-
-            temp_node = temp_node.link
     
     change_number = input(name + "의 변경할 연락처를 입력하세요 : ")
     temp_node.data[1] = change_number
 
-    print(temp_node.data)
+    print(temp_node.data, "수정 완료")
 
 
 # 삭제모드
-def deletenode(name):
+def deleteNode(name):
     global head, current, pre
 
-    if head == None:
-        print("연결리스트가 비어 있습니다.")
-        return
+    temp_node = searchNode(name)    # searchNode()로 name node 탐색
 
-    elif head.data[0] == name:  # head가 삭제 할 사람이면 head.link(다음 노드) 를 head로 만듬
-        head = head.link
-        print("삭제 완료")
-        return
-
-    else :
+    if head.data[0] == name:
         current = head
-        while current != None: # not null
-            pre = current
-            current = current.link
+        head = head.link
+        del(current)
+        print(name, " 삭제완료")
+        return
 
-            if current.data[0] == name: # current.data가 삭제할 이름이면 pre.link를 다음 노드(current.link)로 바꿈
-                pre.link = current.link
-                print("삭제 완료")
-                break
-                
-            elif current.link == None:
-                print("해당 연락처를 삭제할 수 없습니다.(삭제모드)")
-                return
+    elif temp_node != None:
+        pre.link = current.link
+        del(current)
+        print(name, " 삭제완료")
+        return
+
+'''
+    else :
+        print("삭제모드 알 수 없는 오류발생")
+        return
+'''
     
 
 # 탐색 모드
-def searchnode(name):
+def searchNode(name):
     global head, current, pre
 
-    temp_node = Node()
-    temp_node = head
+    current = head
     
-    if temp_node == None:
+    if current == None:
         print("연결리스트가 비어 있습니다.")
-        return
+        return None
             
-    while temp_node != None:    # not null
-        if name == temp_node.data[0]:
-            break;
+    while current != None:    # not null
+        if name == current.data[0]:
+            break
         
         else :
-            if temp_node.link == None:  # 노드의 link가 비어있으면 다음 노드가 없는것 이므로 해당 연락처가 없는 것
-                print("해당 연락처를 찾을 수 없습니다.(탐색모드)")
-                return
+            if current.link == None:  # 노드의 link가 비어있으면 다음 노드가 없는것 이므로 해당 연락처가 없는 것
+                print("해당 연락처를 찾을 수 없습니다.")
+                return None
 
-            temp_node = temp_node.link
+            pre = current
+            current = current.link
     
-    print(temp_node.data)
+    return current
 
 
     
@@ -169,21 +174,27 @@ if __name__ == "__main__" :
             nodedata = [namedata, phonedata]    # 입력받은 데이터를 리스트 형태로 만듬
 
             makeSimpleLinkedList(nodedata)
+            printNodes(head)
         
         # 수정모드
         elif mode == "2":
             inputname = input("수정할 연락처 이름을 입력하세요 : ")
-            editnode(inputname)
+            editNode(inputname)
+            printNodes(head)
 
         # 삭제모드
         elif mode == "3":
             inputname = input("삭제할 연락처 이름을 입력하세요 : ")
-            deletenode(inputname)
+            deleteNode(inputname)
+            printNodes(head)
 
         # 탐색모드
         elif mode == "4":
             inputname = input("탐색할 연락처 이름을 입력하세요 : ")
-            searchnode(inputname)
+            if searchNode(inputname) != None:
+                print(searchNode(inputname))
+            
+            
             
         # 전체 출력모드
         elif mode == "5":
