@@ -98,7 +98,9 @@ def deletenode(name):
         return
 
     elif head.data[0] == name:  # head가 삭제 할 사람이면 head.link(다음 노드) 를 head로 만듬
+        current = head
         head = head.link
+        del(current)
         print("삭제 완료")
         return
 
@@ -110,6 +112,7 @@ def deletenode(name):
 
             if current.data[0] == name: # current.data가 삭제할 이름이면 pre.link를 다음 노드(current.link)로 바꿈
                 pre.link = current.link
+                del(current)
                 print("삭제 완료")
                 break
                 
