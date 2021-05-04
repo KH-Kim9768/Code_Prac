@@ -28,10 +28,17 @@ def printNodes(start) :
         print("연결리스트가 비어 있습니다.")
         return
     print(current.data, end = ' ')
-    while current.rlink != None:
+    while current.rlink != None:    # rlink로 출력
         current = current.rlink
         print(current.data, end = ' ')
     print()
+
+    print(current.data, end = ' ')
+    while current.llink != None:    # llink로 출력
+        current = current.llink
+        print(current.data, end = ' ')
+    print()
+        
 
 # 입력 모드
 def insertNode(head, insertData):
@@ -55,6 +62,7 @@ def insertNode(head, insertData):
         current = current.rlink
         if current.data[0] > newNode.data[0]:
             current.llink.rlink = newNode   # pre.link = newNode
+            newNode.llink = current.llink
             newNode.rlink = current         # newNode.link = current
             current.llink = newNode         
             return head
