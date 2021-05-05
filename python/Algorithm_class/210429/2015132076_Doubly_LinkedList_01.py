@@ -90,16 +90,21 @@ def editNode(head, data_Name):
 # 삭제 모드
 def deleteNode(head, data_Name):
     delete_Node = searchNode(head, data_Name)
+    #delete_HeadNode = head
 
     if delete_Node == None:
         print("삭제모드 취소")
         return head
     
     if delete_Node == head:
-        head.rlink.llink = None
-        delete_HeadNode = head
-        head = head.rlink
-        del(delete_HeadNode)
+        if delete_Node.rlink != None:    
+            head.rlink.llink = None
+            delete_HeadNode = head
+            head = head.rlink
+            del(delete_HeadNode)
+        elif delete_Node.rlink == None:
+            del(head)
+            head = None
         print(data_Name, " 삭제 완료")
         return head
 
