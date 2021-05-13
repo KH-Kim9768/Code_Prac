@@ -2,6 +2,9 @@
 참고사이트
 https://alnova2.tistory.com/1227
 
+sudo pip3 install wiringpi2
+
+
 '''
 
 # import smbus
@@ -64,7 +67,7 @@ def setDuty(pca9685, pin, duty_cycle):
 # pca9685_motor.cpp, p154
 pca9685 = pca9685_t()
 pca9685.i2c_addr = 0x40
-pin[4] = {0, 2, 1, 3}
+pin = {0, 2, 1, 3}
 
 
 if __name__ == "__main__":
