@@ -1,19 +1,18 @@
-class Node:
-    def __init__(self):
-        self.data = None
-        self.link = None
+from test import *
+from test1 import *
+import test2
+import time
+import threading
 
+test1()
+test2.test2()
 
-node1 = Node()
-node2 = Node()
+state = True
+print(state)
+state = not state
+print(state)
 
-top = node1
-rear = node1
-
-print(rear)
-print(top)
-
-rear = rear.link
-print(rear)
-node3 = Node()
-
+ii = [0, 1, 2, 3, 4, 5]
+for i in ii:
+    i = 0
+print(ii)
