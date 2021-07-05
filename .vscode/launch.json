@@ -5,26 +5,9 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: Current File",
-            "type": "python",
-            "request": "launch",
-            "program": "${file}",
-            "console": "integratedTerminal"
-        },
-        {
-            "name": "(Windows) 시작",
-            "type": "cppvsdbg",
-            "request": "launch",
-            "program": "프로그램 이름 입력(예: ${workspaceFolder}/a.exe)",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "console": "externalTerminal"
-        },
-        {
             "type": "lldb",
             "request": "launch",
+   
             "name": "Debug",
             "program": "${workspaceRoot}/target/debug/${workspaceFolderBasename}",
             "args": [],
@@ -32,6 +15,14 @@
             "preLaunchTask": "build",
             "sourceLanguages": ["rust"],
             "terminal": "integrated"
-          }
+        },
+        {
+            "name": "Python: Current File",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        }
+        
     ]
 }
