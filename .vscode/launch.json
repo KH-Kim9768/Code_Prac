@@ -5,16 +5,15 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "lldb",
+            "name": "(Windows) Launch",
+            "type": "cppvsdbg",
             "request": "launch",
-   
-            "name": "Debug",
-            "program": "${workspaceRoot}/target/debug/${workspaceFolderBasename}",
+            "program": "${workspaceFolder}/target/debug/hello.exe",
             "args": [],
-            "cwd": "${workspaceRoot}",
-            "preLaunchTask": "build",
-            "sourceLanguages": ["rust"],
-            "terminal": "integrated"
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "preLaunchTask": "build"
         },
         {
             "name": "Python: Current File",
