@@ -10,6 +10,7 @@ fn main() { // fn --> 새로운 함수 선언
     /* rust 에서 변수는 기본적으로 불변이기 때문에 변수 앞에 mut을 이용하여
      가변변수를 만든다 mutable <-> immutable(default) */
     
+    guess = 
     io::stdin().read_line(&mut guess).expect("Failed to read line");
     /* use std::io가 없다면 std::io::stdio 로 작성 */
 
