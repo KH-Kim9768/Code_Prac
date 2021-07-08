@@ -1,5 +1,6 @@
 {
     "java.project.sourcePaths": [
         "Java/AroundUs"
-    ]
+    ],
+    "rust-analyzer.debug.engine": "vadimcn.vscode-lldb"
 }
