@@ -1,4 +1,5 @@
 use std::io;    // std 표준 라이브러리 -> io 라이브러리 호출
+use rand::Rng;
 
 fn main() { // fn --> 새로운 함수 선언
     println!("Guess the number!");
