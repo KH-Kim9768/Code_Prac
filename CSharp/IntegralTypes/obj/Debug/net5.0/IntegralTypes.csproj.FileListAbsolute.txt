@@ -1,0 +1,16 @@
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\IntegralTypes\bin\Debug\net5.0\IntegralTypes.exe
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\IntegralTypes\bin\Debug\net5.0\IntegralTypes.deps.json
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\IntegralTypes\bin\Debug\net5.0\IntegralTypes.runtimeconfig.json
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\IntegralTypes\bin\Debug\net5.0\IntegralTypes.runtimeconfig.dev.json
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\IntegralTypes\bin\Debug\net5.0\IntegralTypes.dll
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\IntegralTypes\bin\Debug\net5.0\ref\IntegralTypes.dll
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\IntegralTypes\bin\Debug\net5.0\IntegralTypes.pdb
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\IntegralTypes\obj\Debug\net5.0\IntegralTypes.csproj.AssemblyReference.cache
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\IntegralTypes\obj\Debug\net5.0\IntegralTypes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\IntegralTypes\obj\Debug\net5.0\IntegralTypes.AssemblyInfoInputs.cache
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\IntegralTypes\obj\Debug\net5.0\IntegralTypes.AssemblyInfo.cs
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\IntegralTypes\obj\Debug\net5.0\IntegralTypes.csproj.CoreCompileInputs.cache
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\IntegralTypes\obj\Debug\net5.0\IntegralTypes.dll
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\IntegralTypes\obj\Debug\net5.0\ref\IntegralTypes.dll
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\IntegralTypes\obj\Debug\net5.0\IntegralTypes.pdb
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\IntegralTypes\obj\Debug\net5.0\IntegralTypes.genruntimeconfig.cache
