@@ -1,0 +1,16 @@
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\Constant\bin\Debug\net5.0\Constant.exe
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\Constant\bin\Debug\net5.0\Constant.deps.json
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\Constant\bin\Debug\net5.0\Constant.runtimeconfig.json
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\Constant\bin\Debug\net5.0\Constant.runtimeconfig.dev.json
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\Constant\bin\Debug\net5.0\Constant.dll
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\Constant\bin\Debug\net5.0\ref\Constant.dll
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\Constant\bin\Debug\net5.0\Constant.pdb
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\Constant\obj\Debug\net5.0\Constant.csproj.AssemblyReference.cache
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\Constant\obj\Debug\net5.0\Constant.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\Constant\obj\Debug\net5.0\Constant.AssemblyInfoInputs.cache
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\Constant\obj\Debug\net5.0\Constant.AssemblyInfo.cs
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\Constant\obj\Debug\net5.0\Constant.csproj.CoreCompileInputs.cache
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\Constant\obj\Debug\net5.0\Constant.dll
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\Constant\obj\Debug\net5.0\ref\Constant.dll
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\Constant\obj\Debug\net5.0\Constant.pdb
+C:\Users\KH\Github_Repository\Code_Prac\CSharp\Constant\obj\Debug\net5.0\Constant.genruntimeconfig.cache
