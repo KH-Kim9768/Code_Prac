@@ -22,10 +22,14 @@ fn main() { // fn --> 새로운 함수 선언
             Ok(x) => x,
             Err(_) => continue,
         };
+        // guess를 u32(int)로 변환하지 않으면 int와 string 은 비교를 할 수 없기 때문에
+        // 오류가 발생한다.
+        // trim --> 문자열의 앞 뒤 빈칸을 제거해준다 5 입력후 엔터 시 5\n 이 입력됨 --> trim이 \n 제거
 
         println!("You guessed: {}", guess);
 
         match guess.cmp(&secret_number){
+            // Ordering의 열거 값 --> Less, Greater, Equal
             Ordering::Less => println!("TOO SMALL"),
             Ordering::Greater => println!("TOO BIG"),
             Ordering::Equal => {
