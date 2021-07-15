@@ -26,7 +26,7 @@ fn main() {
         println!("{}~", element);
     }
     
-    for number in (1..4).rev(){ // 1 ~ 3 까지
+    for number in (1..4).rev(){ // 1 ~ 3 까지, .rev는 역순
         println!("{}", number);
     }
 
