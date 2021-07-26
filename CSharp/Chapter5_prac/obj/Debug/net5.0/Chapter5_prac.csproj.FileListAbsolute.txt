@@ -1,0 +1,16 @@
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter5_prac\bin\Debug\net5.0\Chapter5_prac.exe
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter5_prac\bin\Debug\net5.0\Chapter5_prac.deps.json
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter5_prac\bin\Debug\net5.0\Chapter5_prac.runtimeconfig.json
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter5_prac\bin\Debug\net5.0\Chapter5_prac.runtimeconfig.dev.json
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter5_prac\bin\Debug\net5.0\Chapter5_prac.dll
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter5_prac\bin\Debug\net5.0\ref\Chapter5_prac.dll
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter5_prac\bin\Debug\net5.0\Chapter5_prac.pdb
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter5_prac\obj\Debug\net5.0\Chapter5_prac.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter5_prac\obj\Debug\net5.0\Chapter5_prac.AssemblyInfoInputs.cache
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter5_prac\obj\Debug\net5.0\Chapter5_prac.AssemblyInfo.cs
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter5_prac\obj\Debug\net5.0\Chapter5_prac.csproj.CoreCompileInputs.cache
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter5_prac\obj\Debug\net5.0\Chapter5_prac.dll
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter5_prac\obj\Debug\net5.0\ref\Chapter5_prac.dll
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter5_prac\obj\Debug\net5.0\Chapter5_prac.pdb
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter5_prac\obj\Debug\net5.0\Chapter5_prac.genruntimeconfig.cache
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter5_prac\obj\Debug\net5.0\Chapter5_prac.csproj.AssemblyReference.cache

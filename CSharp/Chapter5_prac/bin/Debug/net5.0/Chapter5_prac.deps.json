@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "Chapter5_prac/1.0.0": {
+        "runtime": {
+          "Chapter5_prac.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Chapter5_prac/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
