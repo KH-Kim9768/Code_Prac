@@ -7,6 +7,58 @@ namespace Chapter5_prac
         static void Main(string[] args)
         {
 
+            WriteLine("점수를 입력하세요 : ");
+            int score = Convert.ToInt32(ReadLine());
+
+            WriteLine("재수강 입니까? : ");
+            string line = ReadLine();
+            bool repeated = line == "y" ? true : false;
+
+            string grade = (int)(Math.Truncate(score / 10.0) * 10) switch
+            {
+                90 when repeated == true => "B+",
+                90 => "A",
+                80 => "B",
+                70 => "C",
+                60 => "D",
+                _ => "F"
+            };
+
+            WriteLine($"학점 : {grade}");
+
+            /*
+            object obj = null;
+
+            string s = ReadLine();
+
+            
+            // TryParse() 함수는 Parse() 함수와 달리 변환 성공 여부를 반환한다.
+             
+            if (int.TryParse(s, out int out_i))
+                obj = out_i;
+
+            else if (float.TryParse(s, out float out_f))
+                obj = out_f;
+
+            else
+                obj = s;
+
+            switch (obj)
+            {
+                case int i:
+                    WriteLine("int 형 입니다");
+                    break;
+
+                case float f:
+                    WriteLine("float 형 입니다");
+                    break;
+
+                default:
+                    WriteLine("String 형 입니다");
+                    break;
+            }
+            */
+            /*
             int number = 1;
 
             object obj = 123;
@@ -21,7 +73,7 @@ namespace Chapter5_prac
                     WriteLine("float 형입니다");
                     break;
             }
-
+            */
             /*
             switch (number)
             {
