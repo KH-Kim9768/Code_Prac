@@ -7,6 +7,57 @@ namespace Chapter5_prac
         static void Main(string[] args)
         {
 
+            for (int i = 1; i < 6; i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    Write("*");
+                }
+                WriteLine("");
+            }
+
+            for(int i = 5; i > 0; i--)
+            {
+                for(int j = 0; j < i; j++)
+                {
+                    Write("*");
+
+                }
+                WriteLine();
+            }
+
+            WriteLine();
+            int number = 0;
+            while (true)
+            {
+                Write("반복 횟수를 입력하세요 : ");
+                try
+                {
+                   number = Convert.ToInt32(ReadLine());
+                }
+                catch
+                {
+                    WriteLine("숫자를 입력해주세요");
+                    continue;
+                }
+                
+                if (number <= 0)
+                {
+                    WriteLine("0보다 작거나 같은 수는 입력할 수 없습니다.");
+                    continue;
+                }
+
+                for (int i = 0; i < number; i++)
+                {
+                    for (int j = 0; j < i+1; j++)
+                    {
+                        Write("*");
+                    }
+                    WriteLine();
+                }
+            }
+            
+            /*
             WriteLine("점수를 입력하세요 : ");
             int score = Convert.ToInt32(ReadLine());
 
@@ -24,8 +75,10 @@ namespace Chapter5_prac
                 _ => "F"
             };
 
+            
             WriteLine($"학점 : {grade}");
 
+            */
             /*
             object obj = null;
 
