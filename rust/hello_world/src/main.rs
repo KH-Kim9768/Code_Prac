@@ -6,9 +6,7 @@ fn main() {
     let test = String::from("12");
     
     let x = 123;
-    for i in x.as_ne_bytes(){
-        println!("{}", i);
-    }
+    
 
     println!("{}", test.len()>2);
 
