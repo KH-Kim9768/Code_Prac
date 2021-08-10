@@ -19,25 +19,6 @@ fn main() {
 
         let mut numberVec: Vec<i32> = number_to_vec(inputString);
 
-
-        // // 문자를 자릿수별로 숫자로 변환한 후 벡터에 저장
-        // while length < inputString.len(){
-        //     let number = &inputString[index];
-
-        //     let number: u32 = match number.trim().parse(){
-        //         Ok(x) => x,
-        //         Err(_) => continue,
-        //     };
-
-        //     numberVec.push(number);
-        // }
-
-        // for i in numberVec{
-        //     println!("{}", i);
-        // }
-        
-
-        
         // 변환된 숫자 벡터를 구조체로 변환
         let mut numStructVec: Vec<shapeNumber> = Vec::new();
         for i in &numberVec{
@@ -178,105 +159,6 @@ fn transNumber(input_number: &i32) -> shapeNumber {
             fifth_line: 0b111,
         },
     }
-    // if input_number == 0{
-    //     shapeNumber{
-    //         first_line: 0b111,
-    //         second_line: 0b101,
-    //         third_line: 0b101,
-    //         fourth_line: 0b101,
-    //         fifth_line: 0b111,
-    //     }
-    // }
-    // else if input_number == 1{
-    //     shapeNumber{
-    //         first_line: 0b010,
-    //         second_line: 0b010,
-    //         third_line: 0b010,
-    //         fourth_line: 0b010,
-    //         fifth_line: 0b010,
-    //     }
-    // }
-    // else if input_number == 2{
-    //     shapeNumber{
-    //         first_line: 0b111,
-    //         second_line: 0b001,
-    //         third_line: 0b111,
-    //         fourth_line: 0b100,
-    //         fifth_line: 0b111,
-    //     }
-    // }
-    // else if input_number == 3{
-    //     shapeNumber{
-    //         first_line: 0b111,
-    //         second_line: 0b001,
-    //         third_line: 0b111,
-    //         fourth_line: 0b001,
-    //         fifth_line: 0b111,
-    //     }
-    // }
-    // else if input_number == 4{
-    //     shapeNumber{
-    //         first_line: 0b101,
-    //         second_line: 0b101,
-    //         third_line: 0b111,
-    //         fourth_line: 0b001,
-    //         fifth_line: 0b001,
-    //     }
-    // }
-    // else if input_number == 5{
-    //     shapeNumber{
-    //         first_line: 0b111,
-    //         second_line: 0b100,
-    //         third_line: 0b111,
-    //         fourth_line: 0b001,
-    //         fifth_line: 0b111,
-    //     }
-    // }
-    // else if input_number == 6{
-    //     shapeNumber{
-    //         first_line: 0b100,
-    //         second_line: 0b100,
-    //         third_line: 0b111,
-    //         fourth_line: 0b101,
-    //         fifth_line: 0b111,
-    //     }
-    // }
-    // else if input_number == 7{
-    //     shapeNumber{
-    //         first_line: 0b111,
-    //         second_line: 0b001,
-    //         third_line: 0b001,
-    //         fourth_line: 0b001,
-    //         fifth_line: 0b001,
-    //     }
-    // }
-    // else if input_number == 8{
-    //     shapeNumber{
-    //         first_line: 0b111,
-    //         second_line: 0b101,
-    //         third_line: 0b111,
-    //         fourth_line: 0b101,
-    //         fifth_line: 0b111,
-    //     }
-    // }
-    // else if input_number == 9{
-    //     shapeNumber{
-    //         first_line: 0b111,
-    //         second_line: 0b101,
-    //         third_line: 0b111,
-    //         fourth_line: 0b001,
-    //         fifth_line: 0b001,
-    //     }
-    // }
-    // else{
-    //     shapeNumber{
-    //         first_line: 0b111,
-    //         second_line: 0b111,
-    //         third_line: 0b111,
-    //         fourth_line: 0b111,
-    //         fifth_line: 0b111,
-    //     }
-    // }
 }
 
 fn getHashTag(number: &i32) -> String{
