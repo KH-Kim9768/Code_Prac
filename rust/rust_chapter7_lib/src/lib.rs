@@ -34,6 +34,8 @@ mod front_of_house{
     }
 }
 
+use self::front_of_house::hosting;
+
 
 pub fn eat_at_restaurant(){
     // 절대 경로
