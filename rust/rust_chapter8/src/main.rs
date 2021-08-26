@@ -45,6 +45,7 @@ fn main() {
     // 이전 값을 기반으로 값 업데이트
     // 같은 단어가 몇개 들어 있는지 체크하기
     let text = "hello world wonderful world";
+    let s = text.to_string();
 
     let mut map = HashMap::new();
 
