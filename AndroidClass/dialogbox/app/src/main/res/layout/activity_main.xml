@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/basicbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="기본 대화상자" />
+
+    <Button
+        android:id="@+id/basicbox2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="나의 취미 대화상자" />
+
+    <Button
+        android:id="@+id/sexdbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="성별 문의" />
+
+    <Button
+        android:id="@+id/soccerbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="축구 선호 박스" />
+
+    <Button
+        android:id="@+id/telecom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="통신사" />
+
+    <Button
+        android:id="@+id/animal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="동물 선택" />
+
+    <Button
+        android:id="@+id/multiple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="다중 선택" />
+
+</LinearLayout>

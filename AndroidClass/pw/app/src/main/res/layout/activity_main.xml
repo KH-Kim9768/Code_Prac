@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="" />
+
+    <Button
+        android:id="@+id/telecom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="통신사 선택" />
+
+    <Button
+        android:id="@+id/idpw"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ID, PW 입력" />
+
+    <Button
+        android:id="@+id/nameagesex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="이름/나이/성별 입력" />
+
+    <RatingBar
+        android:id="@+id/rate"
+        android:numStars="5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/setstar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="별점 셋팅" />
+
+    <ProgressBar
+        android:max="100"
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

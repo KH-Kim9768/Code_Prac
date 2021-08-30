@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy 3 elements to &apos;Week12/src/kr.ac.shingu.cs.network&apos;&#x0D;&#x0A;- Original project: &apos;Week11&apos;&#x0D;&#x0A;- Destination element: &apos;Week12/src/kr.ac.shingu.cs.network&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     kr.ac.shingu.cs.network.ChatServer.java&#x0D;&#x0A;     kr.ac.shingu.cs.network.ChatClient.java&#x0D;&#x0A;     kr.ac.shingu.cs.network.HelperMethods.java" description="Copy compilation units" destination="=Week12/src&lt;kr.ac.shingu.cs.network" element1="/src&lt;kr.ac.shingu.cs.network{ChatServer.java" element2="/src&lt;kr.ac.shingu.cs.network{ChatClient.java" element3="/src&lt;kr.ac.shingu.cs.network{HelperMethods.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1605661175832" units="3" version="1.0"/>
+</session>

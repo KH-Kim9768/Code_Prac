@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:id="@+id/home">
+
+    <Button
+        android:id="@+id/interest"
+        android:layout_width="match_parent"
+        android:layout_height="317dp"
+        android:background="#007fff"
+        android:gravity="center"
+        android:text="관심사별 추천      >"
+        android:textSize="45sp"
+        android:onClick="goToInterest"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="97dp" />
+
+    <Button
+        android:id="@+id/distance"
+        android:layout_width="match_parent"
+        android:layout_height="351dp"
+        android:background="#ffe135"
+        android:gravity="center"
+        android:text="지역별 추천          >"
+        android:textSize="45sp"
+        android:onClick="goToDistance"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="367dp" />
+</LinearLayout>

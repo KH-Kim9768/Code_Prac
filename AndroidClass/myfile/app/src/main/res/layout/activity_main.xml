@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <EditText
+        android:id="@+id/filename"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="" />
+
+    <EditText
+        android:id="@+id/filetext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="" />
+
+    <Button
+        android:id="@+id/iread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="내부메모리 읽기" />
+
+    <Button
+        android:id="@+id/iwrite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="내부메모리 쓰기" />
+
+    <Button
+        android:id="@+id/idelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="내부메모리 삭제" />
+
+    <EditText
+        android:id="@+id/error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="" />
+
+    <Button
+        android:id="@+id/eread"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SD 카드 읽기" />
+
+    <Button
+        android:id="@+id/ewrite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SD 카드 쓰기" />
+
+    <Button
+        android:id="@+id/edelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SD 카드 삭제" />
+
+    <Button
+        android:id="@+id/mkdir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="디렉토리 만들기" />
+
+</LinearLayout>

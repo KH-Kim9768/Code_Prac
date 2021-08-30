@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;HelperMethods.java&apos; to &apos;Week13/src/kr.ac.shingu.cs.network&apos;&#x0D;&#x0A;- Original project: &apos;Week12&apos;&#x0D;&#x0A;- Destination element: &apos;Week13/src/kr.ac.shingu.cs.network&apos;&#x0D;&#x0A;- Original element: &apos;kr.ac.shingu.cs.network.HelperMethods.java&apos;" description="Copy compilation unit" destination="=Week13/src&lt;kr.ac.shingu.cs.network" element1="/src&lt;kr.ac.shingu.cs.network{HelperMethods.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1606270106747" units="1" version="1.0"/>
+</session>

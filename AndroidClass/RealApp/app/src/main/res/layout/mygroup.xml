@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:text="(임시) 모임 DB 입력창" />
+
+    <EditText
+        android:id="@+id/meettitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="타이틀"
+        android:text="" />
+
+    <EditText
+        android:id="@+id/meetdesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="설명"
+        android:text="" />
+
+    <EditText
+        android:id="@+id/meetlat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="위도"
+        android:text="" />
+
+    <EditText
+        android:id="@+id/meetlon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="경도"
+        android:text="" />
+
+    <CheckBox
+        android:id="@+id/meetonetime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1회 모임" />
+
+    <Button
+        android:id="@+id/meetbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="입력" />
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DB초기화" />
+</LinearLayout>

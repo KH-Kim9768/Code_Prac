@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">다중언어</string>
+    <string name="myname">
+        김광희
+    </string>
+    <string name="title">눌러주세요</string>
+    <string name="mytext">만나서 반갑습니다</string>
+</resources>

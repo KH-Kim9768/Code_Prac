@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="145dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="158dp"
+            android:layout_height="139dp"
+            app:srcCompat="@drawable/profile_picture"
+            tools:ignore="MissingConstraints" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="145dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="242dp"
+                android:layout_height="29dp"
+                android:layout_marginEnd="8dp"
+                android:text="Id"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteY="16dp" />
+
+            <TextView
+                android:id="@+id/aa"
+                android:layout_width="242dp"
+                android:layout_height="29dp"
+                android:layout_marginEnd="8dp"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteY="53dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="106dp"
+                android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/LoginActivity"
+                style="@style/defaultButton"
+                android:layout_width="111dp"
+                android:layout_height="49dp"
+                android:text="로그아웃"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="162dp"
+                tools:layout_editor_absoluteY="90dp" />
+
+                <Button
+                    android:id="@+id/Profile"
+                    style="@style/defaultButton"
+                    android:layout_width="111dp"
+                    android:layout_height="49dp"
+                    android:text="프로필 설정"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="162dp"
+                    tools:layout_editor_absoluteY="90dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="106dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="67dp"
+            android:layout_height="62dp"
+            app:srcCompat="@drawable/setting_setting"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="180dp" />
+
+        <Button
+            android:id="@+id/app_setting"
+            style="@style/defaultButton"
+            android:layout_width="288dp"
+            android:layout_height="63dp"
+            android:text="App 설정"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="108dp"
+            tools:layout_editor_absoluteY="185dp" />
+    </LinearLayout>>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="103dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="67dp"
+            android:layout_height="60dp"
+            app:srcCompat="@drawable/setting_point"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="263dp" />
+
+        <Button
+            android:id="@+id/mypoint"
+            style="@style/defaultButton"
+            android:layout_width="288dp"
+            android:layout_height="61dp"
+            android:text="내 포인트"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="108dp"
+            tools:layout_editor_absoluteY="273dp" />
+    </LinearLayout>>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="66dp"
+            android:layout_height="61dp"
+            app:srcCompat="@drawable/setting_favorite"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="344dp" />
+
+        <Button
+            android:id="@+id/favorite"
+            style="@style/defaultButton"
+            android:layout_width="288dp"
+            android:layout_height="63dp"
+            android:text="등록된 내 관심 모임"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="108dp"
+            tools:layout_editor_absoluteY="355dp" />
+    </LinearLayout>
+</LinearLayout>

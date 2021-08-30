@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;kr.ac.shingu.cs.network.ExceotionTest&apos; to &apos;ExceptionTest&apos;&#x0D;&#x0A;- Original project: &apos;Week02&apos;&#x0D;&#x0A;- Original element: &apos;kr.ac.shingu.cs.network.ExceotionTest&apos;&#x0D;&#x0A;- Renamed element: &apos;kr.ac.shingu.cs.network.ExceptionTest&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ExceotionTest&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;kr.ac.shingu.cs.network{ExceotionTest.java[ExceotionTest" matchStrategy="1" name="ExceptionTest" qualified="false" references="true" similarDeclarations="false" stamp="1607419271663" textual="false" version="1.0"/>
+</session>

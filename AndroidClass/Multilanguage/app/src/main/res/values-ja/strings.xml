@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">일본 다중언어</string>
+    <string name="myname">
+        일본어로 김광희
+    </string>
+    <string name="title">욘데 구다사이</string>
+    <string name="mytext">はじめまして</string>
+</resources>

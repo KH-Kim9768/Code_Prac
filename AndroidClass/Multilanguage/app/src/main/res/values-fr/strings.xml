@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Langue multiple</string>
+    <string name="myname">
+        (FR)Kim Kwang Hee
+    </string>
+    <string name="title">presser</string>
+    <string name="mytext">Envie de vous rencontrer</string>
+</resources>

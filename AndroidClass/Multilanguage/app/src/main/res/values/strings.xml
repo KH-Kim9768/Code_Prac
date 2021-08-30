@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Multi-language</string>
+    <string name="myname">
+        Kim Kwang Hee
+    </string>
+    <string name="title">Press Me</string>
+    <string name="mytext">Glad to meet you</string>
+</resources>
