@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class MyException {
+	
+	/// main() start
+	public static void main(String[] args) {
+		try {
+			int age = readAge();
+			System.out.println("입력된 나이 : " + age);
+		} catch (ReadAgeException e) {
+			System.out.println(e.getMessage());
+		}
+	} /// main() end
+	
+	public static int readAge() throws ReadAgeException{
+		Scanner scan = new Scanner(System.in);
+		int age = scan.nextInt();
+		
+		if (age < 0) throw new ReadAgeException();
+		
+		return age;
+	}
+}
+
+class ReadAgeException extends Exception{
+	public ReadAgeException() {
+		super("잘못된 나이 입력");
+		
+	}
+}

@@ -1,0 +1,35 @@
+
+public class UseTriangle {
+	
+	/// main() start
+	public static void main(String[] args) {
+		
+
+	} /// main() end
+
+}
+
+/// Triangle class start
+class Triangle{
+	double bottom, height;
+	
+	public Triangle(double bottom, double height) {
+		this.bottom = bottom;
+		this.height = height;
+	}
+	
+	public void setBottom(double bottom) {
+		this.bottom = bottom;
+	}
+	
+	public void setHeight(double height) {
+		this.height = height;
+	}
+	
+	public double calcArea() {
+		return bottom * height * 0.5;
+	}
+	
+	
+	
+} /// Trianlge class end

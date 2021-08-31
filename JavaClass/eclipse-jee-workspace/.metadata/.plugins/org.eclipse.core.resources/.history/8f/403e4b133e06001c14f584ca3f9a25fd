@@ -1,0 +1,35 @@
+
+public class InterfaceDemo {
+
+	public static void main(String[] args) {
+
+	}
+
+}
+
+interface Bicycle{
+
+	public void applyBrake(int decreament);
+
+	public void speedup(int increament);
+}
+
+class MountainBike implements Bicycle{
+	
+	private int seatHeight, speed, gear;
+	
+	public MountainBike(int startHeight, int startSpeed, int startGear) {
+		seatHeight = startHeight;
+		speed = startSpeed;
+		gear = startGear;
+	}
+	
+	@Override
+	public void applyBrake(int decreament) {
+		speed -= decreament;
+	}
+	
+	public void speedup(int increament) {
+		speed += increament;
+	}
+}

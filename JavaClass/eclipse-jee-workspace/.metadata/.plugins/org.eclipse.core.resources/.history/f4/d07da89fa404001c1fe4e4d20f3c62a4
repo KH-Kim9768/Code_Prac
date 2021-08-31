@@ -1,0 +1,33 @@
+
+public class Bank2 {
+	// --- main() start ---
+	public static void main(String[] args) {
+		Bank00 myAccount = new Bank00();
+		
+
+	} // --- main() end ---
+
+}
+
+// --- Bank00 class start ---
+class Bank00{
+	int balance = 0;
+	
+	public int deposit(int money) {
+		balance += money;
+		return balance;
+	}
+	
+	public int withdraw(int money) {
+		balance -= money;
+		return balance;
+	}
+	
+	public static void checkBalance(Bank00 account) {
+		System.out.println(account.balance);
+	}
+	
+	
+}
+
+// --- Bank00 class end ---

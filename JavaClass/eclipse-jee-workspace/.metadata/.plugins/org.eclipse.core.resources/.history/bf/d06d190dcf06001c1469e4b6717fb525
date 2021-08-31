@@ -1,0 +1,17 @@
+
+public class MyException {
+	public static void main(String[] args) {
+		try {
+			Scanner scan = new Scanner(System.in);
+		} catch(Exception e) {
+			
+		}
+	}
+}
+
+class ReadAgeException extends Exception{
+	public ReadAgeException() {
+		super("잘못된 나이 입력");
+		
+	}
+}

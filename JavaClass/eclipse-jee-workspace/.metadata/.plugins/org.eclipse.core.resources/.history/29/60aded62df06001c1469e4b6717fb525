@@ -1,0 +1,15 @@
+
+public class SortObject {
+	
+}
+
+
+class Person implements Comparable{
+	private int age;
+	
+	@Override
+	public int compareTo(Object o) {
+		Person p = (Person) o;
+		return this.age - p.age;
+	}
+}

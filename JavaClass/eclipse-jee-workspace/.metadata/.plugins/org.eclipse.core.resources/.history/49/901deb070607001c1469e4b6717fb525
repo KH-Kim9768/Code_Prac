@@ -1,0 +1,11 @@
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class LinkedList2 {
+
+	/// main() start
+	public static void main(String[] args) {
+		LinkedList<String> linkedList = new LinkedList();
+	} /// main() end
+
+}

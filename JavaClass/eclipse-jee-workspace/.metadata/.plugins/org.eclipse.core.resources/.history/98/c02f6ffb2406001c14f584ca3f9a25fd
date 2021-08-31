@@ -1,0 +1,25 @@
+
+public class InheritStatic {
+	
+	/// main() start
+	public static void main(String[] args) {
+		
+	} /// main() end
+}
+
+
+class Parent{
+	protected static int count = 10;
+	
+	public Parent() {
+		count += 1;
+	}
+}
+
+
+class Child extends Parent{
+	
+	public void showCount() {
+		System.out.println(super.count);
+	}
+}

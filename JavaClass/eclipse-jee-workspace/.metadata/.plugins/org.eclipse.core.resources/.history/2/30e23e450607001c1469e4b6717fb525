@@ -1,0 +1,17 @@
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class LinkedList2 {
+
+	/// main() start
+	public static void main(String[] args) {
+		LinkedList<String> linkedList = new LinkedList();
+		linkedList.add("Lee");
+		linkedList.add("Kim");
+		linkedList.add("Park");
+		linkedList.add("Lee");
+		
+		Iterator itr = linkedList.iterator();
+	} /// main() end
+
+}

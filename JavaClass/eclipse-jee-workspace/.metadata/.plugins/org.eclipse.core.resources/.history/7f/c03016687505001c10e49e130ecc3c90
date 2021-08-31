@@ -1,0 +1,23 @@
+
+public class String3 {
+	
+	/// main() start
+	public static void main(String[] args) {
+		Human h = new Human();
+		
+	} /// main() end
+
+}
+
+class Human{
+	private int age;
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public String toString() {
+		return "My age is" + age;
+	}
+	
+}

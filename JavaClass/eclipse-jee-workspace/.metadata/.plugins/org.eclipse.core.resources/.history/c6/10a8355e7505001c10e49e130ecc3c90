@@ -1,0 +1,21 @@
+
+public class String3 {
+
+	public static void main(String[] args) {
+
+	}
+
+}
+
+class Human{
+	private int age;
+	
+	public void setAge(int age) {
+		this.age = age;
+	}
+	
+	public String toString() {
+		return "My age is" + age;
+	}
+	
+}

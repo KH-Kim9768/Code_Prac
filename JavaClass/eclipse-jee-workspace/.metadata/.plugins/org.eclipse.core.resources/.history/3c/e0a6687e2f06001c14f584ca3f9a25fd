@@ -1,0 +1,58 @@
+
+public class InheritPerson {
+	
+	/// main() start
+	public static void main(String[] args) {
+		Family f1 = new Friend("NAME1", "010-2222-3333", "seoul");
+		f1.showPerson();
+	} /// main() end
+}
+
+
+/// Family class start
+class Family{
+	protected String name, phone;
+	
+	public Family(String name, String phone) {
+		this.name = name;
+		this.phone = phone;
+	}
+	
+	public void showPerson() {
+		System.out.println("name = " + name + ", phone = " + phone);
+	}
+} /// Family class end
+
+
+/// Friend class start
+class Friend extends Family{
+	private String address;
+	
+	public Friend(String name, String phone, String address) {
+		super(name, phone);
+		this.address = address;
+	}
+	
+	@Override
+	public void showPerson() {
+		super.showPerson();
+		System.out.println("address = " + address);
+	}
+} /// Friend class start
+
+
+/// UnivFriend class start
+class UnivFriend extends Family{
+	private String major;
+	
+	public UnivFriend(String name, String phone, String major) {
+		super(name, phone);
+		this.major = major;
+	}
+	
+	@Override
+	public void showPerson() {
+		super.showPerson();
+		System.out.println("major = " + major);
+	}
+} /// UnivFriend class end

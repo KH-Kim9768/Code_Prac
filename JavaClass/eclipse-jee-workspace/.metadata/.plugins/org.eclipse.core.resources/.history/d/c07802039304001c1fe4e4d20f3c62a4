@@ -1,0 +1,29 @@
+
+public class Method {
+	
+	// --- main() start ---
+	public static void main(String[] args) {
+		int num1 = 100;
+		int num2 = 200;
+		
+		double num3 = 4.5;
+		double num4 = 5.0;
+		
+		int sum_result = calcSum(num1, num2);
+		double square_result = calcSquare(num3, num4);
+		
+		System.out.println(sum_result + ", " + square_result);
+	} // --- main() end ---
+	
+	// --- calcSum() start ---
+	public static int calcSum(int num1, int num2) {
+		int result = num1 + num2;
+		return result;
+	} // --- calcSum() end ---
+	
+	// --- calcSquare() start ---
+	public static double calcSquare(double num1, double num2) {
+		double result = num1 * num2;
+		return result;
+	} // --- calcSquare() end ---
+}

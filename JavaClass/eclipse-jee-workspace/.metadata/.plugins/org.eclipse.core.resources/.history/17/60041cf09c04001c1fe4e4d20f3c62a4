@@ -1,0 +1,30 @@
+
+public class Bank {
+	static int balance = 0;
+	
+	// --- main() start ---
+	public static void main(String[] args) {
+		
+	} // --- main() end ---
+	
+	
+	
+	public static int deposit(int money){
+		// 입금
+		balance += money;
+		return balance;
+	}
+	
+	public static int withdraw() {
+		// 출금
+		return 0;
+	}
+	
+	public static int checkBalance() {
+		// 잔고 출력
+		return 0;
+	}
+	
+	
+	
+}

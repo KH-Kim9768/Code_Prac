@@ -1,0 +1,11 @@
+
+public class Bank {
+	static int balance = 0;
+	
+	// --- main() start ---
+	public static void main(String[] args) {
+		
+	} // --- main() end ---
+	
+	
+}

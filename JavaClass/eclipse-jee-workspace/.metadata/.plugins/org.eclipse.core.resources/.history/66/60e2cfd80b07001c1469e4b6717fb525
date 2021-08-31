@@ -1,0 +1,19 @@
+import java.util.Iterator;
+import java.util.HashSet;
+
+public class HashSet1 {
+
+	/// main() start
+	public static void main(String[] args) {
+		HashSet<String> hashSet = new HashSet<>();
+		
+		hashSet.add("Part");
+		hashSet.add("Lee");
+		hashSet.add("Park");
+		hashSet.add("Kim");
+		
+		System.out.println("인스턴스 갯수 : " + hashSet.size());
+		
+	} /// main() end
+
+}

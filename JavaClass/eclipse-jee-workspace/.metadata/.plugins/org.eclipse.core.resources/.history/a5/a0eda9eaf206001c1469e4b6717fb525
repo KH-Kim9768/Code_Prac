@@ -1,0 +1,24 @@
+
+public class GenericPrimitive {
+
+	public static void main(String[] args) {
+		
+	}
+
+}
+
+class Box<T>{
+	private T obj;
+	
+	public Box(T arg) {
+		obj = arg;
+	}
+	
+	public void setObj(T obj) {
+		this.obj = obj;
+	}
+	
+	public T getObj() {
+		return obj;
+	}
+}

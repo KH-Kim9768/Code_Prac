@@ -1,0 +1,26 @@
+
+public class SortObject {
+	
+}
+
+
+class PersonSort implements Comparable{
+	private int age;
+	
+	/// 생성자
+	public PersonSort(int age) {
+		this.age = age;
+	}
+	
+	@Override
+	public int compareTo(Object o) {
+		PersonSort p = (PersonSort) o;
+		return this.age - p.age;
+	}
+	
+	@Override
+	public String toString() {
+		
+		return "나이 : " + age;
+	}
+}

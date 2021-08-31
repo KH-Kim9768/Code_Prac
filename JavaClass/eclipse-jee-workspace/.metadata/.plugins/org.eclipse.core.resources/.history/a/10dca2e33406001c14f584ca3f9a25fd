@@ -1,0 +1,73 @@
+
+public class InheritPerson {
+	
+	/// main() start
+	public static void main(String[] args) {
+		Family[] f = new Family[10];
+		int cnt = 0;
+		
+		f[cnt++] = new Friend("Lee", "010-1111-1004", "서울");
+		f[cnt++] = new Friend("Kim", "010-2222-1004", "성남");
+		f[cnt++] = new UnivFriend("Park", "010-3333-1004", "유아교육과");
+		f[cnt++] = new UnivFriend("choi", "010-4444-1004", "IT소프트웨어과");
+		
+		for(Family family : f) {
+			if(family == null) continue;
+			family.showPerson();
+		}
+		
+	} /// main() end
+}
+
+
+/// Family class start
+class Family{
+	protected String name, phone;
+	
+	public Family(String name, String phone) {
+		this.name = name;
+		this.phone = phone;
+	}
+	
+	public void showPerson() {
+		System.out.println("name = " + name + ", phone = " + phone);
+	}
+	
+
+} /// Family class end
+
+
+/// Friend class start
+class Friend extends Family{
+	private String address;
+	
+	public Friend(String name, String phone, String address) {
+		super(name, phone);
+		this.address = address;
+	}
+	
+	@Override
+	public void showPerson() {
+		super.showPerson();
+		System.out.println("address = " + address);
+	}
+	
+} /// Friend class start
+
+
+/// UnivFriend class start
+class UnivFriend extends Family{
+	private String major;
+	
+	public UnivFriend(String name, String phone, String major) {
+		super(name, phone);
+		this.major = major;
+	}
+	
+	@Override
+	public void showPerson() {
+		super.showPerson();
+		System.out.println("major = " + major);
+	}
+	
+} /// UnivFriend class end

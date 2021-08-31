@@ -1,0 +1,14 @@
+
+public class Accumulator {
+	static int sum;
+	
+	static void add(int num) {
+		sum += num;
+	}
+	
+	/// main() start
+	public static void main(String[] args) {
+		
+	} /// main() end
+
+}

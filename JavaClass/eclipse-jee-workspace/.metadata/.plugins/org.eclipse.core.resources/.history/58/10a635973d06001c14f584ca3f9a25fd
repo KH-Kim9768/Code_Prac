@@ -1,0 +1,27 @@
+
+public class InterfaceDemo {
+
+	public static void main(String[] args) {
+
+	}
+
+}
+
+interface Bicycle{
+
+	public void Brake(int decreament);
+
+	public void speedup(int increamnet);
+}
+
+class MountainBike implements Bicycle{
+	
+	
+	public void Brake(int decreament) {
+		
+	}
+	
+	public void speedup(int i) {
+		
+	}
+}

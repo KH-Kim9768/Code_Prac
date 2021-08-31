@@ -1,0 +1,22 @@
+
+public class GenericPrimitive {
+
+	public static void main(String[] args) {
+		Box<Integer> box1 = new Box<Integer>();
+		box1.setObj(100);
+		System.out.println(box1.getObj());
+	}
+
+}
+
+class Box<T>{
+	private T obj;
+	
+	public void setObj(T obj) {
+		this.obj = obj;
+	}
+	
+	public T getObj() {
+		return obj;
+	}
+}

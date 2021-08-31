@@ -1,0 +1,9 @@
+
+public class String1 {
+
+	public static void main(String[] args) {
+		String s1 = "990101-1234567";
+		System.out.println(s1.substring(0,6 )+ " " + s1.substring(7, 14));
+	}
+
+}

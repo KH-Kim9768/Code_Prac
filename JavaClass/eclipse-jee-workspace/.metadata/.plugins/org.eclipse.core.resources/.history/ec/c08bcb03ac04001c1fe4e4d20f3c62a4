@@ -1,0 +1,29 @@
+
+public class Bank3 {
+	public static void main(String[] args) {
+		
+	}
+	
+}
+
+class Bank000{
+	String myAccNumber;
+	int balance = 0;
+	
+	Bank000(String myAccNumber, int balance){
+		this.myAccNumber = myAccNumber;
+		this.balance = balance;
+	}
+	
+	public void deposit(int money) {
+		balance += money;
+	}
+	
+	public void withdraw(int money) {
+		balance -= money;
+	}
+	
+	public void checkBalance() {
+		System.out.println(balance);
+	}
+}

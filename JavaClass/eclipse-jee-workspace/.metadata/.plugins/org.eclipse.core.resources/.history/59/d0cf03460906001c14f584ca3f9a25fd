@@ -1,0 +1,8 @@
+
+public class Array2 {
+	/// main() start
+	public static void main(String[] args) {
+		String[] arr1 = new String[5];
+		
+	} /// main() end
+}

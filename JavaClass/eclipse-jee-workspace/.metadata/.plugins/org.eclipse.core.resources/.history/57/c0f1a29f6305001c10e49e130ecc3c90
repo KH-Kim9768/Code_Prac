@@ -1,0 +1,37 @@
+
+public class Overloading {
+	
+	/// main() start
+	public static void main(String[] args) {
+		Person p1 = new Person("홍길동", 12345678);
+		Person p2 = new Person("김철수");
+		
+		p1.showPerson();
+		p2.showPerson();
+	} /// main() end
+
+}
+
+class Person{
+	int phoneNum = 0;
+	String name;
+	
+	// 생성자 - 이름
+	public Person(String name) {
+		this.name = name;
+	}
+	
+	// 생성자 - 이름, 전화번호
+	public Person(String name, int phoneNum) {
+		this.name = name;
+		this.phoneNum = phoneNum;
+	}
+	
+	public void showPerson() {
+		if (phoneNum == 0) {
+			System.out.println("이름 : " + name + "\n전화번호 없음");
+		} else {
+			System.out.println("이름 : " + name + "\n전화번호 : " + phoneNum);
+		}
+	}
+}

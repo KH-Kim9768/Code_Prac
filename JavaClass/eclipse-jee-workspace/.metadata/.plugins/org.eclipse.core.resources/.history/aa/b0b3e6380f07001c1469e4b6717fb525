@@ -1,0 +1,28 @@
+import java.util.Iterator;
+import java.util.HashSet;
+
+public class HashSet1 {
+
+	/// main() start
+	public static void main(String[] args) {
+		HashSet<String> hashSet = new HashSet<>();
+		
+		hashSet.add("Park");
+		hashSet.add("Lee");
+		hashSet.add("Park");
+		hashSet.add("Kim");
+		
+		System.out.println("인스턴스 개수 : " + hashSet.size());
+		
+		for(String s : hashSet) {
+			System.out.println(s);
+		}
+		
+		Iterator<String> itr = hashSet.iterator();
+		for(itr; itr.hasNext();) {
+			System.out.println(itr.next());
+			itr = hashSet.iterator();
+		}
+	} /// main() end
+
+}

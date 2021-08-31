@@ -1,0 +1,16 @@
+
+public class Bank2 {
+	// --- main() start ---
+	public static void main(String[] args) {
+		
+
+	} // --- main() end ---
+
+}
+
+// --- Bank00 class start ---
+class Bank00{
+	
+}
+
+// --- Bank00 class end ---

@@ -1,0 +1,12 @@
+import java.util.Iterator;
+import java.util.HashSet;
+
+public class HashSet1 {
+
+	/// main() start
+	public static void main(String[] args) {
+		HashSet<String> hashSet = new HashSet<>();
+		
+	} /// main() end
+
+}

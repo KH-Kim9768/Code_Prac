@@ -1,0 +1,27 @@
+
+public class ClassVarAccess {
+
+	public static void main(String[] args) {
+		ClassAccess acc = new ClassAccess();
+		acc.num++;
+		
+		ClassAccess.num++;
+		
+		System.out.println(acc.num);
+
+	}
+
+}
+
+class ClassAccess{
+	static int num = 100;
+	
+	ClassAccess(){
+		increaseCnt();
+	}
+	
+	void increaseCnt() {
+		num++;
+	}
+	
+}
