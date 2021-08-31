@@ -1,0 +1,16 @@
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter7_prac\bin\Debug\net5.0\Chapter7_prac.exe
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter7_prac\bin\Debug\net5.0\Chapter7_prac.deps.json
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter7_prac\bin\Debug\net5.0\Chapter7_prac.runtimeconfig.json
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter7_prac\bin\Debug\net5.0\Chapter7_prac.runtimeconfig.dev.json
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter7_prac\bin\Debug\net5.0\Chapter7_prac.dll
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter7_prac\bin\Debug\net5.0\ref\Chapter7_prac.dll
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter7_prac\bin\Debug\net5.0\Chapter7_prac.pdb
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter7_prac\obj\Debug\net5.0\Chapter7_prac.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter7_prac\obj\Debug\net5.0\Chapter7_prac.AssemblyInfoInputs.cache
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter7_prac\obj\Debug\net5.0\Chapter7_prac.AssemblyInfo.cs
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter7_prac\obj\Debug\net5.0\Chapter7_prac.csproj.CoreCompileInputs.cache
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter7_prac\obj\Debug\net5.0\Chapter7_prac.dll
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter7_prac\obj\Debug\net5.0\ref\Chapter7_prac.dll
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter7_prac\obj\Debug\net5.0\Chapter7_prac.pdb
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter7_prac\obj\Debug\net5.0\Chapter7_prac.genruntimeconfig.cache
+C:\Users\kh\Github_Repositories\Code_Prac\CSharp\Chapter7_prac\obj\Debug\net5.0\Chapter7_prac.csproj.AssemblyReference.cache
