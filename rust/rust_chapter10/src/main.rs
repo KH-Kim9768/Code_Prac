@@ -1,3 +1,5 @@
+use std::fmt::Display;
+
 // main() start
 fn main() {
     let number_list = vec![34, 50, 25, 100, 65];
@@ -39,6 +41,8 @@ fn main() {
 
     notify(&tweet);
     notify1(&tweet);
+
+    "KKH".printHello()
 }
 // main() end
 
@@ -127,3 +131,12 @@ where T: Summary // 메소드 시작 전에 선언
 // pub fn notify(item: &(impl Summary + Display))
 
 
+trait hello{
+    fn printHello(&self);
+}
+
+impl <T: Display> hello for T{
+    fn printHello(&self){
+        println!("{} Hello!", self.to_string());
+    }
+} 

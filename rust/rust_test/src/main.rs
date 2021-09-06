@@ -1,21 +1,15 @@
 fn main() {
-    let str_1 = String::from("Hello World");
+    
+}
 
-    print!("{:?}", str_1);
+struct LinkedList<T, U>{
+    data: T,
+    link: U
+}
 
-    let teams = vec![String::from("Blue"), String::from("Yellow")];
-
-    let teamss = vec![String::from("Blue"), String::from("Yellow")];
-
-    // for i in teams{
-    //     print!("{}", i);
-    // }
-
-    let teams2 = vec![teams, teamss];
-
-    for i in teams2{
-        for j in i{
-            print!("{}", j);
-        }
+impl <T, U>LinkedList<T, U>{
+    fn link_node<V, W>(self, node: &LinkedList<V, W>) -> LinkedList<T, W>
+    {
+        LinkedList { data: self.data, link: node.self }
     }
 }
