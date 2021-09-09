@@ -1,15 +1,22 @@
+use std::option::Option;
+
 fn main() {
     
 }
 
-struct LinkedList<T, U>{
+struct LinkedList<T>{
     data: T,
-    link: U
+    link: Option<LinkedList<T>>
 }
 
-impl <T, U>LinkedList<T, U>{
-    fn link_node<V, W>(self, node: &LinkedList<V, W>) -> LinkedList<T, W>
+impl <T>LinkedList<T>{
+    fn new(t: T) -> LinkedList<T>{
+        LinkedList {data: t, link: None}
+    }
+
+    fn link_node(&mut self, data: T) -> LinkedList<T>
     {
-        LinkedList { data: self.data, link: node.self }
+        LinkedList { data: self.data, link: &LinkedList::new(data) }
+        
     }
 }
