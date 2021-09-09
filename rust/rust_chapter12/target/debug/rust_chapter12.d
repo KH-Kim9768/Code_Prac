@@ -1,0 +1,1 @@
+C:\Users\kh\Github_Repositories\Code_Prac\rust\rust_chapter12\target\debug\rust_chapter12.exe: C:\Users\kh\Github_Repositories\Code_Prac\rust\rust_chapter12\src\lib.rs C:\Users\kh\Github_Repositories\Code_Prac\rust\rust_chapter12\src\main.rs
