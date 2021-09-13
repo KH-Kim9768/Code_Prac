@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.zxingapp2">
+    package="com.example.readbarcode">
 
     <application
         android:allowBackup="true"
@@ -8,13 +8,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ZxingApp2">
+        android:theme="@style/Theme.ReadBarcode">
 
-        <activity android:name=".ZxingActivity"
-            android:exported="true">
-
-        </activity>
-
+        <!--MainActivity-->
         <activity android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -23,6 +19,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--ZxingActivity-->
+        <activity android:name=".ZxingActivity"
+            android:exported="true">
+
+        </activity>
+
     </application>
 
 </manifest>

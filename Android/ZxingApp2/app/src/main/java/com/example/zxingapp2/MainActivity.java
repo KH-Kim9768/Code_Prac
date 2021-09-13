@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         IntentIntegrator integrator = new IntentIntegrator(this);
         integrator.setPrompt("Scan a barcode or QRCode");
+        integrator.setCaptureActivity(ZxingActivity.class);
         integrator.setOrientationLocked(false);
         integrator.initiateScan();
     }
