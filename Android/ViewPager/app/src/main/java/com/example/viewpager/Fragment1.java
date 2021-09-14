@@ -37,19 +37,7 @@ public class Fragment1 extends Fragment {
         viewpageSetup.setAdapter(SetupPagerAdapter); // 어댑터 연결
 
         viewpageSetup.setOrientation(ViewPager2.ORIENTATION_VERTICAL); // 방향 설정
-//        viewpageSetup.setOffscreenPageLimit(3); // 페이지 한계 지정 갯수
-//
-//        // 무제한 스크롤 처럼 보이기 위해서 0페이지 부터가 아니라 1000페이지 부터 시작해서
-//        // 좌측으로 이동할 경우 999페이지로 이동하여 무제한 처럼 스크롤 되는 것 처럼 표현하기 윟마
-//        viewpageSetup.setCurrentItem(1000);
-//
-//
-//        viewpageSetup.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-//            @Override
-//            public void onPageSelected(int position) {
-//                super.onPageSelected(position);
-//            }
-//        });
+
 
 
 

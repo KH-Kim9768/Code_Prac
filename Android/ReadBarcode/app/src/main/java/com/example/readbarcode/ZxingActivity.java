@@ -14,4 +14,6 @@ public class ZxingActivity extends CaptureActivity {
     }
 
 
+
+
 }
