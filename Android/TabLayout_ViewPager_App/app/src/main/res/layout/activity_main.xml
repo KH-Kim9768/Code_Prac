@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPagerImageSlider"
+            android:layout_width="match_parent"
+            android:layout_height="375dp"
+            android:layout_marginTop="200dp"
+            android:background="@android:color/transparent"
+            android:paddingStart="80dp"
+            android:paddingEnd="80dp" />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="70dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/card_title" />
+
+        <ImageView
+            android:layout_width="190dp"
+            android:layout_height="52dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="115dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/card_message" />
+
+        <ImageButton
+            android:id="@+id/btn_next"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_gravity="right|center_vertical"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/card_next" />
+
+        <ImageButton
+            android:id="@+id/btn_pre"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_gravity="left|center_vertical"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/card_previous" />
+
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/mTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="100dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            app:tabGravity="center"
+            app:tabMode="scrollable" />
+
+        <ImageButton
+            android:id="@+id/btn_select"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="44dp"
+            android:background="@android:color/transparent"
+            android:scaleType="fitXY"
+            android:src="@drawable/card_select" />
+    </FrameLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
