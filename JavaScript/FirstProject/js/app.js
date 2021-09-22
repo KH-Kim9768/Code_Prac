@@ -40,6 +40,9 @@ const player = {
     name : "kkh",
     points : 124213,
     login : false,
+    sayHello : function(name){
+        console.log("Hello! my name is " + name);
+    }
 
 };
 
@@ -49,3 +52,24 @@ console.log(player["name"]);
 
 player.lastName = "poatato";
 console.log(player);
+
+function sayHello(name, age) {
+    console.log("Hello! my name is " + name + age);
+}
+
+sayHello("kkh", 25);
+sayHello("KH", 25);
+
+function plus(a, b) {
+    const result = a + b;
+    return result;
+}
+
+const result = plus(10, 20);
+console.log(result);
+
+function divide(a, b){
+    console.log(a / b);
+}
+divide(10, 5);
+player.sayHello("KKH");
