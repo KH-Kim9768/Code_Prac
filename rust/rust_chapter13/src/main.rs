@@ -172,4 +172,15 @@ mod tests {
             ]
         );
     }
+
+    #[test]
+    fn using_other_iterator_trait_mathods() {
+        let sum: u32 = Counter::new()
+        .zip(Counter::new().skip(1))
+        .map(|(a, b)| a * b)
+        .filter(|x| x & 3 == 0)
+        .sum();
+
+        assert_ne!(18, sum);
+    }
 }
