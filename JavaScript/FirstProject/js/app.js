@@ -73,3 +73,8 @@ function divide(a, b){
 }
 divide(10, 5);
 player.sayHello("KKH");
+
+// 나이 물어보기
+// const age = prompt("How old are you?");
+
+const age = parseInt("25");
