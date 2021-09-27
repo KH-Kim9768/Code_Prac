@@ -1,8 +1,12 @@
 package com.example.readbarcode;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+
+import com.google.zxing.integration.android.IntentIntegrator;
 
 public class MainActivity extends AppCompatActivity {
     private HomeFragment homeFragment;
@@ -12,8 +16,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        homeFragment = new HomeFragment();
-        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, homeFragment).commit();
+//        homeFragment = new HomeFragment();
+//        getSupportFragmentManager().beginTransaction().replace(R.id.frame_layout, homeFragment).commit();
+
+        IntentIntegrator integrator = new IntentIntegrator(this);
+//        integrator.setPrompt("Scan a barcode or QRCode");
+        integrator.setCaptureActivity(ZxingActivity.class);
+        integrator.setOrientationLocked(false);
+        integrator.initiateScan();
     }
 
     @Override
@@ -25,5 +35,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
     }
 }

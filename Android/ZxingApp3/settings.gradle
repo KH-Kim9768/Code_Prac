@@ -1,0 +1,2 @@
+rootProject.name = "ZxingApp3"
+include ':app'

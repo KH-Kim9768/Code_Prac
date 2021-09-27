@@ -17,7 +17,7 @@ public class HomeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        viewGroup = (ViewGroup) inflater.inflate(R.layout.home_fragmeny_layout, container, false);
+        viewGroup = (ViewGroup) inflater.inflate(R.layout.home_fragment_layout, container, false);
 
         InitViewPager(); // 뷰페이저 실행
 
