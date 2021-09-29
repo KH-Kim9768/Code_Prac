@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.image3));
         mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.image4));
         mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.image5));
+        mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.card0));
 //        mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.image1));
 //        mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.image1));
 //        mTabLayout.addTab(mTabLayout.newTab().setIcon(R.drawable.image1));
