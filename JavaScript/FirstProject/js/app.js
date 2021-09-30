@@ -78,3 +78,12 @@ player.sayHello("KKH");
 // const age = prompt("How old are you?");
 
 const age = parseInt("25");
+console.log(isNaN(age))
+
+if (age > 25){
+    console.log("25 up");
+} else if (age == 25){
+    console.log("This is 25");
+} else {
+    console.log("25 down")
+}
