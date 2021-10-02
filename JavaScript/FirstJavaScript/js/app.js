@@ -87,3 +87,19 @@ if (age > 25){
 } else {
     console.log("25 down")
 }
+
+// HTML Title change
+// document == html 속성 객체
+document.title = "Hello From JS!";
+
+const title = document.getElementById("title");
+console.log(title);
+console.dir(title);
+
+title.innerText = "Got you";
+
+console.log(title.id);
+
+const his = document.getElementsByClassName("hi");
+console.log(his);
+
