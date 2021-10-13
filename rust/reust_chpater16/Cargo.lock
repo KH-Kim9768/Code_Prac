@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "reust_chpater16"
+name = "rust_chpater16"
 version = "0.1.0"

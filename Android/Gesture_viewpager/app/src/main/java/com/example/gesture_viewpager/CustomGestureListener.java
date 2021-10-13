@@ -8,12 +8,21 @@ import androidx.viewpager2.widget.ViewPager2;
 
 public class CustomGestureListener extends GestureDetector.SimpleOnGestureListener {
 
-    TextView textView;
-    String nowAction;
+    public static TextView textView;
+    static String nowAction;
 
-    ViewPager2 viewPager;
+    static ViewPager2 viewPager;
 
-    public CustomGestureListener(TextView textView){
+    boolean flagScroll;
+    public static boolean isScrollStart;
+
+    static boolean isDistanceXOver50;
+    static float distX;
+
+    static float absDistanceX;
+
+
+    public CustomGestureListener(){
         this.textView = textView;
 
     }
@@ -40,18 +49,35 @@ public class CustomGestureListener extends GestureDetector.SimpleOnGestureListen
 
     @Override
     public boolean onScroll(MotionEvent e1, MotionEvent e2, float distanceX, float distanceY) {
-//            nowAction = "e1 = " + e1.toString() + ", e2 = " + e2.toString();
 
-        float absDistanceX = Math.abs(distanceX);
+        absDistanceX = Math.abs(distanceX);
 
-        if (viewPager.getCurrentItem() == 1){
-            if (absDistanceX > 50){
-                nowAction = "distance X > 50 => " + distanceX;
-                textView.setText(nowAction);
-            }
-        }
+        // 스크롤이 끝났는지 여부 끝났으면 return false 하는 듯
+        boolean result = super.onScroll(e1, e2, distanceX, distanceY);
 
+        isScrollStart = true;
+        this.distX = distanceX;
 
-        return true;
+        if (absDistanceX > 50){
+            nowAction = "distance X > 50 => " + distanceX;
+            textView.setText(nowAction);
+            textView.append(" ::: action = " + e1.getAction() + " ::: " + e2.getAction() + "");
+            textView.append("\n ::: result = " + result);}
+
+        return result;
     }
+
+    public static void onScrollEnd() {
+        if (viewPager.getCurrentItem() == 1 && isScrollStart && isDistanceXOver50){
+
+            // NEXT
+            if (distX >= 0){
+                LogManager.setJsonToView(LogManager.MODE_NEXT);
+            } else if (distX < 0){
+                LogManager.setJsonToView(LogManager.MODE_PREV);
+            }
+
+        }
+    }
+
 }

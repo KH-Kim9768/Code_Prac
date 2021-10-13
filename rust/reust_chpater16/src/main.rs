@@ -18,15 +18,45 @@ fn main() {
 
     let (tt, rr) = mpsc::channel();
     
+    let tt1 = mpsc::Sender::clone(&tt);
+
     thread::spawn(move || {
-        let val = String::from("hi");
-        tt.send(val).unwrap();
+        // let val = String::from("hi");
+        let vals = vec![
+            String::from("hi"),
+            String::from("from"),
+            String::from("the"),
+            String::from("thread"),
+        ];
+
+        for val in vals {
+             tt.send(val).unwrap();
+             thread::sleep(Duration::from_secs(1));
+        }
+        
+        
     });
 
-    // let received = rr.recv().unwrap();
-    for received in rr{
+    thread::spawn(move || {
+        
+        let vals  = vec![
+            String::from("more"),
+            String::from("messages"),
+            String::from("for"),
+            String::from("you"),
+        ];
+
+        for val in vals{
+            tt1.send(val).unwrap();
+            thread::sleep(Duration::from_secs(1));
+        }
+
+    });
+
+    for received in rr {
         println!("Got : {}", received);
     }
+
     
     
 }
