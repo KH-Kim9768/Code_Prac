@@ -23,6 +23,7 @@ public class LogManager {
     private static final int lastIndex = 0;
 
     private static JSONArray logArray;
+    public static JSONObject currentJson;
 
     public static final String TEST_KEY = "testkey";
     public static final int MODE_DEFAULT = 0;
@@ -84,11 +85,11 @@ public class LogManager {
 
         // 뷰를 보이게 함
         try{
-            JSONObject jObject = logArray.getJSONObject(currentIndex);
+            currentJson = logArray.getJSONObject(currentIndex);
 
-            nameView.setText(jObject.getString("name"));
-            ageView.setText(jObject.getInt("age")+"");
-            addressView.setText(jObject.getString("address"));
+            nameView.setText(currentJson.getString("name"));
+            ageView.setText(currentJson.getInt("age")+"");
+            addressView.setText(currentJson.getString("address"));
 
         } catch (Exception e){
             Log.d("LogFragment", e.getMessage());
