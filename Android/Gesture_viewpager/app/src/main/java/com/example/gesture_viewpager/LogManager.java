@@ -1,9 +1,13 @@
 package com.example.gesture_viewpager;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 
 import org.json.JSONArray;
@@ -30,10 +34,20 @@ public class LogManager {
     public static final int MODE_NEXT = 1;
     public static final int MODE_PREV = 2;
 
+    public static Context context;
+
+    public static DialogInterface.OnClickListener send, cancel;
+
+
 
     public LogManager(){
 
     }
+
+    public static void setContext (Context _context){
+        context = _context;
+    }
+
 
     public static void setTextView(TextView _nameView, TextView _ageView, TextView _addressView){
         nameView = _nameView;
@@ -116,4 +130,56 @@ public class LogManager {
         logArray.put(jObject);
     }
 
+
+    public static void sendLog(){
+        /*
+
+        LongPress 시 sendLog() 실행
+        sendLog() 에선 AlretDialog 실행
+        AlertDialog에서 EditText로 상품명 입력받고 "전송"버튼 누름
+
+        전송 버튼 누르면 서버로 전송 -> 이 부분은 DialogInterface.OnClickListener에 구현
+
+         */
+        send = new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // 키보드 내리기
+                InputMethodManager immhide = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+                immhide.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+
+                // 서버 전송 부분
+
+                // ----
+
+            }
+        };
+
+        cancel = new DialogInterface.OnClickListener(){
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                // 키보드 내리기
+                InputMethodManager immhide = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+                immhide.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+
+
+                // 취소 작동 부분
+                // ----
+            }
+        };
+
+        View dialogView = (View) View.inflate(context, R.layout.log_dialog, null);
+        AlertDialog.Builder dialog = new AlertDialog.Builder(context);
+        dialog.setTitle("상품명 전송");
+        dialog.setView(dialogView);
+        dialog.setPositiveButton("전송", send);
+        dialog.setNegativeButton("취소", cancel);
+        dialog.show();
+
+        // 키보드 올라오기
+        InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, InputMethodManager.HIDE_IMPLICIT_ONLY);
+
+
+    }
 }

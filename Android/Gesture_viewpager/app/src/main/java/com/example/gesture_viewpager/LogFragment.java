@@ -45,6 +45,8 @@ public class LogFragment extends Fragment{
 
     }
 
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -98,6 +100,8 @@ public class LogFragment extends Fragment{
 
         saveJSONArray();
         // JSON 추가 테스트
+
+        LogManager.setContext(getActivity());
 
         return rootView;
     }

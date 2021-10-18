@@ -43,8 +43,11 @@ public class CustomGestureListener extends GestureDetector.SimpleOnGestureListen
         if (viewPager.getCurrentItem() == 1){
             nowAction = "LongPress";
             textView.setText(nowAction);
+            LogManager.sendLog();
+
         }
     }
+
 
 
     @Override
