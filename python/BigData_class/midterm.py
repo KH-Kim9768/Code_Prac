@@ -111,3 +111,43 @@ a = np.array([[4,2], [2,7], [-2, 1]])
 c = np.array([[1,-2, 3], [5, 0, 2]])
 res = np.matmul(a,c) # 행렬의 곱셈 ex) res[0,0] = a[0,0]*b[0,0] + a[0,1]*b[0,1]...
 print(res) # => [[14, -8, 16], [37, -4, 20], [3, 4, -4]]
+
+
+# 랜덤 숫자 발생 프로그램
+import random as r
+
+numbers = []
+
+for i in range(10):
+    numbers.append(r.randrange(0, 10))
+
+print("생성된 리스트", numbers)
+for i in range(10):
+    if i not in numbers:
+        print("숫자", i, "이 없네요.")
+
+
+# 별 출력 프로그램
+i = 0
+while i < 9 :
+    if i < 5:
+        k = 0
+        while k < 4 - i:
+            print('  ', end='')
+            k += 1
+        k = 0
+        while k < i*2 + 1:
+            print('\u2605', end=' ')
+            k += 1
+    else:
+        k = 0
+        while k < i-4:
+            print('  ', end='')
+            k += 1
+        k = 0
+        while k < (9-i)*2 - 1:
+            print('\u2605', end=' ')
+            k += 1
+    
+    print()
+    i += 1
