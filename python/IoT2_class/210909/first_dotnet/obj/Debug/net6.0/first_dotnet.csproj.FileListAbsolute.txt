@@ -1,0 +1,16 @@
+/home/kh/IoT2_class/210909/first_dotnet/bin/Debug/net6.0/first_dotnet
+/home/kh/IoT2_class/210909/first_dotnet/bin/Debug/net6.0/first_dotnet.deps.json
+/home/kh/IoT2_class/210909/first_dotnet/bin/Debug/net6.0/first_dotnet.runtimeconfig.json
+/home/kh/IoT2_class/210909/first_dotnet/bin/Debug/net6.0/first_dotnet.dll
+/home/kh/IoT2_class/210909/first_dotnet/bin/Debug/net6.0/first_dotnet.pdb
+/home/kh/IoT2_class/210909/first_dotnet/obj/Debug/net6.0/first_dotnet.csproj.AssemblyReference.cache
+/home/kh/IoT2_class/210909/first_dotnet/obj/Debug/net6.0/first_dotnet.GeneratedMSBuildEditorConfig.editorconfig
+/home/kh/IoT2_class/210909/first_dotnet/obj/Debug/net6.0/first_dotnet.AssemblyInfoInputs.cache
+/home/kh/IoT2_class/210909/first_dotnet/obj/Debug/net6.0/first_dotnet.AssemblyInfo.cs
+/home/kh/IoT2_class/210909/first_dotnet/obj/Debug/net6.0/first_dotnet.ImplicitNamespaceImports.cs
+/home/kh/IoT2_class/210909/first_dotnet/obj/Debug/net6.0/first_dotnet.csproj.CoreCompileInputs.cache
+/home/kh/IoT2_class/210909/first_dotnet/obj/Debug/net6.0/first_dotnet.dll
+/home/kh/IoT2_class/210909/first_dotnet/obj/Debug/net6.0/refint/first_dotnet.dll
+/home/kh/IoT2_class/210909/first_dotnet/obj/Debug/net6.0/first_dotnet.pdb
+/home/kh/IoT2_class/210909/first_dotnet/obj/Debug/net6.0/first_dotnet.genruntimeconfig.cache
+/home/kh/IoT2_class/210909/first_dotnet/obj/Debug/net6.0/ref/first_dotnet.dll

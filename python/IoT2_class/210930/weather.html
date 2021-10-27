@@ -1,0 +1,2027 @@
+<!doctype html>
+<html lang="ko" data-platform="pc" data-useragent="python-requests/2.22.0">
+    <head>
+        <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1">
+<meta name="format-detection" content="telephone=no">
+<meta property="og:title" content="네이버 날씨"/>
+<meta property="og:url" content="http://weather.naver.com/today"/>
+<meta property="og:image" content="https://ssl.pstatic.net/static/weather/m/og_weather.png"/>
+<meta property="og:description" content="국내외 날씨와 미세먼지에 대한 종합정보 제공"/>
+<link rel="shortcut icon" href="https://ssl.pstatic.net/static/www/nFavicon24.png" type="image/x-icon">
+<link rel="preload" href="https://ssl.pstatic.net/static/weather/font/NotoSans-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://ssl.pstatic.net/static/weather/font/NotoSans-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://ssl.pstatic.net/static/weather/font/NotoSans-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://ssl.pstatic.net/static/weather/font/NotoSans-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://ssl.pstatic.net/static/weather/font/Roboto-Light.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://ssl.pstatic.net/static/weather/font/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://ssl.pstatic.net/static/weather/font/Roboto-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="https://ssl.pstatic.net/static/weather/font/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="apple-touch-icon-precomposed" href="https://ssl.pstatic.net/static/weather/web_icon/web_iOS_iPhone_2x_120X120.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://ssl.pstatic.net/static/weather/web_icon/web_iOS_iPad_2x_152X152.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="167x167" href="https://ssl.pstatic.net/static/weather/web_icon/web_iOS_iPadPro_2x_167X167.png" />
+        <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://ssl.pstatic.net/static/weather/web_icon/web_iOS_iPhone_3x_180X180.png" />
+    <title>네이버 날씨</title>
+<link rel="stylesheet" type="text/css" href="https://ssl.pstatic.net/staticv2.weather/responsive/css/weather_webfont_202109161810.css">
+			</head>
+    <body >
+        <div id="u_skip"><a href="#container" onclick="document.getElementById('container').tabIndex=-1;document.getElementById('container').focus();return false;">본문 바로가기</a></div>
+        <div id="wrap" data-region-code="09710670" class="is_weather">
+            <div id="header" role="banner" class="has_notify shadow">
+	<div class="gnb_area">
+		<div class="content_inner">
+			<h1 class="logo_area">
+				<a href="https://www.naver.com" class="logo" onclick="nclk_v2(this, 'gnb.naver', '', '')"><span class="blind">NAVER</span></a>
+				<span class="blind">날씨</span>
+			</h1>
+			<div class="location_area">
+				<span class="blind">현위치</span>
+				<strong class="location_name">송파구 잠실2동</strong>
+				<button type="button" class="btn_location" data-loading-class="loading" onclick="nclk_v2(this, 'gnb.curloc', '', '')"><span class="blind">내위치 찾기</span></button>
+			</div>
+			<div class="gnb_group">
+				<div id="gnb">
+				</div>
+			</div>
+			<div class="button_group">
+				<button type="button" class="btn_search _cnSearchPopup" onclick="nclk_v2(this, 'gnb.search', '', '')">
+					<span class="icon_animation">
+						<span class="icon_search"></span>
+					</span>
+					<span class="blind">검색 펼치기</span>
+				</button>
+				<div class="layer_search">
+    <h2 class="blind">도시 별 날씨 검색</h2>
+    <div class="layer_content">
+        <div class="form_wrap">
+            <form name="search" role="search" onsubmit="$('.search_inner .btn_search').trigger('click'); return false;">
+                <span class="search_inner">
+                    <input id="_idSearchInput" type="search" placeholder="국내, 해외도시를 검색해보세요." title="도시 검색창" autocomplete="off" class="search_input">
+                    <span class="focus_border_white"></span>
+                    <button type="submit" class="btn_search _cnSearchSubmit" onclick="nclk_v2(this, 'sch.schbut', '', '')"><span class="blind">검색</span></button>
+                    <button type="reset" class="btn_cancle"><span class="blind">검색 취소</span></button>
+                </span>
+            </form>
+        </div>
+        <div id="_idSearchRecent" class="weather_list_area">
+    <h2 class="blind">최근 검색 지역 목록</h2>
+    <div class="scroll_control end_left">
+        <div class="scroll_area" data-name="recentRegion" data-click="true">
+            <ul class="card_list">
+                <li class="card_item nation active">
+                    <a href="/today?targetId=nation" class="link_nation"><strong>전국 날씨 바로가기</strong></a>
+                </li>
+                </ul>
+        </div>
+        <button type="button" class="btn_prev"><span class="blind">이전 보기</span></button>
+        <button type="button" class="btn_next"><span class="blind">다음 보기</span></button>
+    </div>
+</div><div id="_idAutoCompleted" class="keyword_autocomplete hide">
+    <h2 class="blind">검색어 자동 완성</h2>
+    <ul class="keyword_list">
+
+    </ul>
+</div><div id="_idsearchResultContainer" class="search_result hide">
+
+</div></div>
+</div>
+<span class="btn_forecast"><button type="button" class="btn" onclick="nclk_v2(this, 'gnb.tointfc', '', '')"><span class="blind">날씨 예보 펼치기</span></button></span>
+				</div>
+		</div>
+	</div>
+	<div class="lnb_area" role="menubar">
+		<ul class="lnb" role="menubar">
+			<li class="item on" role="presentation"><a href="/today/09710670" class="menu" role="menuitem" onclick="nclk_v2(this, 'gnb.weathertab', '', '')">날씨</a><span class="blind">선택됨</span></li>
+			<li class="item" role="presentation"><a href="/air/09710670" class="menu" role="menuitem" onclick="nclk_v2(this, 'gnb.dusttab', '', '')">미세먼지</a></li>
+				<li class="item" role="presentation"><a href="/video/09710670" class="menu" role="menuitem" onclick="nclk_v2(this, 'gnb.mvtab', '', '')">대기영상</a></li>
+			<li class="item" role="presentation"><a href="/map/09710670" class="menu" role="menuitem" onclick="nclk_v2(this, 'gnb.maptab', '', '')">지도</a></li>
+			<li class="item" role="presentation"><a href="/news/09710670" class="menu" role="menuitem" onclick="nclk_v2(this, 'gnb.newtab', '', '')">뉴스</a></li>
+			</ul>
+	</div>
+
+	<div class="notify_area">
+			<div class="notify_inner">
+			<a href="https://blog.naver.com/naver_weather/222481118400" class="link_notify on" onclick="nclk_v2(this, 'gnb.notiban', '', '')" target="_blank">
+					<storng class="badge">새기능</storng>
+					<span class="text">태풍정보 개편</span>
+				</a>
+				</div>
+		</div>
+	</div><div id="container" role="main" class="is_today korean">
+    <div id="content">
+        <div class="section_wrap">
+            <div class="section_center">
+                <div class="card card_today">
+    <h2 class="blind">현재 날씨</h2>
+    <div class="today_weather">
+        <div class="cp_area">
+            <span class="blind">날씨 제공사 설정</span>
+            <ul class="list_cp">
+                <li class="item kma on">
+                    <button type="button" class="button" data-cp-name="KMA" onclick="nclk_v2(this, 'wtk.cpskmi', '', '')" aria-selected="true"><span class="text">기상청</span></button>
+                </li>
+                <li class="item accuweather ">
+                    <button type="button" class="button" data-cp-name="ACCUWEATHER" onclick="nclk_v2(this, 'wtk.cpsacc', '', '')" aria-selected="false"><span class="text">아큐웨더</span></button>
+                </li>
+                <li class="item twc ">
+                    <button type="button" class="button" data-cp-name="TWC" onclick="nclk_v2(this, 'wtk.cpstwc', '', '')" aria-selected="false"><span class="text">웨더채널</span></button>
+                </li>
+            </ul>
+            <div class="btn_area">
+                <button type="button" class="btn_setting" onclick="nclk_v2(this, 'wtk.cpsmore', '', '')"><span class="text">제공사 설정</span></button>
+                <button type="button" class="btn_compare" onclick="nclk_v2(this, 'wtk.cpsmore', '', '')"><span class="text">예보비교</span></button>
+            </div>
+        </div>
+        <i class="ico _cnLazy " data-ico="ico_animation_wt1" data-ymdt="2021093016"></i>
+        <div class="weather_area">
+            <strong class="current"><span class="blind">현재 온도</span>26<span class="degree">°</span></strong>
+            <p class="summary">
+                어제보다 <span class="temperature up">5° <span class="blind">높아요</span></span><span class="weather before_slash">맑음</span>
+                    </p>
+            <dl class="summary_list">
+                <dt class="term">습도</dt>
+                <dd class="desc">50%</dd>
+                <dt class="term">북서풍</dt>
+                <dd class="desc">1m/s</dd>
+                <dt class="term">체감</dt>
+                <dd class="desc">28°</dd>
+            </dl>
+            </div>
+        <ul class="today_chart_list">
+            <li class="item_today level4_2">
+    <a href="/air/09710670" class="item_inner" onclick="nclk_v2(this, 'wtk.pm10cd', '', '')">
+        <div class="ttl_area">
+            <strong class="ttl">미세먼지</strong>
+            <em class="level_text">보통</em>
+        </div>
+    </a>
+</li><li class="item_today level4_1">
+    <a href="/air/09710670" class="item_inner" onclick="nclk_v2(this, 'wtk.pm25cd', '', '')">
+        <div class="ttl_area">
+            <strong class="ttl">초미세먼지</strong>
+            <em class="level_text">좋음</em>
+        </div>
+    </a>
+</li><li class="item_today level5_3">
+    <a href="#lifeIndex" class="item_inner" onclick="nclk_v2(this, 'wtk.uvictcd', '', '')">
+        <div class="ttl_area">
+            <strong class="ttl">자외선</strong>
+            <em class="level_text">높음</em>
+        </div>
+    </a>
+</li><li class="item_today type_sun">
+    <a href="#sunRiseSet" class="item_inner" onclick="nclk_v2(this, 'wtk.suncd', '', '')">
+        <div class="ttl_area">
+            <strong class="ttl">일몰</strong>
+            <em class="level_text">18:18</em>
+        </div>
+    </a>
+</li></ul>
+    </div>
+    <div class="time_weather">
+            <div class="top_area">
+                <h3 class="sub_title kma">시간대별</h3>
+                <strong class="help_icon"><button type="button" class="ico_help" onclick="nclk_v2(this, 'wtk.houricn', '', '')"><span class="blind">날씨 아이콘 도움말</span></button></strong>
+                <div class="ly_help">
+                    <strong class="ly_ttl">날씨아이콘</strong>
+                    <span class="desc">기온단위 (℃)</span>
+                    <ul class="weather_list"></ul>
+                    <button type="button" class="btn_close" onclick="nclk_v2(this, 'wtk.houricn', '', '')"><span class="blind">도움말 닫기</span></button>
+                </div>
+                <span class="title_dsc">
+                    16:20 업데이트
+                        </span>
+                <button type="button" class="btn_time">발표기준<span class="blind"> 도움말</span></button>
+                <div class="ly_time">
+                    <strong class="title">기상청 발표 기준시간</strong>
+                    <dl class="list">
+                        <dt class="term">현재 날씨 및 1시간 예보</dt>
+                        <dd class="desc">09.30. 15:30</dd>
+                        <dt class="term">시간별 예보</dt>
+                        <dd class="desc">09.30. 17:00</dd>
+<dt class="term">주간 예보</dt>
+                        <dd class="desc">09.30. 11:00</dd>
+                    </dl>
+                    <p class="notice">
+                        
+                                발표 <a href="https://www.weather.go.kr/w/index.do" target="_blank" class="link">기상청</a>
+                                제공 <a href="https://www.weatheri.co.kr/" target="_blank" class="link">웨더아이</a></p>
+                            <button type="button" class="btn_close"><span class="blind">도움말 닫기</span></button>
+                </div>
+            </div>
+            <div class="scroll_control end_left _cnHourlyTmpr">
+                <div class="scroll_area" data-name="hourly" data-click="false" data-nclk="wtk.hourscr">
+                    <div>
+                        <div class="chart_area" aria-hidden="true"></div>
+                        <ul class="time_list align_left">
+                            <li class="item_time " data-tmpr="26" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="true" data-ymdt="2021093017">
+                                    <span class="time">17시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt0"><span class="blind">맑음</span></i>
+                                    <span class="blind">26도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="25" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="true" data-ymdt="2021093018">
+                                    <span class="time">18시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">25도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="24" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021093019">
+                                    <span class="time">19시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">24도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="24" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021093020">
+                                    <span class="time">20시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">24도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="23" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021093021">
+                                    <span class="time">21시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">23도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="22" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021093022">
+                                    <span class="time">22시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">22도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="21" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021093023">
+                                    <span class="time">23시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">21도</span>
+                                </li>
+                            <li class="item_time tomorrow" data-tmpr="21" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021100100">
+                                    <span class="time">내일</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">21도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="20" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021100101">
+                                    <span class="time">1시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">20도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="19" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021100102">
+                                    <span class="time">2시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">19도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="19" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021100103">
+                                    <span class="time">3시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">19도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="19" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021100104">
+                                    <span class="time">4시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">19도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="19" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021100105">
+                                    <span class="time">5시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">19도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="19" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021100106">
+                                    <span class="time">6시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">19도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="19" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="true" data-ymdt="2021100107">
+                                    <span class="time">7시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">19도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="19" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="true" data-ymdt="2021100108">
+                                    <span class="time">8시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">19도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="20" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="true" data-ymdt="2021100109">
+                                    <span class="time">9시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">20도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="22" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="true" data-ymdt="2021100110">
+                                    <span class="time">10시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">22도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="23" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="true" data-ymdt="2021100111">
+                                    <span class="time">11시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">23도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="25" data-wetr-cd="5" data-wetr-txt="구름많음" data-is-daytime="true" data-ymdt="2021100112">
+                                    <span class="time">12시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt5"><span class="blind">구름많음</span></i>
+                                    <span class="blind">25도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="26" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="true" data-ymdt="2021100113">
+                                    <span class="time">13시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">26도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="26" data-wetr-cd="5" data-wetr-txt="구름많음" data-is-daytime="true" data-ymdt="2021100114">
+                                    <span class="time">14시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt5"><span class="blind">구름많음</span></i>
+                                    <span class="blind">26도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="26" data-wetr-cd="5" data-wetr-txt="구름많음" data-is-daytime="true" data-ymdt="2021100115">
+                                    <span class="time">15시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt5"><span class="blind">구름많음</span></i>
+                                    <span class="blind">26도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="26" data-wetr-cd="5" data-wetr-txt="구름많음" data-is-daytime="true" data-ymdt="2021100116">
+                                    <span class="time">16시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt5"><span class="blind">구름많음</span></i>
+                                    <span class="blind">26도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="25" data-wetr-cd="5" data-wetr-txt="구름많음" data-is-daytime="true" data-ymdt="2021100117">
+                                    <span class="time">17시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt5"><span class="blind">구름많음</span></i>
+                                    <span class="blind">25도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="24" data-wetr-cd="5" data-wetr-txt="구름많음" data-is-daytime="true" data-ymdt="2021100118">
+                                    <span class="time">18시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt5"><span class="blind">구름많음</span></i>
+                                    <span class="blind">24도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="23" data-wetr-cd="5" data-wetr-txt="구름많음" data-is-daytime="false" data-ymdt="2021100119">
+                                    <span class="time">19시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt5"><span class="blind">구름많음</span></i>
+                                    <span class="blind">23도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="22" data-wetr-cd="5" data-wetr-txt="구름많음" data-is-daytime="false" data-ymdt="2021100120">
+                                    <span class="time">20시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt5"><span class="blind">구름많음</span></i>
+                                    <span class="blind">22도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="22" data-wetr-cd="7" data-wetr-txt="흐림" data-is-daytime="false" data-ymdt="2021100121">
+                                    <span class="time">21시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt7"><span class="blind">흐림</span></i>
+                                    <span class="blind">22도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="21" data-wetr-cd="7" data-wetr-txt="흐림" data-is-daytime="false" data-ymdt="2021100122">
+                                    <span class="time">22시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt7"><span class="blind">흐림</span></i>
+                                    <span class="blind">21도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="20" data-wetr-cd="7" data-wetr-txt="흐림" data-is-daytime="false" data-ymdt="2021100123">
+                                    <span class="time">23시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt7"><span class="blind">흐림</span></i>
+                                    <span class="blind">20도</span>
+                                </li>
+                            <li class="item_time after_tomorrow" data-tmpr="20" data-wetr-cd="7" data-wetr-txt="흐림" data-is-daytime="false" data-ymdt="2021100200">
+                                    <span class="time">모레</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt7"><span class="blind">흐림</span></i>
+                                    <span class="blind">20도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="20" data-wetr-cd="7" data-wetr-txt="흐림" data-is-daytime="false" data-ymdt="2021100201">
+                                    <span class="time">1시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt7"><span class="blind">흐림</span></i>
+                                    <span class="blind">20도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="20" data-wetr-cd="7" data-wetr-txt="흐림" data-is-daytime="false" data-ymdt="2021100202">
+                                    <span class="time">2시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt7"><span class="blind">흐림</span></i>
+                                    <span class="blind">20도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="19" data-wetr-cd="9" data-wetr-txt="비" data-is-daytime="false" data-ymdt="2021100203">
+                                    <span class="time">3시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt9"><span class="blind">비</span></i>
+                                    <span class="blind">19도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="19" data-wetr-cd="9" data-wetr-txt="비" data-is-daytime="false" data-ymdt="2021100204">
+                                    <span class="time">4시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt9"><span class="blind">비</span></i>
+                                    <span class="blind">19도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="19" data-wetr-cd="7" data-wetr-txt="흐림" data-is-daytime="false" data-ymdt="2021100205">
+                                    <span class="time">5시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt7"><span class="blind">흐림</span></i>
+                                    <span class="blind">19도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="19" data-wetr-cd="7" data-wetr-txt="흐림" data-is-daytime="false" data-ymdt="2021100206">
+                                    <span class="time">6시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt7"><span class="blind">흐림</span></i>
+                                    <span class="blind">19도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="19" data-wetr-cd="7" data-wetr-txt="흐림" data-is-daytime="true" data-ymdt="2021100207">
+                                    <span class="time">7시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt7"><span class="blind">흐림</span></i>
+                                    <span class="blind">19도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="20" data-wetr-cd="5" data-wetr-txt="구름많음" data-is-daytime="true" data-ymdt="2021100208">
+                                    <span class="time">8시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt5"><span class="blind">구름많음</span></i>
+                                    <span class="blind">20도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="21" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="true" data-ymdt="2021100209">
+                                    <span class="time">9시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">21도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="22" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="true" data-ymdt="2021100210">
+                                    <span class="time">10시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">22도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="23" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="true" data-ymdt="2021100211">
+                                    <span class="time">11시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">23도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="25" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="true" data-ymdt="2021100212">
+                                    <span class="time">12시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">25도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="26" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="true" data-ymdt="2021100213">
+                                    <span class="time">13시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">26도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="27" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="true" data-ymdt="2021100214">
+                                    <span class="time">14시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">27도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="27" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="true" data-ymdt="2021100215">
+                                    <span class="time">15시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">27도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="27" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="true" data-ymdt="2021100216">
+                                    <span class="time">16시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">27도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="26" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="true" data-ymdt="2021100217">
+                                    <span class="time">17시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">26도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="25" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="true" data-ymdt="2021100218">
+                                    <span class="time">18시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">25도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="24" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021100219">
+                                    <span class="time">19시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">24도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="23" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021100220">
+                                    <span class="time">20시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">23도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="22" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021100221">
+                                    <span class="time">21시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">22도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="21" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021100222">
+                                    <span class="time">22시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">21도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="21" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021100223">
+                                    <span class="time">23시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">21도</span>
+                                </li>
+                            <li class="item_time after_tomorrow" data-tmpr="20" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021100300">
+                                    <span class="time">글피</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">20도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="20" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021100301">
+                                    <span class="time">1시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">20도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="19" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021100302">
+                                    <span class="time">2시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">19도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="19" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021100303">
+                                    <span class="time">3시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">19도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="19" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021100304">
+                                    <span class="time">4시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">19도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="19" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021100305">
+                                    <span class="time">5시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">19도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="19" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021100306">
+                                    <span class="time">6시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">19도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="19" data-wetr-cd="5" data-wetr-txt="구름많음" data-is-daytime="true" data-ymdt="2021100307">
+                                    <span class="time">7시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt5"><span class="blind">구름많음</span></i>
+                                    <span class="blind">19도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="20" data-wetr-cd="5" data-wetr-txt="구름많음" data-is-daytime="true" data-ymdt="2021100308">
+                                    <span class="time">8시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt5"><span class="blind">구름많음</span></i>
+                                    <span class="blind">20도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="22" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="true" data-ymdt="2021100309">
+                                    <span class="time">9시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">22도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="23" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="true" data-ymdt="2021100310">
+                                    <span class="time">10시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">23도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="25" data-wetr-cd="5" data-wetr-txt="구름많음" data-is-daytime="true" data-ymdt="2021100311">
+                                    <span class="time">11시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt5"><span class="blind">구름많음</span></i>
+                                    <span class="blind">25도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="26" data-wetr-cd="5" data-wetr-txt="구름많음" data-is-daytime="true" data-ymdt="2021100312">
+                                    <span class="time">12시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt5"><span class="blind">구름많음</span></i>
+                                    <span class="blind">26도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="27" data-wetr-cd="5" data-wetr-txt="구름많음" data-is-daytime="true" data-ymdt="2021100313">
+                                    <span class="time">13시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt5"><span class="blind">구름많음</span></i>
+                                    <span class="blind">27도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="28" data-wetr-cd="5" data-wetr-txt="구름많음" data-is-daytime="true" data-ymdt="2021100314">
+                                    <span class="time">14시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt5"><span class="blind">구름많음</span></i>
+                                    <span class="blind">28도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="28" data-wetr-cd="5" data-wetr-txt="구름많음" data-is-daytime="true" data-ymdt="2021100315">
+                                    <span class="time">15시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt5"><span class="blind">구름많음</span></i>
+                                    <span class="blind">28도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="28" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="true" data-ymdt="2021100316">
+                                    <span class="time">16시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">28도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="27" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="true" data-ymdt="2021100317">
+                                    <span class="time">17시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">27도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="25" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="true" data-ymdt="2021100318">
+                                    <span class="time">18시</span>
+                                    <i class="ico _cnLazy " data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">25도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="25" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021100319">
+                                    <span class="time">19시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">25도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="24" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021100320">
+                                    <span class="time">20시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">24도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="23" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021100321">
+                                    <span class="time">21시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">23도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="23" data-wetr-cd="5" data-wetr-txt="구름많음" data-is-daytime="false" data-ymdt="2021100322">
+                                    <span class="time">22시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt5"><span class="blind">구름많음</span></i>
+                                    <span class="blind">23도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="22" data-wetr-cd="5" data-wetr-txt="구름많음" data-is-daytime="false" data-ymdt="2021100323">
+                                    <span class="time">23시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt5"><span class="blind">구름많음</span></i>
+                                    <span class="blind">22도</span>
+                                </li>
+                            <li class="item_time " data-tmpr="22" data-wetr-cd="1" data-wetr-txt="맑음" data-is-daytime="false" data-ymdt="2021100400">
+                                    <span class="time">0시</span>
+                                    <i class="ico _cnLazy  night" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                    <span class="blind">22도</span>
+                                </li>
+                            </ul>
+                    </div>
+                </div>
+                <button type="button" class="btn_prev" onclick="nclk_v2(this, 'wtk.hourarclk', '', '')"><span class="blind">이전 보기</span></button>
+                <button type="button" class="btn_next" onclick="nclk_v2(this, 'wtk.hourarclk', '', '')"><span class="blind">다음 보기</span></button>
+            </div>
+        </div>
+    </div><div id="hourly" class="card card_climate">
+                    <h2 class="title kma">
+                        <button type="button" class="title_tab on" onclick="nclk_v2(this, 'wtk.rainamt', '', '')">강수<span class="blind">선택됨</span></button>
+                        <button type="button" class="title_tab" onclick="nclk_v2(this, 'wtk.humit', '', '')">습도</button>
+                        <button type="button" class="title_tab" onclick="nclk_v2(this, 'wtk.windt', '', '')">바람</button>
+                    </h2>
+
+                    <!-- 강수 -->
+                    <div class="inner_card climate_rain ">
+        <h2 class="title kma">강수</h2>
+        <div class="scroll_control end_left _cnHourlyRain">
+        </div>
+    </div>
+<!-- 습도 -->
+                    <div class="inner_card climate_humidity hide">
+        <h2 class="title kma">습도</h2>
+        <div class="scroll_control end_left _cnHourlyHumidity">
+        </div>
+    </div>
+<!-- 바람 -->
+                    <div class="inner_card climate_wind hide">
+        <h2 class="title kma">바람</h2>
+        <div class="scroll_control end_left _cnHourlyRain">
+        </div>
+    </div>
+</div>
+
+                <!-- 주간예보 -->
+                <div id="weekly" class="card card_week">
+    <h2 class="title kma">주간예보</h2>
+    <strong class="help_icon"><button type="button" class="ico_help" onclick="nclk_v2(this, 'wtk.weekicn', '', '')"><span class="blind">도움말</span></button></strong>
+    <div class="ly_help">
+        <strong class="ly_ttl">날씨아이콘</strong>
+        <span class="desc">기온단위 (℃)</span>
+        <ul class="weather_list"></ul>
+        <button class="btn_close" onclick="nclk_v2(this, 'wtw.weekicn', '', '')"><span class="blind">도움말 닫기</span></button>
+    </div>
+    <a href="https://blog.naver.com/naver_weather/222199399966" target="_blank" class="link_temperature">
+        <span class="text">최저</span><span class="text">최고 기준</span>
+    </a>
+    <ul class="box_color">
+        <li class="item">
+                    <span class="color_inner">
+                        <span class="color_cell">
+                            <strong class="ttl">오늘<span class="sub">오전</span></strong>
+                        </span>
+                        <span class="color_cell">
+                            <span class="rainfall"><span class="blind">강수확률</span>0%</span>
+                            <i class="ico _cnLazy" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                            <span class="data lowest"><span class="blind">평균기온</span>16<span class="degree">°</span></span>
+                        </span>
+                    </span>
+                </li>
+                <li class="item">
+                    <span class="color_inner">
+                        <span class="color_cell">
+                            <strong class="ttl">오늘<span class="sub">오후</span></strong>
+                        </span>
+                        <span class="color_cell">
+                            <span class="rainfall"><span class="blind">강수확률</span>0%</span>
+                            <i class="ico _cnLazy" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                            <span class="data highest"><span class="blind">평균기온</span>29<span class="degree">°</span></span>
+                        </span>
+                    </span>
+                </li>
+            </ul>
+    <div class="scroll_control end_left">
+        <div class="scroll_area" data-name="weekly" data-click="false" data-nclk="wtk.weekscr">
+            <ul class="week_list">
+                <li class="week_item today">
+                        <div class="day_data">
+                            <div class="cell_date">
+                                <span class="date_inner">
+                                    <strong class="day">오늘</strong><span class="date">9.30.</span>
+                                </span>
+                            </div>
+                            <div class="cell_weather">
+                                <span class="weather_inner" data-wetr-cd="1" data-wetr-txt="맑음">
+                                    <strong class="inner_left">
+                                        <span class="timeslot">오전</span>
+                                        <span class="rainfall"><span class="blind">강수확률</span>0%</span>
+                                    </strong>
+                                    <i class="ico _cnLazy" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                </span>
+                                        <span class="weather_inner" data-wetr-cd="1" data-wetr-txt="맑음">
+                                    <strong class="inner_left">
+                                        <span class="timeslot">오후</span>
+                                        <span class="rainfall"><span class="blind">강수확률</span>0%</span>
+                                    </strong>
+                                    <i class="ico _cnLazy" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                </span>
+                            </div>
+                            <div class="cell_temperature">
+                                <strong class="temperature">
+                                    <span class="lowest"><span class="blind">최저기온</span>16°</span>
+                                    <span class="bar">/</span>
+                                    <span class="highest"><span class="blind">최고기온</span>29°</span>
+                                </strong>
+                            </div>
+                        </div>
+                    </li>
+                <li class="week_item">
+                        <div class="day_data">
+                            <div class="cell_date">
+                                <span class="date_inner">
+                                    <strong class="day">내일</strong><span class="date">10.01.</span>
+                                </span>
+                            </div>
+                            <div class="cell_weather">
+                                <span class="weather_inner" data-wetr-cd="1" data-wetr-txt="맑음">
+                                    <strong class="inner_left">
+                                        <span class="timeslot">오전</span>
+                                        <span class="rainfall"><span class="blind">강수확률</span>0%</span>
+                                    </strong>
+                                    <i class="ico _cnLazy" data-ico="ico_wt1"><span class="blind">맑음</span></i>
+                                </span>
+                                <span class="weather_inner" data-wetr-cd="5" data-wetr-txt="구름많음">
+                                    <strong class="inner_left">
+                                        <span class="timeslot">오후</span>
+                                        <span class="rainfall"><span class="blind">강수확률</span>20%</span>
+                                    </strong>
+                                    <i class="ico _cnLazy" data-ico="ico_wt5"><span class="blind">구름많음</span></i>
+                                </span>
+                            </div>
+                            <div class="cell_temperature">
+                                <strong class="temperature">
+                                    <span class="lowest"><span class="blind">최저기온</span>17°</span>
+                                    <span class="bar">/</span>
+                                    <span class="highest"><span class="blind">최고기온</span>27°</span>
+                                </strong>
+                            </div>
+                        </div>
+                    </li>
+                <li class="week_item ">
+                        <div class="day_data">
+                            <div class="cell_date">
+                                <span class="date_inner ">
+                                    <strong class="day">토</strong><span class="date">10.02.</span>
+                                        </span>
+                            </div>
+                            <div class="cell_weather">
+                            <span class="weather_inner" data-wetr-cd="5" data-wetr-txt="구름많음">
+                                <strong class="inner_left">
+                                    <span class="timeslot">오전</span>
+                                    <span class="rainfall"><span class="blind">강수확률</span>20%</span>
+                                </strong>
+                                <i class="ico _cnLazy" data-ico="ico_wt5"><span class="blind">구름많음</span></i>
+                            </span>
+                                <span class="weather_inner" data-wetr-cd="5" data-wetr-txt="구름많음">
+                                <strong class="inner_left">
+                                    <span class="timeslot">오후</span>
+                                    <span class="rainfall"><span class="blind">강수확률</span>30%</span>
+                                </strong>
+                                <i class="ico _cnLazy" data-ico="ico_wt5"><span class="blind">구름많음</span></i>
+                            </span>
+                            </div>
+                            <div class="cell_temperature">
+                                <strong class="temperature">
+                                    <span class="lowest"><span class="blind">최저기온</span>17°</span>
+                                    <span class="bar">/</span>
+                                    <span class="highest"><span class="blind">최고기온</span>26°</span>
+                                </strong>
+                            </div>
+                        </div>
+                    </li>
+                <li class="week_item ">
+                        <div class="day_data">
+                            <div class="cell_date">
+                                <span class="date_inner holiday">
+                                    <strong class="day">일</strong><span class="date">10.03.</span>
+                                        </span>
+                            </div>
+                            <div class="cell_weather">
+                            <span class="weather_inner" data-wetr-cd="5" data-wetr-txt="구름많음">
+                                <strong class="inner_left">
+                                    <span class="timeslot">오전</span>
+                                    <span class="rainfall"><span class="blind">강수확률</span>30%</span>
+                                </strong>
+                                <i class="ico _cnLazy" data-ico="ico_wt5"><span class="blind">구름많음</span></i>
+                            </span>
+                                <span class="weather_inner" data-wetr-cd="5" data-wetr-txt="구름많음">
+                                <strong class="inner_left">
+                                    <span class="timeslot">오후</span>
+                                    <span class="rainfall"><span class="blind">강수확률</span>30%</span>
+                                </strong>
+                                <i class="ico _cnLazy" data-ico="ico_wt5"><span class="blind">구름많음</span></i>
+                            </span>
+                            </div>
+                            <div class="cell_temperature">
+                                <strong class="temperature">
+                                    <span class="lowest"><span class="blind">최저기온</span>17°</span>
+                                    <span class="bar">/</span>
+                                    <span class="highest"><span class="blind">최고기온</span>28°</span>
+                                </strong>
+                            </div>
+                        </div>
+                    </li>
+                <li class="week_item ">
+                        <div class="day_data">
+                            <div class="cell_date">
+                                <span class="date_inner ">
+                                    <strong class="day">월</strong><span class="date">10.04.</span>
+                                        </span>
+                            </div>
+                            <div class="cell_weather">
+                            <span class="weather_inner" data-wetr-cd="7" data-wetr-txt="흐림">
+                                <strong class="inner_left">
+                                    <span class="timeslot">오전</span>
+                                    <span class="rainfall"><span class="blind">강수확률</span>30%</span>
+                                </strong>
+                                <i class="ico _cnLazy" data-ico="ico_wt7"><span class="blind">흐림</span></i>
+                            </span>
+                                <span class="weather_inner" data-wetr-cd="7" data-wetr-txt="흐림">
+                                <strong class="inner_left">
+                                    <span class="timeslot">오후</span>
+                                    <span class="rainfall"><span class="blind">강수확률</span>30%</span>
+                                </strong>
+                                <i class="ico _cnLazy" data-ico="ico_wt7"><span class="blind">흐림</span></i>
+                            </span>
+                            </div>
+                            <div class="cell_temperature">
+                                <strong class="temperature">
+                                    <span class="lowest"><span class="blind">최저기온</span>19°</span>
+                                    <span class="bar">/</span>
+                                    <span class="highest"><span class="blind">최고기온</span>26°</span>
+                                </strong>
+                            </div>
+                        </div>
+                    </li>
+                <li class="week_item ">
+                        <div class="day_data">
+                            <div class="cell_date">
+                                <span class="date_inner ">
+                                    <strong class="day">화</strong><span class="date">10.05.</span>
+                                        </span>
+                            </div>
+                            <div class="cell_weather">
+                            <span class="weather_inner" data-wetr-cd="7" data-wetr-txt="흐림">
+                                <strong class="inner_left">
+                                    <span class="timeslot">오전</span>
+                                    <span class="rainfall"><span class="blind">강수확률</span>30%</span>
+                                </strong>
+                                <i class="ico _cnLazy" data-ico="ico_wt7"><span class="blind">흐림</span></i>
+                            </span>
+                                <span class="weather_inner" data-wetr-cd="9" data-wetr-txt="흐리고 비">
+                                <strong class="inner_left">
+                                    <span class="timeslot">오후</span>
+                                    <span class="rainfall"><span class="blind">강수확률</span>60%</span>
+                                </strong>
+                                <i class="ico _cnLazy" data-ico="ico_wt9"><span class="blind">흐리고 비</span></i>
+                            </span>
+                            </div>
+                            <div class="cell_temperature">
+                                <strong class="temperature">
+                                    <span class="lowest"><span class="blind">최저기온</span>19°</span>
+                                    <span class="bar">/</span>
+                                    <span class="highest"><span class="blind">최고기온</span>26°</span>
+                                </strong>
+                            </div>
+                        </div>
+                    </li>
+                <li class="week_item ">
+                        <div class="day_data">
+                            <div class="cell_date">
+                                <span class="date_inner ">
+                                    <strong class="day">수</strong><span class="date">10.06.</span>
+                                        </span>
+                            </div>
+                            <div class="cell_weather">
+                            <span class="weather_inner" data-wetr-cd="9" data-wetr-txt="흐리고 비">
+                                <strong class="inner_left">
+                                    <span class="timeslot">오전</span>
+                                    <span class="rainfall"><span class="blind">강수확률</span>60%</span>
+                                </strong>
+                                <i class="ico _cnLazy" data-ico="ico_wt9"><span class="blind">흐리고 비</span></i>
+                            </span>
+                                <span class="weather_inner" data-wetr-cd="9" data-wetr-txt="흐리고 비">
+                                <strong class="inner_left">
+                                    <span class="timeslot">오후</span>
+                                    <span class="rainfall"><span class="blind">강수확률</span>60%</span>
+                                </strong>
+                                <i class="ico _cnLazy" data-ico="ico_wt9"><span class="blind">흐리고 비</span></i>
+                            </span>
+                            </div>
+                            <div class="cell_temperature">
+                                <strong class="temperature">
+                                    <span class="lowest"><span class="blind">최저기온</span>19°</span>
+                                    <span class="bar">/</span>
+                                    <span class="highest"><span class="blind">최고기온</span>24°</span>
+                                </strong>
+                            </div>
+                        </div>
+                    </li>
+                <li class="week_item type_only">
+                        <div class="day_data">
+                            <div class="cell_date">
+                                <span class="date_inner ">
+                                    <strong class="day">목</strong><span class="date">10.07.</span>
+                                        </span>
+                            </div>
+                            <div class="cell_weather">
+                            <span class="weather_inner" data-wetr-cd="9" data-wetr-txt="흐리고 비">
+                                <strong class="inner_left">
+                                    <span class="timeslot">오전</span>
+                                    <span class="rainfall"><span class="blind">강수확률</span>60%</span>
+                                </strong>
+                                <i class="ico _cnLazy" data-ico="ico_wt9"><span class="blind">흐리고 비</span></i>
+                            </span>
+                                <span class="weather_inner" data-wetr-cd="7" data-wetr-txt="흐림">
+                                <strong class="inner_left">
+                                    <span class="timeslot">오후</span>
+                                    <span class="rainfall"><span class="blind">강수확률</span>30%</span>
+                                </strong>
+                                <i class="ico _cnLazy" data-ico="ico_wt7"><span class="blind">흐림</span></i>
+                            </span>
+                            </div>
+                            <div class="cell_temperature">
+                                <strong class="temperature">
+                                    <span class="lowest"><span class="blind">최저기온</span>17°</span>
+                                    <span class="bar">/</span>
+                                    <span class="highest"><span class="blind">최고기온</span>24°</span>
+                                </strong>
+                            </div>
+                        </div>
+                    </li>
+                <li class="week_item type_only">
+                        <div class="day_data">
+                            <div class="cell_date">
+                                <span class="date_inner ">
+                                    <strong class="day">금</strong><span class="date">10.08.</span>
+                                        </span>
+                            </div>
+                            <div class="cell_weather">
+                            <span class="weather_inner" data-wetr-cd="7" data-wetr-txt="흐림">
+                                <strong class="inner_left">
+                                    <span class="timeslot">오전</span>
+                                    <span class="rainfall"><span class="blind">강수확률</span>30%</span>
+                                </strong>
+                                <i class="ico _cnLazy" data-ico="ico_wt7"><span class="blind">흐림</span></i>
+                            </span>
+                                <span class="weather_inner" data-wetr-cd="7" data-wetr-txt="흐림">
+                                <strong class="inner_left">
+                                    <span class="timeslot">오후</span>
+                                    <span class="rainfall"><span class="blind">강수확률</span>30%</span>
+                                </strong>
+                                <i class="ico _cnLazy" data-ico="ico_wt7"><span class="blind">흐림</span></i>
+                            </span>
+                            </div>
+                            <div class="cell_temperature">
+                                <strong class="temperature">
+                                    <span class="lowest"><span class="blind">최저기온</span>17°</span>
+                                    <span class="bar">/</span>
+                                    <span class="highest"><span class="blind">최고기온</span>26°</span>
+                                </strong>
+                            </div>
+                        </div>
+                    </li>
+                <li class="week_item type_only">
+                        <div class="day_data">
+                            <div class="cell_date">
+                                <span class="date_inner ">
+                                    <strong class="day">토</strong><span class="date">10.09.</span>
+                                        </span>
+                            </div>
+                            <div class="cell_weather">
+                            <span class="weather_inner" data-wetr-cd="7" data-wetr-txt="흐림">
+                                <strong class="inner_left">
+                                    <span class="timeslot">오전</span>
+                                    <span class="rainfall"><span class="blind">강수확률</span>30%</span>
+                                </strong>
+                                <i class="ico _cnLazy" data-ico="ico_wt7"><span class="blind">흐림</span></i>
+                            </span>
+                                <span class="weather_inner" data-wetr-cd="7" data-wetr-txt="흐림">
+                                <strong class="inner_left">
+                                    <span class="timeslot">오후</span>
+                                    <span class="rainfall"><span class="blind">강수확률</span>30%</span>
+                                </strong>
+                                <i class="ico _cnLazy" data-ico="ico_wt7"><span class="blind">흐림</span></i>
+                            </span>
+                            </div>
+                            <div class="cell_temperature">
+                                <strong class="temperature">
+                                    <span class="lowest"><span class="blind">최저기온</span>16°</span>
+                                    <span class="bar">/</span>
+                                    <span class="highest"><span class="blind">최고기온</span>23°</span>
+                                </strong>
+                            </div>
+                        </div>
+                    </li>
+                <li class="week_item type_only">
+                        <div class="day_data">
+                            <div class="cell_date">
+                                <span class="date_inner holiday">
+                                    <strong class="day">일</strong><span class="date">10.10.</span>
+                                        </span>
+                            </div>
+                            <div class="cell_weather">
+                            <span class="weather_inner" data-wetr-cd="7" data-wetr-txt="흐림">
+                                <strong class="inner_left">
+                                    <span class="timeslot">오전</span>
+                                    <span class="rainfall"><span class="blind">강수확률</span>30%</span>
+                                </strong>
+                                <i class="ico _cnLazy" data-ico="ico_wt7"><span class="blind">흐림</span></i>
+                            </span>
+                                <span class="weather_inner" data-wetr-cd="7" data-wetr-txt="흐림">
+                                <strong class="inner_left">
+                                    <span class="timeslot">오후</span>
+                                    <span class="rainfall"><span class="blind">강수확률</span>30%</span>
+                                </strong>
+                                <i class="ico _cnLazy" data-ico="ico_wt7"><span class="blind">흐림</span></i>
+                            </span>
+                            </div>
+                            <div class="cell_temperature">
+                                <strong class="temperature">
+                                    <span class="lowest"><span class="blind">최저기온</span>17°</span>
+                                    <span class="bar">/</span>
+                                    <span class="highest"><span class="blind">최고기온</span>25°</span>
+                                </strong>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+        </div>
+        <button type="button" class="btn_prev" onclick="nclk_v2(this, 'wtk.weekarclk', '', '')"><span class="blind">이전 보기</span></button>
+        <button type="button" class="btn_next" onclick="nclk_v2(this, 'wtk.weekarclk', '', '')"><span class="blind">다음 보기</span></button>
+    </div>
+    <p class="offer_area">기상청은 자정에서 정오 전이 오전, 정오에서 자정 전이 오후이고, 해외 제공사는 일출부터 일몰 전이 낮, 일몰부터 일출 전이 밤입니다. <a href="https://blog.naver.com/naver_weather/222199399966" target="_blank" class="link_more">더보기</a></p></div><!-- 광고 -->
+                <div class="card card_advertisement">
+	<div id="_idAD_weather" data-veta-preview="weather_01"></div>
+</div><!-- 위성영상 -->
+                <div id="video" class="card card_video">
+                    <h2 class="title">
+                        <button type="button" class="title_tab on" onclick="nclk_v2(this, 'wtk.statmvt', '', '')">위성영상 <span class="blind">선택됨</span></button>
+                        <button type="button" class="title_tab" onclick="nclk_v2(this, 'wtk.radmvt', '', '')">레이더영상</button>
+                    </h2>
+                    <div class="inner_video video_satellite _cnImagePanel" data-video-category="SAT">
+        <div class="video_area _cnImageArea _cnPlayerArea is_on">
+            <button type="button" class="btn btn_play">
+                <span class="blind">재생</span>
+            </button>
+            <div class="control_zone">
+                <div class="progress_control">
+                    <strong class="timer_progress">13:50<span class="blind">재생 중</span></strong>
+                    <div class="progress_whole noUi-target noUi-ltr noUi-horizontal _cnSlider">
+                        <div class="noUi-base">
+                            <div class="noUi-connects">
+                                <div class="progress_current noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
+                            </div>
+                            <div class="noUi-origin" style="transform: translate(-1000%, 0px); z-index: 4;">
+                                <div class="progress_handle noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="1.0" aria-valuenow="0.0" aria-valuetext="0.00">
+                                    <div class="noUi-touch-area"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <strong class="timer_progress"><span class="blind">동영상 총 재생 시간</span>15:50<span class="blind">중</span></strong>
+                </div>
+            </div>
+            <span class="blind" aria-live="polite">2021년 09월 30일 13시 50분 한중일 위성영상</span>
+                            <img class="img_video _cnImage lazy" src="https://ssl.pstatic.net/static/weather/image/none_image.png" data-src="https://weather-phinf.pstatic.net/20210930_298/sat_16329787380669lQOC_GIF/MTSAT_RIR_20210930045000.gif" onerror="this.parentNode.className += ' thumb_ready';" alt="" style="opacity:1;" width="100%;" data-alt="2021년 09월 30일 13시 50분 한중일 위성영상">
+                        <img class="img_video _cnImage" src="https://ssl.pstatic.net/static/m/weather/2011/im/bl4.png" data-src="https://weather-phinf.pstatic.net/20210930_298/sat_1632979440782QBDAS_GIF/MTSAT_RIR_20210930050000.gif" onerror="this.parentNode.className += ' thumb_ready';" alt="" style="opacity:1; display:none;" width="100%;" data-alt="2021년 09월 30일 13시 50분 한중일 위성영상 재생중">
+                        <img class="img_video _cnImage" src="https://ssl.pstatic.net/static/m/weather/2011/im/bl4.png" data-src="https://weather-phinf.pstatic.net/20210930_270/sat_1632979440921L6bpj_GIF/MTSAT_RIR_20210930051000.gif" onerror="this.parentNode.className += ' thumb_ready';" alt="" style="opacity:1; display:none;" width="100%;" data-alt="2021년 09월 30일 13시 50분 한중일 위성영상 재생중">
+                        <img class="img_video _cnImage" src="https://ssl.pstatic.net/static/m/weather/2011/im/bl4.png" data-src="https://weather-phinf.pstatic.net/20210930_285/sat_1632980568253Cp67p_GIF/MTSAT_RIR_20210930052000.gif" onerror="this.parentNode.className += ' thumb_ready';" alt="" style="opacity:1; display:none;" width="100%;" data-alt="2021년 09월 30일 13시 50분 한중일 위성영상 재생중">
+                        <img class="img_video _cnImage" src="https://ssl.pstatic.net/static/m/weather/2011/im/bl4.png" data-src="https://weather-phinf.pstatic.net/20210930_165/sat_1632981136692NQK9e_GIF/MTSAT_RIR_20210930053000.gif" onerror="this.parentNode.className += ' thumb_ready';" alt="" style="opacity:1; display:none;" width="100%;" data-alt="2021년 09월 30일 13시 50분 한중일 위성영상 재생중">
+                        <img class="img_video _cnImage" src="https://ssl.pstatic.net/static/m/weather/2011/im/bl4.png" data-src="https://weather-phinf.pstatic.net/20210930_22/sat_1632981736472kiQ8b_GIF/MTSAT_RIR_20210930054000.gif" onerror="this.parentNode.className += ' thumb_ready';" alt="" style="opacity:1; display:none;" width="100%;" data-alt="2021년 09월 30일 13시 50분 한중일 위성영상 재생중">
+                        <img class="img_video _cnImage" src="https://ssl.pstatic.net/static/m/weather/2011/im/bl4.png" data-src="https://weather-phinf.pstatic.net/20210930_23/sat_1632982344381h6A0X_GIF/MTSAT_RIR_20210930055000.gif" onerror="this.parentNode.className += ' thumb_ready';" alt="" style="opacity:1; display:none;" width="100%;" data-alt="2021년 09월 30일 13시 50분 한중일 위성영상 재생중">
+                        <img class="img_video _cnImage" src="https://ssl.pstatic.net/static/m/weather/2011/im/bl4.png" data-src="https://weather-phinf.pstatic.net/20210930_71/sat_1632983545179xoCRp_GIF/MTSAT_RIR_20210930061000.gif" onerror="this.parentNode.className += ' thumb_ready';" alt="" style="opacity:1; display:none;" width="100%;" data-alt="2021년 09월 30일 13시 50분 한중일 위성영상 재생중">
+                        <img class="img_video _cnImage" src="https://ssl.pstatic.net/static/m/weather/2011/im/bl4.png" data-src="https://weather-phinf.pstatic.net/20210930_52/sat_1632984188664bL1TO_GIF/MTSAT_RIR_20210930062000.gif" onerror="this.parentNode.className += ' thumb_ready';" alt="" style="opacity:1; display:none;" width="100%;" data-alt="2021년 09월 30일 13시 50분 한중일 위성영상 재생중">
+                        <img class="img_video _cnImage" src="https://ssl.pstatic.net/static/m/weather/2011/im/bl4.png" data-src="https://weather-phinf.pstatic.net/20210930_244/sat_1632984749486ehcdi_GIF/MTSAT_RIR_20210930063000.gif" onerror="this.parentNode.className += ' thumb_ready';" alt="" style="opacity:1; display:none;" width="100%;" data-alt="2021년 09월 30일 13시 50분 한중일 위성영상 재생중">
+                        <img class="img_video _cnImage" src="https://ssl.pstatic.net/static/m/weather/2011/im/bl4.png" data-src="https://weather-phinf.pstatic.net/20210930_264/sat_1632984749601wxTXj_GIF/MTSAT_RIR_20210930064000.gif" onerror="this.parentNode.className += ' thumb_ready';" alt="" style="opacity:1; display:none;" width="100%;" data-alt="2021년 09월 30일 13시 50분 한중일 위성영상 재생중">
+                        <img class="img_video _cnImage" src="https://ssl.pstatic.net/static/m/weather/2011/im/bl4.png" data-src="https://weather-phinf.pstatic.net/20210930_55/sat_1632985984367IkwBC_GIF/MTSAT_RIR_20210930065000.gif" onerror="this.parentNode.className += ' thumb_ready';" alt="" style="opacity:1; display:none;" width="100%;" data-alt="2021년 09월 30일 13시 50분 한중일 위성영상 재생중">
+                        </div>
+    </div>
+<div class="inner_video video_satellite _cnImagePanel" style="display: none" data-video-category="RADAR">
+		<div class="video_area _cnImageArea _cnPlayerArea">
+			<button type="button" class="btn btn_play">
+				<span class="blind">재생</span>
+			</button>
+			<div class="control_zone">
+				<div class="progress_control">
+					<strong class="timer_progress">15:40<span class="blind">재생 중</span></strong>
+					<div class="progress_whole noUi-target noUi-ltr noUi-horizontal _cnSlider">
+						<div class="noUi-base">
+							<div class="noUi-connects">
+								<div class="progress_current noUi-connect" style="transform: translate(0%, 0px) scale(0, 1);"></div>
+							</div>
+							<div class="noUi-origin" style="transform: translate(-1000%, 0px); z-index: 4;">
+								<div class="progress_handle noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="1.0" aria-valuenow="0.0" aria-valuetext="0.00">
+									<div class="noUi-touch-area"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<strong class="timer_progress"><span class="blind">동영상 총 재생 시간</span>16:05<span class="blind">중</span></strong>
+				</div>
+			</div>
+			<span class="blind" aria-live="polite">2021년 09월 30일 15시 40분 한반도 레이더영상</span>
+							<img class="img_video _cnImage lazy" src="https://ssl.pstatic.net/static/weather/image/none_image.png" data-src="https://weather-phinf.pstatic.net/20210930_86/sat_1632984749861eC7xR_PNG/RDR_CMI2_202109301540.png" onerror="this.parentNode.className += ' thumb_ready';" alt="" style="opacity:1;" width="100%" data-alt="2021년 09월 30일 15시 40분 한반도 레이더영상">
+						<img class="img_video _cnImage" src="https://ssl.pstatic.net/static/m/weather/2011/im/bl4.png" data-src="https://weather-phinf.pstatic.net/20210930_74/sat_1632984749902aBvDc_PNG/RDR_CMI2_202109301545.png" onerror="this.parentNode.className += ' thumb_ready';" alt="" style="display:none;opacity:1;" width="100%" data-alt="2021년 09월 30일 15시 40분 한반도 레이더영상 재생중">
+						<img class="img_video _cnImage" src="https://ssl.pstatic.net/static/m/weather/2011/im/bl4.png" data-src="https://weather-phinf.pstatic.net/20210930_185/sat_1632985331627yWUzo_PNG/RDR_CMI2_202109301550.png" onerror="this.parentNode.className += ' thumb_ready';" alt="" style="display:none;opacity:1;" width="100%" data-alt="2021년 09월 30일 15시 40분 한반도 레이더영상 재생중">
+						<img class="img_video _cnImage" src="https://ssl.pstatic.net/static/m/weather/2011/im/bl4.png" data-src="https://weather-phinf.pstatic.net/20210930_107/sat_1632985331656SmxCk_PNG/RDR_CMI2_202109301555.png" onerror="this.parentNode.className += ' thumb_ready';" alt="" style="display:none;opacity:1;" width="100%" data-alt="2021년 09월 30일 15시 40분 한반도 레이더영상 재생중">
+						<img class="img_video _cnImage" src="https://ssl.pstatic.net/static/m/weather/2011/im/bl4.png" data-src="https://weather-phinf.pstatic.net/20210930_227/sat_1632985985139unnkJ_PNG/RDR_CMI2_202109301600.png" onerror="this.parentNode.className += ' thumb_ready';" alt="" style="display:none;opacity:1;" width="100%" data-alt="2021년 09월 30일 15시 40분 한반도 레이더영상 재생중">
+						<img class="img_video _cnImage" src="https://ssl.pstatic.net/static/m/weather/2011/im/bl4.png" data-src="https://weather-phinf.pstatic.net/20210930_25/sat_1632985985231cJHbJ_PNG/RDR_CMI2_202109301605.png" onerror="this.parentNode.className += ' thumb_ready';" alt="" style="display:none;opacity:1;" width="100%" data-alt="2021년 09월 30일 15시 40분 한반도 레이더영상 재생중">
+						</div>
+	</div>
+<p class="offer_area"><a href="https://www.weather.go.kr/w/index.do" class="link_go" target="_blank" onclick="nclk_v2(this, 'wtk.statreff', '', '')">기상청</a>, <a href="https://www.weatheri.co.kr" class="link_go" target="_blank" onclick="nclk_v2(this, 'wtk.statreff', '', '')">웨더아이</a> 제공, 업데이트 09.30. 14:40</p>
+                </div>
+
+                <!-- 날씨뉴스 -->
+                <div id="news" class="card card_news">
+    <h2 class="title">날씨뉴스</h2>
+    <div class="scroll_control end_left">
+        <div class="scroll_area" data-name="news" data-click="true" data-nclk="wtk.wrknewsrc">
+            <ul class="news_list">
+                <li class="news_item">
+                            <a href="#" class="link" data-oid="421" data-aid="0005630969" onclick="nclk_v2(this, 'wtk.wrknewm', '', '')">
+                                <div class="thumb_area">
+                                    <img class="thumb lazy" src="https://ssl.pstatic.net/static/weather/image/none_image.png" data-src="https://mimgnews.pstatic.net/image/origin/421/2021/09/30/5630969.jpg?type=f158_91" onerror="this.parentNode.className += ' thumb_ready';" alt="강원 다음달 기온&#8231;강수량 평년과 비슷">
+                                    </div>
+                                <div class="info_area">
+                                    <strong class="info_ttl">강원 다음달 기온&#8231;강수량 평년과 비슷</strong>
+                                    <p class="info_dsc">(강원=뉴스1) 이종재 기자 = 10월 강원지역의 기온과 강수량은 평년과 비슷하거나 높을 것으로 예보됐다. 기상청이 30일 발표한 1개월 전망(10월11일~11월7일)에 따르면 이 기간 평균기온과 강수량은 평년과 비</p>
+                                    <div class="info_media">
+                                        <span class="info_time">42분전</span>
+                                        <span class="info_press">뉴스1</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    <li class="news_item">
+                            <a href="#" class="link" data-oid="214" data-aid="0001151152" onclick="nclk_v2(this, 'wtk.wrknewm', '', '')">
+                                <div class="thumb_area">
+                                    <img class="thumb lazy" src="https://ssl.pstatic.net/static/weather/image/none_image.png" data-src="https://mimgnews.pstatic.net/image/origin/214/2021/09/30/1151152.jpg?type=f158_91" onerror="this.parentNode.className += ' thumb_ready';" alt="[날씨] 쾌청한 날씨 계속">
+                                    </div>
+                                <div class="info_area">
+                                    <strong class="info_ttl">[날씨] 쾌청한 날씨 계속</strong>
+                                    <p class="info_dsc">오늘 밤과 내일은 전국이 맑겠습니다. 내일 아침 기온은 서울과 광주 18도, 부산 19도, 낮 기온은 서울 26도 등 전국이 24도에서 31도까지 올라 일교차가 크겠습니다. 한편 기상청은 내일까지 제주 해안과 전남 </p>
+                                    <div class="info_media">
+                                        <span class="info_time">49분전</span>
+                                        <span class="info_press">MBC</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    <li class="news_item">
+                            <a href="#" class="link" data-oid="003" data-aid="0010745425" onclick="nclk_v2(this, 'wtk.wrknewm', '', '')">
+                                <div class="thumb_area">
+                                    <img class="thumb lazy" src="https://ssl.pstatic.net/static/weather/image/none_image.png" data-src="https://mimgnews.pstatic.net/image/origin/003/2021/09/30/10745425.jpg?type=f158_91" onerror="this.parentNode.className += ' thumb_ready';" alt="활짝 핀 황화 코스모스">
+                                    </div>
+                                <div class="info_area">
+                                    <strong class="info_ttl">활짝 핀 황화 코스모스</strong>
+                                    <p class="info_dsc">[고양=뉴시스] 정병혁 기자 = 30일 오후 경기 고양시 대화동 인근 공터에 심어진 황화 코스모스가 활짝 피어있다. 2021.09.30. jhope@newsis.com [사진 영상 제보받습니다] 공감언론 뉴시스가 독</p>
+                                    <div class="info_media">
+                                        <span class="info_time">57분전</span>
+                                        <span class="info_press">뉴시스</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    <li class="news_item">
+                            <a href="#" class="link" data-oid="003" data-aid="0010745420" onclick="nclk_v2(this, 'wtk.wrknewm', '', '')">
+                                <div class="thumb_area">
+                                    <img class="thumb lazy" src="https://ssl.pstatic.net/static/weather/image/none_image.png" data-src="https://mimgnews.pstatic.net/image/origin/003/2021/09/30/10745420.jpg?type=f158_91" onerror="this.parentNode.className += ' thumb_ready';" alt="황화 코스모스 찾은 벌">
+                                    </div>
+                                <div class="info_area">
+                                    <strong class="info_ttl">황화 코스모스 찾은 벌</strong>
+                                    <p class="info_dsc">[고양=뉴시스] 정병혁 기자 = 30일 오후 경기 고양시 대화동 인근 공터에 심어진 황화 코스모스 밭에서 벌이 꿀을 모으고 있다. 2021.09.30. jhope@newsis.com [사진 영상 제보받습니다] 공감언</p>
+                                    <div class="info_media">
+                                        <span class="info_time">57분전</span>
+                                        <span class="info_press">뉴시스</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    <li class="news_item">
+                            <a href="#" class="link" data-oid="422" data-aid="0000506914" onclick="nclk_v2(this, 'wtk.wrknewm', '', '')">
+                                <div class="thumb_area">
+                                    <img class="thumb lazy" src="https://ssl.pstatic.net/static/weather/image/none_image.png" data-src="https://mimgnews.pstatic.net/image/origin/422/2021/09/30/506914.jpg?type=f158_91" onerror="this.parentNode.className += ' thumb_ready';" alt="[날씨] 청명한 하늘 속 늦더위…큰 일교차 유의">
+                                    <span class="ico_video"><span class="blind">동영상 뉴스</span></span>
+                                        <span class="play_time"><span class="blind">재생시간</span></span>
+                                    </div>
+                                <div class="info_area">
+                                    <strong class="info_ttl">[날씨] 청명한 하늘 속 늦더위…큰 일교차 유의</strong>
+                                    <p class="info_dsc">[앵커] 청명한 가을 날씨 속에 기온이 크게 올라 다소 덥습니다. 하루 사이 기온 변화가 심한 만큼 일교차에 각별히 유의하셔야겠습니다. 자세한 날씨는 기상캐스터 연결해 알아보겠습니다. 김하윤 캐스터. [캐스터] 어제</p>
+                                    <div class="info_media">
+                                        <span class="info_time">1시간3분전</span>
+                                        <span class="info_press">연합뉴스TV</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    <li class="news_item">
+                            <a href="#" class="link" data-oid="214" data-aid="0001151151" onclick="nclk_v2(this, 'wtk.wrknewm', '', '')">
+                                <div class="thumb_area">
+                                    <img class="thumb lazy" src="https://ssl.pstatic.net/static/weather/image/none_image.png" data-src="https://mimgnews.pstatic.net/image/origin/214/2021/09/30/1151151.jpg?type=f158_91" onerror="this.parentNode.className += ' thumb_ready';" alt="[날씨] 쾌청한 하늘, 바람은 솔솔‥일교차 조심">
+                                    <span class="ico_video"><span class="blind">동영상 뉴스</span></span>
+                                        <span class="play_time"><span class="blind">재생시간</span></span>
+                                    </div>
+                                <div class="info_area">
+                                    <strong class="info_ttl">[날씨] 쾌청한 하늘, 바람은 솔솔‥일교차 조심</strong>
+                                    <p class="info_dsc">[뉴스외전] 가을이 점점 더 깊어가고 있습니다. 강원 산지는 이제 막 단풍 물결도 시작됐습니다. 설악산은 정상에서 200m, 대청봉 부근이 붉은빛으로 옷을 갈아입기 시작했고요. 지금 같은 추세면 다음 달 20일쯤 설</p>
+                                    <div class="info_media">
+                                        <span class="info_time">1시간6분전</span>
+                                        <span class="info_press">MBC</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    <li class="news_item">
+                            <a href="#" class="link" data-oid="056" data-aid="0011129226" onclick="nclk_v2(this, 'wtk.wrknewm', '', '')">
+                                <div class="thumb_area">
+                                    <img class="thumb lazy" src="https://ssl.pstatic.net/static/weather/image/none_image.png" data-src="https://mimgnews.pstatic.net/image/origin/056/2021/09/30/11129226.jpg?type=f158_91" onerror="this.parentNode.className += ' thumb_ready';" alt="[오후날씨 꿀팁] 오늘 늦더위…당분간 낮엔 더워요!">
+                                    <span class="ico_video"><span class="blind">동영상 뉴스</span></span>
+                                        <span class="play_time"><span class="blind">재생시간</span></span>
+                                    </div>
+                                <div class="info_area">
+                                    <strong class="info_ttl">[오후날씨 꿀팁] 오늘 늦더위…당분간 낮엔 더워요!</strong>
+                                    <p class="info_dsc"> 현재 광주는 31.8도까지 올랐습니다. 비가 그치고 맑은 하늘이 드러나면서 기온이 빠르게 오르고 있는데요. 오늘 서울의 낮 최고기온 28도, 내일 26도 등 당분간 한낮엔 늦더위가 이어지겠습니다. 맑고 일교차 큰 </p>
+                                    <div class="info_media">
+                                        <span class="info_time">1시간44분전</span>
+                                        <span class="info_press">KBS</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    <li class="news_item">
+                            <a href="#" class="link" data-oid="052" data-aid="0001646538" onclick="nclk_v2(this, 'wtk.wrknewm', '', '')">
+                                <div class="thumb_area">
+                                    <img class="thumb lazy" src="https://ssl.pstatic.net/static/weather/image/none_image.png" data-src="https://mimgnews.pstatic.net/image/origin/052/2021/09/30/1646538.jpg?type=f158_91" onerror="this.parentNode.className += ' thumb_ready';" alt="[날씨] 내일도 전국 맑고 늦더위...큰 일교차 주의">
+                                    <span class="ico_video"><span class="blind">동영상 뉴스</span></span>
+                                        <span class="play_time"><span class="blind">재생시간</span></span>
+                                    </div>
+                                <div class="info_area">
+                                    <strong class="info_ttl">[날씨] 내일도 전국 맑고 늦더위...큰 일교차 주의</strong>
+                                    <p class="info_dsc">[앵커] 오늘 쾌청한 하늘 아래 늦더위가 기승을 부리고 있습니다. 일교차도 10도 이상 벌어져 주의가 필요하다는데요. 기상캐스터 연결해 자세한 날씨 알아보겠습니다. 신미림 캐스터! [캐스터] 네, 하늘공원에 나와 있</p>
+                                    <div class="info_media">
+                                        <span class="info_time">1시간47분전</span>
+                                        <span class="info_press">YTN</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    <li class="news_item">
+                            <a href="#" class="link" data-oid="003" data-aid="0010745049" onclick="nclk_v2(this, 'wtk.wrknewm', '', '')">
+                                <div class="thumb_area">
+                                    <img class="thumb lazy" src="https://ssl.pstatic.net/static/weather/image/none_image.png" data-src="https://mimgnews.pstatic.net/image/origin/003/2021/09/30/10745049.jpg?type=f158_91" onerror="this.parentNode.className += ' thumb_ready';" alt="주말까지 맑고 선선 '가을날씨'…내주 수도권 비소식">
+                                    </div>
+                                <div class="info_area">
+                                    <strong class="info_ttl">주말까지 맑고 선선 '가을날씨'…내주 수도권 비소식</strong>
+                                    <p class="info_dsc">기사내용 요약 2일 오전 수도권 등 약한 비 가능성 주말 아침에는 기온 하락으로 안개 6일부터 7일까지 수도권·강원도 비 [서울=뉴시스] 이준호 기자 = 이번 주말까지 대체로 맑고 선선한 가을날씨가 이어질 것으로 보</p>
+                                    <div class="info_media">
+                                        <span class="info_time">2시간12분전</span>
+                                        <span class="info_press">뉴시스</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    <li class="news_item">
+                            <a href="#" class="link" data-oid="056" data-aid="0011129205" onclick="nclk_v2(this, 'wtk.wrknewm', '', '')">
+                                <div class="thumb_area">
+                                    <img class="thumb lazy" src="https://ssl.pstatic.net/static/weather/image/none_image.png" data-src="https://mimgnews.pstatic.net/image/origin/056/2021/09/30/11129205.jpg?type=f158_91" onerror="this.parentNode.className += ' thumb_ready';" alt="경남 등 남부지방 비 그치며 전국 대체로 맑은 날씨">
+                                    </div>
+                                <div class="info_area">
+                                    <strong class="info_ttl">경남 등 남부지방 비 그치며 전국 대체로 맑은 날씨</strong>
+                                    <p class="info_dsc">오늘은 남부지방에 내리던 비가 그치며 전국 대부분 지역에서 맑은 날씨를 보이겠습니다. 오늘 낮 기온은 서울 28도 등 전국이 25도에서 30도로 어제보다 5도 가량 크게 올라 한낮에는 덥겠습니다. 오늘과 내일 제주도</p>
+                                    <div class="info_media">
+                                        <span class="info_time">2시간21분전</span>
+                                        <span class="info_press">KBS</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+        </div>
+        <button type="button" class="btn_prev"><span class="blind">이전 보기</span></button>
+        <button type="button" class="btn_next"><span class="blind">다음 뉴스 보기</span></button>
+    </div>
+</div></div>
+            <div class="section_right">
+                <!-- 전국날씨 -->
+                <div id="nation" class="card card_nation">
+    <h2 class="title">전국날씨</h2>
+    <ul class="weekly_list">
+        <li class="item on">
+                <button type="button" class="button" aria-selected="true" data-date="20210930">
+                    <span class="day">Thu</span>
+                    <span class="date">오늘</span>
+                </button>
+            </li>
+        <li class="item">
+                <button type="button" class="button" aria-selected="false" data-date="20211001">
+                    <span class="day">Fri</span>
+                    <span class="date">10.1</span>
+                </button>
+            </li>
+        <li class="item">
+                <button type="button" class="button" aria-selected="false" data-date="20211002">
+                    <span class="day">Sat</span>
+                    <span class="date">10.2</span>
+                </button>
+            </li>
+        <li class="item">
+                <button type="button" class="button" aria-selected="false" data-date="20211003">
+                    <span class="day">Sun</span>
+                    <span class="date">10.3</span>
+                </button>
+            </li>
+        <li class="item">
+                <button type="button" class="button" aria-selected="false" data-date="20211004">
+                    <span class="day">Mon</span>
+                    <span class="date">10.4</span>
+                </button>
+            </li>
+        <li class="item">
+                <button type="button" class="button" aria-selected="false" data-date="20211005">
+                    <span class="day">Tue</span>
+                    <span class="date">10.5</span>
+                </button>
+            </li>
+        <li class="item">
+                <button type="button" class="button" aria-selected="false" data-date="20211006">
+                    <span class="day">Wed</span>
+                    <span class="date">10.6</span>
+                </button>
+            </li>
+        </ul>
+    <div class="map_wrap">
+        <div class="time_area">
+            <button type="button" class="button on" data-hday="now" aria-selected="true">현재</button>
+            <button type="button" class="button" data-hday="am" aria-selected="false">오전</button>
+            <button type="button" class="button" data-hday="pm" aria-selected="false">오후</button>
+        </div>
+        <div class="nation_map"></div>
+    </div>
+    <p class="offer_area">제공 <a href="https://www.weather.go.kr/w/index.do" class="link_go" target="_blank" onclick="nclk_v2(this, 'wtk.statreff', '', '')">기상청</a> 발표 <a href="https://www.weatheri.co.kr" class="link_go" target="_blank" onclick="nclk_v2(this, 'wtk.statreff', '', '')">웨더아이</a></p>
+</div><div class="halve_area">
+                    <div class="card_halve">
+                        <div id="lifeIndex" class="card card_figure">
+                            <h2 class="title">
+                                <button type="button" class="title_tab on" onclick="nclk_v2(this, 'wtk.lifindt', '', '')">생활지수 <span class="blind">선택됨</span></button>
+                                <button type="button" class="title_tab" onclick="nclk_v2(this, 'wtk.heaindt', '', '')">보건지수</button>
+                            </h2>
+                            <!-- 생활지수 -->
+                            <div class="inner_card ">
+        <h2 class="title">생활기상지수</h2>
+        <ul class="chart_list">
+            <li class="item">
+                    <div class="chart_area level5_3">
+                        <div class="chart">
+                            <strong class="level ico"></strong>
+                            <div class="_cnDonutChart" data-degree-value="216.0" data-color="rgb(253, 165, 14)" data-back-color="rgb(255, 224, 172)" data-code="a07">
+                                <svg width="45" height="45" focusable="false">
+                                    <g transform="translate(22.5,22.5)">
+                                        <circle r="20" fill="rgb(255, 255, 255)" stroke="rgb(255, 224, 172)" stroke-width="5px"></circle>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <strong class="level_dsc">높음</strong>
+                    </div>
+                    <div class="chart_info">
+                        <strong class="chart_ttl">자외선지수<button type="button" class="ico_help" onclick="nclk_v2(this, 'wtk.lifindicn', '', '')"><span class="blind">도움말</span></button>
+                        </strong>
+                        <div class="ly_help">
+                            <strong class="ly_ttl">자외선지수</strong>
+                            <p class="figure_dsc">1-2시간 노출시 햇볕에 피부화상이 가능하므로, 한낮엔 그늘에 있고, 외출 시 긴 소매 옷, 모자, 선글라스를 착용하세요. 자외선 차단제를 수시로 바르세요.</p>
+                            <ul class="level_list">
+                                <li class="item_level"><span class="bar bg_level5_1"></span><span class="text">낮음</span></li>
+                                <li class="item_level"><span class="bar bg_level5_2"></span><span class="text">보통</span></li>
+                                <li class="item_level"><span class="bar bg_level5_3"></span><span class="text">높음</span></li>
+                                <li class="item_level"><span class="bar bg_level5_4"></span><span class="text">매우높음</span></li>
+                                <li class="item_level"><span class="bar bg_level5_5"></span><span class="text">위험</span></li>
+                                </ul>
+                            <button class="btn_close" onclick="nclk_v2(this, 'wtk.lifindicn', '', '')"><span class="blind">도움말 닫기</span></button>
+                        </div>
+                        <p class="chart_dsc">1-2시간 노출 시 피부화상이 가능하니, 자외선 차단에 유의하세요.</p>
+                    </div>
+                </li>
+            <li class="item">
+                    <div class="chart_area level4_3">
+                        <div class="chart">
+                            <strong class="level ico"></strong>
+                            <div class="_cnDonutChart" data-degree-value="270.0" data-color="rgb(253, 165, 14)" data-back-color="rgb(255, 224, 172)" data-code="a01_2">
+                                <svg width="45" height="45" focusable="false">
+                                    <g transform="translate(22.5,22.5)">
+                                        <circle r="20" fill="rgb(255, 255, 255)" stroke="rgb(255, 224, 172)" stroke-width="5px"></circle>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <strong class="level_dsc">경고</strong>
+                    </div>
+                    <div class="chart_info">
+                        <strong class="chart_ttl">식중독지수<button type="button" class="ico_help" onclick="nclk_v2(this, 'wtk.lifindicn', '', '')"><span class="blind">도움말</span></button>
+                        </strong>
+                        <div class="ly_help">
+                            <strong class="ly_ttl">식중독지수</strong>
+                            <p class="figure_dsc">식중독 발생 가능성이 높아 경계가 필요합니다. 조리도구 세척과 소독과 식품의 유통기한 및 보관방법을 확인하는 등 음식물 조리 및 보관에 각별한 주의가 필요합니다.</p>
+                            <ul class="level_list">
+                                <li class="item_level"><span class="bar bg_level4_1"></span><span class="text">관심</span></li>
+                                <li class="item_level"><span class="bar bg_level4_2"></span><span class="text">주의</span></li>
+                                <li class="item_level"><span class="bar bg_level4_3"></span><span class="text">경고</span></li>
+                                <li class="item_level"><span class="bar bg_level4_4"></span><span class="text">위험</span></li>
+                                </ul>
+                            <button class="btn_close" onclick="nclk_v2(this, 'wtk.lifindicn', '', '')"><span class="blind">도움말 닫기</span></button>
+                        </div>
+                        <p class="chart_dsc">식중독 발생가능성이 높으니 각별한 주의가 필요합니다. </p>
+                    </div>
+                </li>
+            </ul>
+        <p class="offer_area">제공 <a href="https://www.weather.go.kr/w/index.do" class="link_go" target="_blank" onclick="nclk_v2(this, 'wtk.statreff', '', '')">기상청</a> 발표 <a href="https://www.weatheri.co.kr" class="link_go" target="_blank" onclick="nclk_v2(this, 'wtk.statreff', '', '')">웨더아이</a></p>
+    </div>
+<!-- 보건지수 -->
+                            <div class="inner_card hide">
+        <h2 class="title">보건기상지수</h2>
+        <ul class="chart_list">
+            <li class="item">
+                    <div class="chart_area level4_2">
+                        <div class="chart">
+                            <strong class="level ico"></strong>
+                            <div class="_cnDonutChart" data-degree-value="180.0" data-color="rgb(0, 199, 60)" data-back-color="rgb(200, 240, 212)" data-code="d05">
+                                <svg width="45" height="45" focusable="false">
+                                    <g transform="translate(22.5,22.5)">
+                                        <circle r="20" fill="rgb(255, 255, 255)" stroke="rgb(200, 240, 212)" stroke-width="5px"></circle>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <strong class="level_dsc">보통</strong>
+                    </div>
+                    <div class="chart_info">
+                        <strong class="chart_ttl">감기지수<button type="button" class="ico_help" onclick="nclk_v2(this, 'wtk.lifindicn', '', '')"><span class="blind">도움말</span></button>
+                        </strong>
+                        <div class="ly_help">
+                            <strong class="ly_ttl">감기지수</strong>
+                            <p class="figure_dsc">규칙적인 생활습관을 유지하고, 수분을 적절히 섭취하며, 외출 후 손발을 깨끗이 씻으세요.</p>
+                            <ul class="level_list">
+                                <li class="item_level"><span class="bar bg_level4_1"></span><span class="text">낮음</span></li>
+                                <li class="item_level"><span class="bar bg_level4_2"></span><span class="text">보통</span></li>
+                                <li class="item_level"><span class="bar bg_level4_3"></span><span class="text">높음</span></li>
+                                <li class="item_level"><span class="bar bg_level4_4"></span><span class="text">매우높음</span></li>
+                                </ul>
+                            <button class="btn_close" onclick="nclk_v2(this, 'wtk.lifindicn', '', '')"><span class="blind">도움말 닫기</span></button>
+                        </div>
+                        <p class="chart_dsc">감기예방을 위해 수분섭취와 외출후 청결유지에 유의해 주세요.</p>
+                    </div>
+                </li>
+            <li class="item">
+                    <div class="chart_area level4_2">
+                        <div class="chart">
+                            <strong class="level ico"></strong>
+                            <div class="_cnDonutChart" data-degree-value="180.0" data-color="rgb(0, 199, 60)" data-back-color="rgb(200, 240, 212)" data-code="d01">
+                                <svg width="45" height="45" focusable="false">
+                                    <g transform="translate(22.5,22.5)">
+                                        <circle r="20" fill="rgb(255, 255, 255)" stroke="rgb(200, 240, 212)" stroke-width="5px"></circle>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <strong class="level_dsc">보통</strong>
+                    </div>
+                    <div class="chart_info">
+                        <strong class="chart_ttl">천식폐질환지수<button type="button" class="ico_help" onclick="nclk_v2(this, 'wtk.lifindicn', '', '')"><span class="blind">도움말</span></button>
+                        </strong>
+                        <div class="ly_help">
+                            <strong class="ly_ttl">천식폐질환지수</strong>
+                            <p class="figure_dsc">기상조건에 따른 천식, 폐질환 발생 가능성을 지수화 한 것입니다. 높은 기온은 오존농도를 높여 알레르기성 호흡질환에 영향을 미치며, 일교차가 큰 계절은 기도 바이러스 감염 발생이 증가합니다. 낮은 기온은 폐기능과 면역력에 영향을 미칩니다.</p>
+                            <ul class="level_list">
+                                <li class="item_level"><span class="bar bg_level4_1"></span><span class="text">낮음</span></li>
+                                <li class="item_level"><span class="bar bg_level4_2"></span><span class="text">보통</span></li>
+                                <li class="item_level"><span class="bar bg_level4_3"></span><span class="text">높음</span></li>
+                                <li class="item_level"><span class="bar bg_level4_4"></span><span class="text">매우높음</span></li>
+                                </ul>
+                            <button class="btn_close" onclick="nclk_v2(this, 'wtk.lifindicn', '', '')"><span class="blind">도움말 닫기</span></button>
+                        </div>
+                        <p class="chart_dsc">만성 천식, 폐질환 환자는 각별한 주의가 필요한 날입니다.</p>
+                    </div>
+                </li>
+            <li class="item">
+                    <div class="chart_area level4_1">
+                        <div class="chart">
+                            <strong class="level ico"></strong>
+                            <div class="_cnDonutChart" data-degree-value="90.0" data-color="rgb(50, 161, 255)" data-back-color="rgb(214, 228, 243)" data-code="d02">
+                                <svg width="45" height="45" focusable="false">
+                                    <g transform="translate(22.5,22.5)">
+                                        <circle r="20" fill="rgb(255, 255, 255)" stroke="rgb(214, 228, 243)" stroke-width="5px"></circle>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <strong class="level_dsc">낮음</strong>
+                    </div>
+                    <div class="chart_info">
+                        <strong class="chart_ttl">뇌졸중가능지수<button type="button" class="ico_help" onclick="nclk_v2(this, 'wtk.lifindicn', '', '')"><span class="blind">도움말</span></button>
+                        </strong>
+                        <div class="ly_help">
+                            <strong class="ly_ttl">뇌졸중가능지수</strong>
+                            <p class="figure_dsc">기온 등 기상조건에 따른 뇌졸중 발생 가능성을 지수화 한 것입니다. 외부 기온이 낮아지면 혈관이 수축하고 혈압이 높아지고 흐름이 둔화되어 혈전이나 혈관질환 가능성이 커질 수 있으므로, 뇌졸중 위험군은 추운날씨 건강관리가 필요합니다.</p>
+                            <ul class="level_list">
+                                <li class="item_level"><span class="bar bg_level4_1"></span><span class="text">낮음</span></li>
+                                <li class="item_level"><span class="bar bg_level4_2"></span><span class="text">보통</span></li>
+                                <li class="item_level"><span class="bar bg_level4_3"></span><span class="text">높음</span></li>
+                                <li class="item_level"><span class="bar bg_level4_4"></span><span class="text">매우높음</span></li>
+                                </ul>
+                            <button class="btn_close" onclick="nclk_v2(this, 'wtk.lifindicn', '', '')"><span class="blind">도움말 닫기</span></button>
+                        </div>
+                        <p class="chart_dsc">뇌졸중 가능지수가 낮은 날이나, 건강관리 유의하세요.</p>
+                    </div>
+                </li>
+            <li class="item">
+                    <div class="chart_area level4_1">
+                        <div class="chart">
+                            <strong class="level ico"></strong>
+                            <div class="_cnDonutChart" data-degree-value="90.0" data-color="rgb(50, 161, 255)" data-back-color="rgb(214, 228, 243)" data-code="d08">
+                                <svg width="45" height="45" focusable="false">
+                                    <g transform="translate(22.5,22.5)">
+                                        <circle r="20" fill="rgb(255, 255, 255)" stroke="rgb(214, 228, 243)" stroke-width="5px"></circle>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div>
+                        <strong class="level_dsc">낮음</strong>
+                    </div>
+                    <div class="chart_info">
+                        <strong class="chart_ttl">꽃가루농도지수 잡초류<button type="button" class="ico_help" onclick="nclk_v2(this, 'wtk.lifindicn', '', '')"><span class="blind">도움말</span></button>
+                        </strong>
+                        <div class="ly_help">
+                            <strong class="ly_ttl">꽃가루농도지수 잡초류</strong>
+                            <p class="figure_dsc">꽃가루는 기관지 천식, 비염, 아토피 피부염 등 알레르기 질환을 유발시키거나 악화시킬 수 있어 주의관찰이 필요합니다. 기온이 20-30℃, 약 2m/s의 약풍에서 강해질 수 있으며, 수목류는 3-5월, 잡초류는 8-10월, 잔디류는 6-8월 주로 발생합니다.</p>
+                            <ul class="level_list">
+                                <li class="item_level"><span class="bar bg_level4_1"></span><span class="text">낮음</span></li>
+                                <li class="item_level"><span class="bar bg_level4_2"></span><span class="text">보통</span></li>
+                                <li class="item_level"><span class="bar bg_level4_3"></span><span class="text">높음</span></li>
+                                <li class="item_level"><span class="bar bg_level4_4"></span><span class="text">매우높음</span></li>
+                                </ul>
+                            <button class="btn_close" onclick="nclk_v2(this, 'wtk.lifindicn', '', '')"><span class="blind">도움말 닫기</span></button>
+                        </div>
+                        <p class="chart_dsc">알레르기 민감군은 주의가 필요한 날입니다.</p>
+                    </div>
+                </li>
+            </ul>
+        <p class="offer_area">제공 <a href="https://www.weather.go.kr/w/index.do" class="link_go" target="_blank" onclick="nclk_v2(this, 'wtk.statreff', '', '')">기상청</a> 발표 <a href="https://www.weatheri.co.kr" class="link_go" target="_blank" onclick="nclk_v2(this, 'wtk.statreff', '', '')">웨더아이</a></p>
+    </div>
+</div>
+
+                        <!-- 장기예보 -->
+                        <div class="card card_forecast_today">
+    <h2 class="title">
+        <button type="button" class="title_tab on" onclick="nclk_v2(this, 'wtk.seafore', '', '')" aria-selected="true">계절예보</button>
+        <button type="button" class="title_tab" onclick="nclk_v2(this, 'wtk.monfore', '', '')" aria-selected="false">월간예보</button>
+    </h2>
+    <div class="inner_forecast forecast_season">
+        <ul role="tablist" class="forecast_tablist">
+            <li role="presentation" class="forecast_item on">
+                            <button type="button" role="tab" class="forecast_tab" onclick="nclk_v2(this, 'wtk.seasfmont', '', '')" aria-controls="season_10" aria-selected="true">10월</button>
+                        </li>
+                    <li role="presentation" class="forecast_item">
+                            <button type="button" role="tab" class="forecast_tab" onclick="nclk_v2(this, 'wtk.seasfmont', '', '')" aria-controls="season_11" aria-selected="false">11월</button>
+                        </li>
+                    <li role="presentation" class="forecast_item">
+                            <button type="button" role="tab" class="forecast_tab" onclick="nclk_v2(this, 'wtk.seasfmont', '', '')" aria-controls="season_12" aria-selected="false">12월</button>
+                        </li>
+                    </ul>
+        <div role="tabpanel" id="season_10" class="forecast_panel" >
+                <table class="forecast_average">
+                    <caption><span class="blind">계절 월별 평균 정보. 기간, 평년기온, 평년강수 정보</span></caption>
+                    <colgroup>
+                        <col class="average_ttl">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="average_ttl">평년기온</th>
+                            <td class="average_value">비슷함</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="average_ttl">평년강수</th>
+                            <td class="average_value">비슷함</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="forecast_summary"> 건조한 공기의 영향을 주로 받아 낮과 밤의 기온 차가 큰 날이 많겠으며, 상층 찬 공기의 영향으로 일시적으로 쌀쌀한 날씨를 보일 때가 있겠습니다. (월평균기온) 평년(13.6~14.6℃)과 비슷하거나 높을 확률이 각각 40%입니다. (월강수량) 평년(28.5~63.1㎜)과 비슷할 확률이 50%입니다.</p>
+            </div>
+        <div role="tabpanel" id="season_11" class="forecast_panel" style="display:none">
+                <table class="forecast_average">
+                    <caption><span class="blind">계절 월별 평균 정보. 기간, 평년기온, 평년강수 정보</span></caption>
+                    <colgroup>
+                        <col class="average_ttl">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="average_ttl">평년기온</th>
+                            <td class="average_value">비슷함</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="average_ttl">평년강수</th>
+                            <td class="average_value">비슷함</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="forecast_summary">찬 공기와 따뜻한 공기의 영향을 주기적으로 받아 기온 변화가 크겠으며, 찬 대륙고기압이 확장하면서 기온이 다소 큰 폭으로 떨어질 때가 있겠습니다. (월평균기온) 평년(6.1~7.3℃)보다 낮을 확률이 50%입니다. (월강수량) 평년(33.8~58.4㎜)보다 적을 확률이 50%입니다.</p>
+            </div>
+        <div role="tabpanel" id="season_12" class="forecast_panel" style="display:none">
+                <table class="forecast_average">
+                    <caption><span class="blind">계절 월별 평균 정보. 기간, 평년기온, 평년강수 정보</span></caption>
+                    <colgroup>
+                        <col class="average_ttl">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="average_ttl">평년기온</th>
+                            <td class="average_value">비슷함</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="average_ttl">평년강수</th>
+                            <td class="average_value">적음</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="forecast_summary">찬 공기와 따뜻한 공기의 영향을 주기적으로 받아 기온 변화가 크겠고, 찬 대륙고기압이 확장하면서 추운 날이 보일 때가 있겠으며, 지형적인 영향으로 많은 눈이 오는 곳이 있겠습니다. (월평균기온) 평년(-1.1~0.3℃)과 비슷하거나 낮을 확률이 각각 40%입니다.</p>
+            </div>
+        </div>
+    <div class="inner_forecast forecast_monthly hide">
+        <ul role="tablist" class="forecast_tablist">
+            <li role="presentation" class="forecast_item on">
+                            <button type="button" role="tab" class="forecast_tab" onclick="nclk_v2(this, 'wtk.monfwekt', '', '')" aria-controls="monthly_1" aria-selected="true">1주차</button>
+                        </li>
+                    <li role="presentation" class="forecast_item">
+                            <button type="button" role="tab" class="forecast_tab" onclick="nclk_v2(this, 'wtk.monfwekt', '', '')" aria-controls="monthly_2" aria-selected="false">2주차</button>
+                        </li>
+                    <li role="presentation" class="forecast_item">
+                            <button type="button" role="tab" class="forecast_tab" onclick="nclk_v2(this, 'wtk.monfwekt', '', '')" aria-controls="monthly_3" aria-selected="false">3주차</button>
+                        </li>
+                    <li role="presentation" class="forecast_item">
+                            <button type="button" role="tab" class="forecast_tab" onclick="nclk_v2(this, 'wtk.monfwekt', '', '')" aria-controls="monthly_4" aria-selected="false">4주차</button>
+                        </li>
+                    </ul>
+        <div role="tabpanel" id="monthly_1" class="forecast_panel" >
+                <table class="forecast_average">
+                    <caption><span class="blind">월간 기간별 평균 정보. 기간, 평년기온, 평년강수 정보</span></caption>
+                    <colgroup>
+                        <col class="average_ttl">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="average_ttl">기간</th>
+                            <td class="average_value">10.04.~10.10.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="average_ttl">평년기온</th>
+                            <td class="average_value">15.6~17.0° 비슷함</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="average_ttl">평년강수</th>
+                            <td class="average_value">0.2~7.0㎜ 비슷함</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="forecast_summary">  이동성 고기압의 영향을 주로 받겠으나, 남쪽을 지나는 저기압의 영향을 받을 때가 있겠습니다. (주평균기온) 평년(15.6~17.0℃)과 비슷하거나 높을 확률이 각각 40%입니다. (주강수량) 평년(0.2~7.0㎜)과 비슷하거나 많을 확률이 각각 40%입니다. </p>
+            </div>
+        <div role="tabpanel" id="monthly_2" class="forecast_panel" style="display:none">
+                <table class="forecast_average">
+                    <caption><span class="blind">월간 기간별 평균 정보. 기간, 평년기온, 평년강수 정보</span></caption>
+                    <colgroup>
+                        <col class="average_ttl">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="average_ttl">기간</th>
+                            <td class="average_value">10.11.~10.17.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="average_ttl">평년기온</th>
+                            <td class="average_value">13.8~15.0° 비슷함</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="average_ttl">평년강수</th>
+                            <td class="average_value">0.8~7.9㎜ 비슷함</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="forecast_summary"> 이동성 고기압의 영향을 주로 받아 일교차가 큰 날이 많겠습니다. (주평균기온) 평년(13.8~15.0℃)과 비슷할 확률이 50%입니다. (주강수량) 평년(0.8~7.9㎜)과 비슷할 확률이 50%입니다. </p>
+            </div>
+        <div role="tabpanel" id="monthly_3" class="forecast_panel" style="display:none">
+                <table class="forecast_average">
+                    <caption><span class="blind">월간 기간별 평균 정보. 기간, 평년기온, 평년강수 정보</span></caption>
+                    <colgroup>
+                        <col class="average_ttl">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="average_ttl">기간</th>
+                            <td class="average_value">10.18.~10.24.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="average_ttl">평년기온</th>
+                            <td class="average_value">12.5~14.1° 비슷함</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="average_ttl">평년강수</th>
+                            <td class="average_value">1.8~9.5㎜ 비슷함</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="forecast_summary"> 이동성 고기압의 영향을 주로 받아 맑고 건조한 가운데 일교차가 큰 날이 많겠습니다. (주평균기온) 평년(12.5~14.1℃)과 비슷하거나 낮을 확률이 각각 40%입니다. (주강수량) 평년(1.8~9.5㎜)과 비슷할 확률이 50%입니다. </p>
+            </div>
+        <div role="tabpanel" id="monthly_4" class="forecast_panel" style="display:none">
+                <table class="forecast_average">
+                    <caption><span class="blind">월간 기간별 평균 정보. 기간, 평년기온, 평년강수 정보</span></caption>
+                    <colgroup>
+                        <col class="average_ttl">
+                        <col>
+                    </colgroup>
+                    <tbody>
+                        <tr>
+                            <th scope="row" class="average_ttl">기간</th>
+                            <td class="average_value">10.25.~10.31.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="average_ttl">평년기온</th>
+                            <td class="average_value">10.0~11.8° 비슷함</td>
+                        </tr>
+                        <tr>
+                            <th scope="row" class="average_ttl">평년강수</th>
+                            <td class="average_value">2.1~13.3㎜ 비슷함</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="forecast_summary"> 이동성 고기압의 영향을 주로 받겠으나 일시적인 찬 공기의 영향으로 쌀쌀한 날씨를 보일 때가 있겠습니다. (주평균기온) 평년(10.0~11.8℃)과 비슷하거나 낮을 확률이 각각 40%입니다. (주강수량) 평년(2.1~13.3㎜)과 비슷할 확률이 50%입니다. </p>
+            </div>
+        </div>
+    <p class="offer_area">제공 <a href="https://www.weather.go.kr/w/index.do" class="link_go" target="_blank" onclick="nclk_v2(this, 'wtk.statreff', '', '')">기상청</a> 발표 <a href="https://www.weatheri.co.kr" class="link_go" target="_blank" onclick="nclk_v2(this, 'wtk.statreff', '', '')">웨더아이</a></p>
+</div></div>
+                    <div class="card_halve">
+                        <!-- 일출일몰 -->
+                        <div id="sunRiseSet" class="card card_sun">
+        <div class="card_sun_inner">
+            <h2 class="title">일출일몰</h2>
+            <div class="sun_panel">
+                        <div class="sun_chart _cnLazy" data-ico="part13">
+                            <div class="move_sun"></div>
+                            <div class="progress_bar">
+                                <div class="current_bar">
+                                    <span class="bar"></span>
+                                </div>
+                            </div>
+                            <div class="sun_info">
+                                <span class="icon_area"><span class="ico _cnLazy" data-ico="ico_sun_down"></span></span>
+                                    <dl class="time_list">
+                                    <dt class="time_ttl">일출<span class="blind">시간</span></dt>
+                                    <dd class="time_sun">06:26</dd>
+                                    <dt class="time_ttl">일몰<span class="blind">시간</span></dt>
+                                    <dd class="time_sun">18:18</dd>
+                                </dl>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        <p class="offer_area">제공 <a href="https://www.weather.go.kr/w/index.do" class="link_go" target="_blank" onclick="nclk_v2(this, 'wtk.statreff', '', '')">기상청</a> 발표 <a href="https://www.weatheri.co.kr" class="link_go" target="_blank" onclick="nclk_v2(this, 'wtk.statreff', '', '')">웨더아이</a></p>
+    </div>
+<!-- 과거날씨 -->
+                        <div id="past" class="card card_past"></div></div>
+                </div>
+
+                </div>
+        </div>
+    </div>
+</div>
+
+<div class="popup_cp hide" role="dialog" aria-modal="true">
+    <form action="">
+        <div class="inner">
+            <h2 class="popup_title">날씨 제공사</h2>
+            <ul class="cp_tablist">
+                <li role="presentation" class="item"><button type="button" role="tab" class="tab _cnTabCpSettingBtn" aria-controls="_idCpSettings" aria-selected="true" onclick="nclk_v2(this, 'wtk.cpselect', '', '')">제공사 설정</button></li>
+                <li role="presentation" class="item on"><button type="button" role="tab" class="tab _cnTabCpCompareBtn" aria-controls="_idCpComparison" aria-selected="false" onclick="nclk_v2(this, 'wtk.cpctb', '', '')">예보 비교</button></li>
+            </ul>
+            <div role="tabpanel" id="_idCpSettings" class="cp_panel hide">
+                <ul class="list_setting">
+                    <li class="item_kma on">
+                        <strong class="korean">기상청</strong>
+                        <em class="english">KMA</em>
+                        <p class="desc">국가 기상정보, 기후 관련 재난재해를 분석·발표하는 중앙행정기관입니다.</p>
+                        <input type="checkbox" class="toggle" checked disabled>
+                        <label for="toggle_kma" class="label_check" data-cp-name="KMA" onclick="nclk_v2(this, 'wtk.lcpskmi', '', '')"><span class="blind">기상청 설정</span></label>
+                    </li>
+                    <li class="item_accuweather ">
+                        <strong class="korean">아큐웨더</strong>
+                        <em class="english">AccuWeather</em>
+                        <p class="desc">세계적으로 가장 신뢰할 수 있는 글로벌 기상 미디어 기업 중 하나입니다.</p>
+                        <input type="checkbox" class="toggle" >
+                        <label for="toggle_accuweather" class="label_check" data-cp-name="ACCUWEATHER" onclick="nclk_v2(this, 'wtk.lcpsacc', '', '')"><span class="blind">아큐웨더 설정</span></label>
+                    </li>
+                    <li class="item_twc ">
+                        <strong class="korean">웨더채널</strong>
+                        <em class="english">The Weather Channel</em>
+                        <p class="desc">AI 및 빅데이터 분석으로 더 신속하고 정확한 날씨 정보를 제공합니다.</p>
+                        <input type="checkbox" class="toggle"  >
+                        <label for="toggle_twc" class="label_check" data-cp-name="TWC" onclick="nclk_v2(this, 'wtk.lcpstwc', '', '')"><span class="blind">웨더채널 설정</span></label>
+                    </li>
+                    <li class="item_prearranged">
+                        <p class="desc">날씨 제공사 추가 서비스 예정입니다.</p>
+                    </li>
+                </ul>
+            </div>
+            <div role="tabpanel" id="_idCpComparison" class="cp_panel">
+                <div class="scroll_control end_left">
+                    <ul class="list_comparison" aria-hidden="true">
+                        <li class="item_kma on"><span class="text">기상청</span></li>
+                        <li class="item_accuweather "><span class="text">아큐웨더</span></li>
+                        <li class="item_twc "><span class="text">웨더채널</span></li>
+                    </ul>
+
+                    <button type="button" class="btn_prev"><span class="blind">이전 보기</span></button>
+                    <button type="button" class="btn_next"><span class="blind">다음 보기</span></button>
+                </div>
+            </div>
+            <div class="text_area">
+                <p class="notice">기본으로 설정된 날씨 제공사는 다음 방문 시에도 유지됩니다. <br class="break">단, 로그인/비로그인 상태에 따라 날씨 제공사가 각각 설정됩니다.</p>
+                <p class="alert fadeout" role="alert">날씨 제공사가 변경되었습니다</p>
+            </div>
+            <button type="button" class="btn_close" onclick="nclk_v2(this, 'wtk.lcpscls', '', '')"><span class="blind">팝업 닫기</span></button>
+        </div>
+    </form>
+</div><div id="footer" role="contentinfo">
+	<div class="content_inner">
+		<p class="desc">본 콘텐츠의 저작권은 제공처에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라 법적책임을 질 수 있습니다.</p>
+		<ul class="info_list">
+			<li class="item">사업자등록번호: 220-81-62517</li>
+			<li class="item">통신판매업신고번호: 220-81-62517</li>
+			<li class="item">대표이사: 한성숙 <a href="http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2208162517" target="_blank" class="link" onclick="nclk_v2(this, 'fot.regnum', '', '')">사업자정보 확인</a></li>
+			<li class="item">주소: 경기도 성남시 분당구 불정로 6 네이버 그린팩토리 463-867</li>
+			<li class="item">대표전화: 1588-3820</li>
+		</ul>
+		<div class="link_list">
+			<span class="link_group">
+				<a href="#" class="link" onclick="nclk_v2(this, 'fot.login', '', ''); oCommon.fnLogin(); return false;"><strong>로그인</strong></a>
+					<a href="https://m.naver.com/services.html?f=svc.weather" class="link" onclick="nclk_v2(this, 'fot.apps', '', '')">전체서비스</a>
+			</span>
+			<span class="link_group">
+				<a href="https://policy.naver.com/policy/privacy.html" class="link" onclick="nclk_v2(this, 'fot.priinfoman', '', '')">개인정보처리방침</a>
+						<a href="https://help.naver.com/support/service/main.help?serviceNo=23599" class="link" onclick="nclk_v2(this, 'fot.report', '', '')">고객센터</a>
+					</span>
+			<span class="link_group">
+				<a href="https://www.navercorp.com/" class="link" onclick="nclk_v2(this, 'fot.naverlog', '', '')">©NAVER Corp.</a>
+			</span>
+		</div>
+	</div>
+</div></div>
+        <script type="text/javascript" src="https://ssl.pstatic.net/staticv2.weather/responsive/js/weather_common_202109161810.js"></script>
+		<script type="text/javascript" src="https://ssl.pstatic.net/staticv2.weather/responsive/js/corejs_202109161810.js"></script>
+			<script type="text/javascript" src="https://ssl.pstatic.net/staticv2.weather/responsive/js/regenerator-runtime_202109161810.js"></script>
+		<script>
+	try {
+		oCommon.bindError();
+	} catch (e) {
+		// nothing
+	}
+
+	// GNB용
+	var baseURL = location.protocol +"//" + location.hostname;
+	var nsc = "naver.service";
+	var gnb_service = "weather";
+	var gnb_logout = baseURL;
+	var gnb_template = "gnb_utf8";
+	var gnb_brightness= 1;
+
+	// nclick용
+	var g_ssc = "Mweather.v4";
+	var ccsrv = "cc.naver.com";
+	// var ccsrv = "alpha-cc.naver.com";
+
+	// DA광고용
+	var sDaUri = 'https://mv.veta.naver.com/fxshow?su=SU10165&da_dom_id=_idAD_weather';
+
+	// LCS용
+	var deviceType = "pc";
+	var category = "";
+	var menu = "today";
+	var lcsPrefix = deviceType === "mobile" ? "m_weather_" : "weather_";
+	var lcsSuffix = category === "" ? "" : "_" + category;
+	var lcsStiCode = (lcsPrefix + menu + lcsSuffix).toLowerCase();
+
+	var phase = "real";
+	var isNapp = false;
+	var isLogin = false;
+	var responsiveSizeType = oCommon.fnGetResponsiveSizeType();
+	var sRegionCode = "09710670";
+	var userAgent = 'python-requests/2.22.0';
+	var oldPcDomain = 'https://weather.naver.com';
+	var oldMobileDomain = 'https://m.weather.naver.com';
+	var targetId = '#';
+	var naverApp = false;
+	var osName = "unknown";
+
+	var eventType = "onpageshow" in window ? "pageshow" : "load";
+	$(window).on(eventType, function (event) {
+		if ( event.originalEvent && event.originalEvent.persisted) {
+			window.location.reload();
+		}
+		oCommon.fnInit();
+		setTimeout(function () {
+			oSearch.fnInit();
+
+			if (deviceType === 'pc') {
+				oCommon.fnCachedScript('https://ssl.pstatic.net/static.gn/templates/gnb_utf8.nhn?2021093016')
+					.done(function() {
+						getGNB();
+					})
+					.fail(function(jqXHR){
+						oCommon.fnSendErrorToNelo("[gnb JS] script 호출 실패", jqXHR);
+					});
+			}
+		}, 50);
+
+		
+				oCommon.fnHandlebarsInit('https://ssl.pstatic.net/staticv2.weather/responsive/handlebars/', '202109161810');
+			
+	});
+
+	// Image Lazy Loading
+	document.addEventListener("DOMContentLoaded", function() {
+		var lazyImages = [].slice.call($(document).find("img.lazy"));
+		var active = false;
+
+		var lazyLoad = function() {
+			if (active === false) {
+				active = true;
+
+				setTimeout(function() {
+					lazyImages.forEach(function(lazyImage) {
+						if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
+							lazyImage.src = $(lazyImage).data("src");
+							lazyImage.classList.remove("lazy");
+
+							lazyImages = lazyImages.filter(function(image) {
+								return image !== lazyImage;
+							});
+
+							if (lazyImages.length === 0) {
+								document.removeEventListener("scroll", lazyLoad);
+								window.removeEventListener("resize", lazyLoad);
+								window.removeEventListener("orientationchange", lazyLoad);
+							}
+						}
+					});
+
+					active = false;
+				}, 200);
+			}
+		};
+
+		lazyLoad();
+		document.addEventListener("scroll", lazyLoad);
+		window.addEventListener("resize", lazyLoad);
+		window.addEventListener("orientationchange", lazyLoad);
+	});
+</script><script>
+    var isDomestic = true;
+    
+            var townFcastListJson = [{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20210930","aplTm":"17","aplYmdt":"2021093017","wetrCd":"1","wetrTxt":"맑음","tmpr":26.0,"rainProb":0,"windDrctn":"NW","windSpd":1.0,"humd":50,"fcastYmdt":"20210930153000","oneHourRainAmt":"0.0","oneHourSnowAmt":null,"lastUdtYmdt":"20210930162051","rainAmt":"0","snowAmt":"0","windDrctnName":"북서풍","nowFcast":false,"windBarHeight":3.3333333333333335,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20210930","aplTm":"18","aplYmdt":"2021093018","wetrCd":"1","wetrTxt":"맑음","tmpr":25.0,"rainProb":0,"windDrctn":"NW","windSpd":1.0,"humd":60,"fcastYmdt":"20210930153000","oneHourRainAmt":"0.0","oneHourSnowAmt":null,"lastUdtYmdt":"20210930162051","rainAmt":"0","snowAmt":"0","windDrctnName":"북서풍","nowFcast":false,"windBarHeight":3.3333333333333335,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20210930","aplTm":"19","aplYmdt":"2021093019","wetrCd":"1","wetrTxt":"맑음","tmpr":24.0,"rainProb":0,"windDrctn":"NW","windSpd":1.0,"humd":65,"fcastYmdt":"20210930153000","oneHourRainAmt":"0.0","oneHourSnowAmt":null,"lastUdtYmdt":"20210930162051","rainAmt":"0","snowAmt":"0","windDrctnName":"북서풍","nowFcast":false,"windBarHeight":3.3333333333333335,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20210930","aplTm":"20","aplYmdt":"2021093020","wetrCd":"1","wetrTxt":"맑음","tmpr":24.0,"rainProb":0,"windDrctn":"NW","windSpd":1.0,"humd":70,"fcastYmdt":"20210930153000","oneHourRainAmt":"0.0","oneHourSnowAmt":null,"lastUdtYmdt":"20210930162051","rainAmt":"0","snowAmt":"0","windDrctnName":"북서풍","nowFcast":false,"windBarHeight":3.3333333333333335,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20210930","aplTm":"21","aplYmdt":"2021093021","wetrCd":"1","wetrTxt":"맑음","tmpr":23.0,"rainProb":0,"windDrctn":"NW","windSpd":1.0,"humd":75,"fcastYmdt":"20210930153000","oneHourRainAmt":"0.0","oneHourSnowAmt":null,"lastUdtYmdt":"20210930162051","rainAmt":"0","snowAmt":"0","windDrctnName":"북서풍","nowFcast":false,"windBarHeight":3.3333333333333335,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20210930","aplTm":"22","aplYmdt":"2021093022","wetrCd":"1","wetrTxt":"맑음","tmpr":22.0,"rainProb":0,"windDrctn":"N","windSpd":0.3,"humd":80,"fcastYmdt":"20210930140000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930122343","rainAmt":"0","snowAmt":"0","windDrctnName":"북풍","nowFcast":true,"windBarHeight":1.0,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20210930","aplTm":"23","aplYmdt":"2021093023","wetrCd":"1","wetrTxt":"맑음","tmpr":21.0,"rainProb":0,"windDrctn":"NE","windSpd":0.4,"humd":80,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"북동풍","nowFcast":true,"windBarHeight":1.3333333333333335,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"00","aplYmdt":"2021100100","wetrCd":"1","wetrTxt":"맑음","tmpr":21.0,"rainProb":0,"windDrctn":"SE","windSpd":0.9,"humd":80,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남동풍","nowFcast":true,"windBarHeight":3.0000000000000004,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"01","aplYmdt":"2021100101","wetrCd":"1","wetrTxt":"맑음","tmpr":20.0,"rainProb":0,"windDrctn":"SE","windSpd":0.8,"humd":80,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남동풍","nowFcast":true,"windBarHeight":2.666666666666667,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"02","aplYmdt":"2021100102","wetrCd":"1","wetrTxt":"맑음","tmpr":19.0,"rainProb":0,"windDrctn":"SE","windSpd":0.4,"humd":85,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남동풍","nowFcast":true,"windBarHeight":1.3333333333333335,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"03","aplYmdt":"2021100103","wetrCd":"1","wetrTxt":"맑음","tmpr":19.0,"rainProb":0,"windDrctn":"S","windSpd":0.4,"humd":85,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남풍","nowFcast":true,"windBarHeight":1.3333333333333335,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"04","aplYmdt":"2021100104","wetrCd":"1","wetrTxt":"맑음","tmpr":19.0,"rainProb":0,"windDrctn":"S","windSpd":0.9,"humd":85,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남풍","nowFcast":true,"windBarHeight":3.0000000000000004,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"05","aplYmdt":"2021100105","wetrCd":"1","wetrTxt":"맑음","tmpr":19.0,"rainProb":0,"windDrctn":"SE","windSpd":0.7,"humd":90,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남동풍","nowFcast":true,"windBarHeight":2.333333333333333,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"06","aplYmdt":"2021100106","wetrCd":"1","wetrTxt":"맑음","tmpr":19.0,"rainProb":0,"windDrctn":"SE","windSpd":0.2,"humd":90,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남동풍","nowFcast":true,"windBarHeight":0.6666666666666667,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"07","aplYmdt":"2021100107","wetrCd":"1","wetrTxt":"맑음","tmpr":19.0,"rainProb":0,"windDrctn":"N","windSpd":0.2,"humd":90,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"북풍","nowFcast":true,"windBarHeight":0.6666666666666667,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"08","aplYmdt":"2021100108","wetrCd":"1","wetrTxt":"맑음","tmpr":19.0,"rainProb":0,"windDrctn":"N","windSpd":0.3,"humd":85,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"북풍","nowFcast":true,"windBarHeight":1.0,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"09","aplYmdt":"2021100109","wetrCd":"1","wetrTxt":"맑음","tmpr":20.0,"rainProb":0,"windDrctn":"NW","windSpd":0.6,"humd":85,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"북서풍","nowFcast":true,"windBarHeight":2.0,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"10","aplYmdt":"2021100110","wetrCd":"1","wetrTxt":"맑음","tmpr":22.0,"rainProb":0,"windDrctn":"NW","windSpd":1.1,"humd":75,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"북서풍","nowFcast":true,"windBarHeight":3.6666666666666665,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"11","aplYmdt":"2021100111","wetrCd":"1","wetrTxt":"맑음","tmpr":23.0,"rainProb":20,"windDrctn":"NW","windSpd":0.9,"humd":65,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"북서풍","nowFcast":true,"windBarHeight":3.0000000000000004,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"12","aplYmdt":"2021100112","wetrCd":"5","wetrTxt":"구름많음","tmpr":25.0,"rainProb":0,"windDrctn":"W","windSpd":1.3,"humd":60,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"서풍","nowFcast":true,"windBarHeight":4.333333333333334,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"13","aplYmdt":"2021100113","wetrCd":"1","wetrTxt":"맑음","tmpr":26.0,"rainProb":0,"windDrctn":"W","windSpd":2.0,"humd":55,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"서풍","nowFcast":true,"windBarHeight":6.666666666666667,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"14","aplYmdt":"2021100114","wetrCd":"5","wetrTxt":"구름많음","tmpr":26.0,"rainProb":20,"windDrctn":"W","windSpd":2.4,"humd":55,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"서풍","nowFcast":true,"windBarHeight":8.0,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"15","aplYmdt":"2021100115","wetrCd":"5","wetrTxt":"구름많음","tmpr":26.0,"rainProb":20,"windDrctn":"W","windSpd":2.7,"humd":55,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"서풍","nowFcast":true,"windBarHeight":9.000000000000002,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"16","aplYmdt":"2021100116","wetrCd":"5","wetrTxt":"구름많음","tmpr":26.0,"rainProb":20,"windDrctn":"W","windSpd":2.9,"humd":55,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"서풍","nowFcast":true,"windBarHeight":9.666666666666666,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"17","aplYmdt":"2021100117","wetrCd":"5","wetrTxt":"구름많음","tmpr":25.0,"rainProb":20,"windDrctn":"W","windSpd":2.8,"humd":55,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"서풍","nowFcast":true,"windBarHeight":9.333333333333332,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"18","aplYmdt":"2021100118","wetrCd":"5","wetrTxt":"구름많음","tmpr":24.0,"rainProb":20,"windDrctn":"W","windSpd":1.9,"humd":65,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"서풍","nowFcast":true,"windBarHeight":6.333333333333332,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"19","aplYmdt":"2021100119","wetrCd":"5","wetrTxt":"구름많음","tmpr":23.0,"rainProb":20,"windDrctn":"W","windSpd":1.6,"humd":70,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"서풍","nowFcast":true,"windBarHeight":5.333333333333334,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"20","aplYmdt":"2021100120","wetrCd":"5","wetrTxt":"구름많음","tmpr":22.0,"rainProb":0,"windDrctn":"W","windSpd":1.2,"humd":70,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"서풍","nowFcast":true,"windBarHeight":4.0,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"21","aplYmdt":"2021100121","wetrCd":"7","wetrTxt":"흐림","tmpr":22.0,"rainProb":0,"windDrctn":"W","windSpd":1.1,"humd":75,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"서풍","nowFcast":true,"windBarHeight":3.6666666666666665,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"22","aplYmdt":"2021100122","wetrCd":"7","wetrTxt":"흐림","tmpr":21.0,"rainProb":0,"windDrctn":"W","windSpd":0.6,"humd":80,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"서풍","nowFcast":true,"windBarHeight":2.0,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211001","aplTm":"23","aplYmdt":"2021100123","wetrCd":"7","wetrTxt":"흐림","tmpr":20.0,"rainProb":0,"windDrctn":"SW","windSpd":0.8,"humd":85,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남서풍","nowFcast":true,"windBarHeight":2.666666666666667,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"00","aplYmdt":"2021100200","wetrCd":"7","wetrTxt":"흐림","tmpr":20.0,"rainProb":0,"windDrctn":"W","windSpd":0.5,"humd":85,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"서풍","nowFcast":true,"windBarHeight":1.6666666666666667,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"01","aplYmdt":"2021100201","wetrCd":"7","wetrTxt":"흐림","tmpr":20.0,"rainProb":0,"windDrctn":"S","windSpd":0.5,"humd":85,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남풍","nowFcast":true,"windBarHeight":1.6666666666666667,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"02","aplYmdt":"2021100202","wetrCd":"7","wetrTxt":"흐림","tmpr":20.0,"rainProb":20,"windDrctn":"S","windSpd":0.7,"humd":85,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남풍","nowFcast":true,"windBarHeight":2.333333333333333,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"03","aplYmdt":"2021100203","wetrCd":"9","wetrTxt":"비","tmpr":19.0,"rainProb":20,"windDrctn":"S","windSpd":0.7,"humd":90,"fcastYmdt":"20210930170000","oneHourRainAmt":"~1","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"~1","snowAmt":"0","windDrctnName":"남풍","nowFcast":true,"windBarHeight":2.333333333333333,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"04","aplYmdt":"2021100204","wetrCd":"9","wetrTxt":"비","tmpr":19.0,"rainProb":30,"windDrctn":"S","windSpd":0.6,"humd":90,"fcastYmdt":"20210930170000","oneHourRainAmt":"~1","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"~1","snowAmt":"0","windDrctnName":"남풍","nowFcast":true,"windBarHeight":2.0,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"05","aplYmdt":"2021100205","wetrCd":"7","wetrTxt":"흐림","tmpr":19.0,"rainProb":30,"windDrctn":"SW","windSpd":0.3,"humd":90,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남서풍","nowFcast":true,"windBarHeight":1.0,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"06","aplYmdt":"2021100206","wetrCd":"7","wetrTxt":"흐림","tmpr":19.0,"rainProb":30,"windDrctn":"NW","windSpd":0.1,"humd":90,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"북서풍","nowFcast":true,"windBarHeight":0.33333333333333337,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"07","aplYmdt":"2021100207","wetrCd":"7","wetrTxt":"흐림","tmpr":19.0,"rainProb":30,"windDrctn":"N","windSpd":0.3,"humd":90,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"북풍","nowFcast":true,"windBarHeight":1.0,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"08","aplYmdt":"2021100208","wetrCd":"5","wetrTxt":"구름많음","tmpr":20.0,"rainProb":30,"windDrctn":"N","windSpd":0.5,"humd":90,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"북풍","nowFcast":true,"windBarHeight":1.6666666666666667,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"09","aplYmdt":"2021100209","wetrCd":"1","wetrTxt":"맑음","tmpr":21.0,"rainProb":30,"windDrctn":"NE","windSpd":0.3,"humd":80,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"북동풍","nowFcast":true,"windBarHeight":1.0,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"10","aplYmdt":"2021100210","wetrCd":"1","wetrTxt":"맑음","tmpr":22.0,"rainProb":20,"windDrctn":"SW","windSpd":0.2,"humd":75,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남서풍","nowFcast":true,"windBarHeight":0.6666666666666667,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"11","aplYmdt":"2021100211","wetrCd":"1","wetrTxt":"맑음","tmpr":23.0,"rainProb":20,"windDrctn":"W","windSpd":0.7,"humd":65,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"서풍","nowFcast":true,"windBarHeight":2.333333333333333,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"12","aplYmdt":"2021100212","wetrCd":"1","wetrTxt":"맑음","tmpr":25.0,"rainProb":30,"windDrctn":"W","windSpd":1.0,"humd":50,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"서풍","nowFcast":true,"windBarHeight":3.3333333333333335,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"13","aplYmdt":"2021100213","wetrCd":"1","wetrTxt":"맑음","tmpr":26.0,"rainProb":20,"windDrctn":"W","windSpd":1.2,"humd":45,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"서풍","nowFcast":true,"windBarHeight":4.0,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"14","aplYmdt":"2021100214","wetrCd":"1","wetrTxt":"맑음","tmpr":27.0,"rainProb":20,"windDrctn":"W","windSpd":1.3,"humd":40,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"서풍","nowFcast":true,"windBarHeight":4.333333333333334,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"15","aplYmdt":"2021100215","wetrCd":"1","wetrTxt":"맑음","tmpr":27.0,"rainProb":20,"windDrctn":"W","windSpd":1.7,"humd":40,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"서풍","nowFcast":true,"windBarHeight":5.666666666666666,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"16","aplYmdt":"2021100216","wetrCd":"1","wetrTxt":"맑음","tmpr":27.0,"rainProb":20,"windDrctn":"W","windSpd":1.9,"humd":40,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"서풍","nowFcast":true,"windBarHeight":6.333333333333332,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"17","aplYmdt":"2021100217","wetrCd":"1","wetrTxt":"맑음","tmpr":26.0,"rainProb":20,"windDrctn":"W","windSpd":1.7,"humd":40,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"서풍","nowFcast":true,"windBarHeight":5.666666666666666,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"18","aplYmdt":"2021100218","wetrCd":"1","wetrTxt":"맑음","tmpr":25.0,"rainProb":30,"windDrctn":"W","windSpd":1.3,"humd":55,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"서풍","nowFcast":true,"windBarHeight":4.333333333333334,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"19","aplYmdt":"2021100219","wetrCd":"1","wetrTxt":"맑음","tmpr":24.0,"rainProb":20,"windDrctn":"W","windSpd":1.3,"humd":55,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"서풍","nowFcast":true,"windBarHeight":4.333333333333334,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"20","aplYmdt":"2021100220","wetrCd":"1","wetrTxt":"맑음","tmpr":23.0,"rainProb":20,"windDrctn":"W","windSpd":0.8,"humd":65,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"서풍","nowFcast":true,"windBarHeight":2.666666666666667,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"21","aplYmdt":"2021100221","wetrCd":"1","wetrTxt":"맑음","tmpr":22.0,"rainProb":0,"windDrctn":"NW","windSpd":0.6,"humd":70,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"북서풍","nowFcast":true,"windBarHeight":2.0,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"22","aplYmdt":"2021100222","wetrCd":"1","wetrTxt":"맑음","tmpr":21.0,"rainProb":0,"windDrctn":"NE","windSpd":0.7,"humd":75,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"북동풍","nowFcast":true,"windBarHeight":2.333333333333333,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211002","aplTm":"23","aplYmdt":"2021100223","wetrCd":"1","wetrTxt":"맑음","tmpr":21.0,"rainProb":0,"windDrctn":"E","windSpd":1.0,"humd":75,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"동풍","nowFcast":true,"windBarHeight":3.3333333333333335,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"00","aplYmdt":"2021100300","wetrCd":"1","wetrTxt":"맑음","tmpr":20.0,"rainProb":0,"windDrctn":"SE","windSpd":1.6,"humd":75,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남동풍","nowFcast":true,"windBarHeight":5.333333333333334,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"01","aplYmdt":"2021100301","wetrCd":"1","wetrTxt":"맑음","tmpr":20.0,"rainProb":0,"windDrctn":"SE","windSpd":1.5,"humd":80,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남동풍","nowFcast":true,"windBarHeight":5.0,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"02","aplYmdt":"2021100302","wetrCd":"1","wetrTxt":"맑음","tmpr":19.0,"rainProb":0,"windDrctn":"SE","windSpd":1.4,"humd":80,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남동풍","nowFcast":true,"windBarHeight":4.666666666666666,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"03","aplYmdt":"2021100303","wetrCd":"1","wetrTxt":"맑음","tmpr":19.0,"rainProb":0,"windDrctn":"SE","windSpd":1.8,"humd":80,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남동풍","nowFcast":true,"windBarHeight":6.000000000000001,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"04","aplYmdt":"2021100304","wetrCd":"1","wetrTxt":"맑음","tmpr":19.0,"rainProb":0,"windDrctn":"SE","windSpd":1.8,"humd":80,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남동풍","nowFcast":true,"windBarHeight":6.000000000000001,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"05","aplYmdt":"2021100305","wetrCd":"1","wetrTxt":"맑음","tmpr":19.0,"rainProb":0,"windDrctn":"SE","windSpd":1.9,"humd":85,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남동풍","nowFcast":true,"windBarHeight":6.333333333333332,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"06","aplYmdt":"2021100306","wetrCd":"1","wetrTxt":"맑음","tmpr":19.0,"rainProb":0,"windDrctn":"SE","windSpd":2.0,"humd":85,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남동풍","nowFcast":true,"windBarHeight":6.666666666666667,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"07","aplYmdt":"2021100307","wetrCd":"5","wetrTxt":"구름많음","tmpr":19.0,"rainProb":10,"windDrctn":"SE","windSpd":2.1,"humd":85,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남동풍","nowFcast":true,"windBarHeight":7.000000000000001,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"08","aplYmdt":"2021100308","wetrCd":"5","wetrTxt":"구름많음","tmpr":20.0,"rainProb":0,"windDrctn":"SE","windSpd":2.5,"humd":80,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남동풍","nowFcast":true,"windBarHeight":8.333333333333332,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"09","aplYmdt":"2021100309","wetrCd":"1","wetrTxt":"맑음","tmpr":22.0,"rainProb":0,"windDrctn":"SE","windSpd":2.6,"humd":75,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남동풍","nowFcast":true,"windBarHeight":8.666666666666668,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"10","aplYmdt":"2021100310","wetrCd":"1","wetrTxt":"맑음","tmpr":23.0,"rainProb":0,"windDrctn":"S","windSpd":2.8,"humd":70,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남풍","nowFcast":true,"windBarHeight":9.333333333333332,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"11","aplYmdt":"2021100311","wetrCd":"5","wetrTxt":"구름많음","tmpr":25.0,"rainProb":20,"windDrctn":"S","windSpd":2.9,"humd":60,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남풍","nowFcast":true,"windBarHeight":9.666666666666666,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"12","aplYmdt":"2021100312","wetrCd":"5","wetrTxt":"구름많음","tmpr":26.0,"rainProb":10,"windDrctn":"S","windSpd":2.9,"humd":55,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남풍","nowFcast":true,"windBarHeight":9.666666666666666,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"13","aplYmdt":"2021100313","wetrCd":"5","wetrTxt":"구름많음","tmpr":27.0,"rainProb":10,"windDrctn":"S","windSpd":3.0,"humd":55,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남풍","nowFcast":true,"windBarHeight":10.0,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"14","aplYmdt":"2021100314","wetrCd":"5","wetrTxt":"구름많음","tmpr":28.0,"rainProb":10,"windDrctn":"S","windSpd":3.1,"humd":50,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남풍","nowFcast":true,"windBarHeight":10.333333333333334,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"15","aplYmdt":"2021100315","wetrCd":"5","wetrTxt":"구름많음","tmpr":28.0,"rainProb":20,"windDrctn":"S","windSpd":3.0,"humd":45,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남풍","nowFcast":true,"windBarHeight":10.0,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"16","aplYmdt":"2021100316","wetrCd":"1","wetrTxt":"맑음","tmpr":28.0,"rainProb":0,"windDrctn":"S","windSpd":2.8,"humd":45,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남풍","nowFcast":true,"windBarHeight":9.333333333333332,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"17","aplYmdt":"2021100317","wetrCd":"1","wetrTxt":"맑음","tmpr":27.0,"rainProb":0,"windDrctn":"S","windSpd":2.3,"humd":50,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남풍","nowFcast":true,"windBarHeight":7.666666666666666,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"18","aplYmdt":"2021100318","wetrCd":"1","wetrTxt":"맑음","tmpr":25.0,"rainProb":0,"windDrctn":"S","windSpd":1.4,"humd":60,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남풍","nowFcast":true,"windBarHeight":4.666666666666666,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"19","aplYmdt":"2021100319","wetrCd":"1","wetrTxt":"맑음","tmpr":25.0,"rainProb":0,"windDrctn":"S","windSpd":1.3,"humd":65,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남풍","nowFcast":true,"windBarHeight":4.333333333333334,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"20","aplYmdt":"2021100320","wetrCd":"1","wetrTxt":"맑음","tmpr":24.0,"rainProb":0,"windDrctn":"S","windSpd":1.5,"humd":70,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남풍","nowFcast":true,"windBarHeight":5.0,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"21","aplYmdt":"2021100321","wetrCd":"1","wetrTxt":"맑음","tmpr":23.0,"rainProb":0,"windDrctn":"S","windSpd":1.4,"humd":70,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남풍","nowFcast":true,"windBarHeight":4.666666666666666,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"22","aplYmdt":"2021100322","wetrCd":"5","wetrTxt":"구름많음","tmpr":23.0,"rainProb":20,"windDrctn":"S","windSpd":1.2,"humd":75,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남풍","nowFcast":true,"windBarHeight":4.0,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211003","aplTm":"23","aplYmdt":"2021100323","wetrCd":"5","wetrTxt":"구름많음","tmpr":22.0,"rainProb":10,"windDrctn":"S","windSpd":1.3,"humd":80,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남풍","nowFcast":true,"windBarHeight":4.333333333333334,"skip":false,"fullAreaName":"송파구 잠실2동"},{"naverRgnCd":"09710670","lareaNm":"서울특별시","mareaNm":"송파구","sareaNm":"잠실2동","cpName":"KMA","aplYmd":"20211004","aplTm":"00","aplYmdt":"2021100400","wetrCd":"1","wetrTxt":"맑음","tmpr":22.0,"rainProb":0,"windDrctn":"S","windSpd":1.6,"humd":80,"fcastYmdt":"20210930170000","oneHourRainAmt":"0","oneHourSnowAmt":"0","lastUdtYmdt":"20210930161032","rainAmt":"0","snowAmt":"0","windDrctnName":"남풍","nowFcast":true,"windBarHeight":5.333333333333334,"skip":false,"fullAreaName":"송파구 잠실2동"}];
+            var isTownFcastSnow = "false";
+        
+
+    var sunRiseSet = {};
+    sunRiseSet.sriseTm = "062600";
+    sunRiseSet.ssetTm = "181800";
+    var cpName = "KMA";
+    var oneDayAfter = "2021100100";
+    var twoDayAfter = "2021100200";
+    var threeDayAfter = "2021100300";
+
+    lcsStiCode += sRegionCode.indexOf("WD") === 0 ? "_overseas" : "_domestic";
+
+    $(window).on(eventType, function () {
+        
+                oCommon.fnCachedScript('https://ssl.pstatic.net/staticv2.weather/responsive/js/weather_today_202109161810.js')
+                    .done(function() {
+                        oCommon.fnSendLCS({
+                            sti: lcsStiCode
+                        });
+                        oToday.fnInit();
+                    })
+                    .fail(function(jqXHR){
+                        oCommon.fnSendErrorToNelo("[weather_today JS] script 호출 실패", jqXHR);
+                    });
+                oCommon.fnCachedScript('https://ssl.pstatic.net/tveta/libs/assets/js/mo/main/min/mo.veta.core.min.js?202109161810.js')
+                    .done(function () {
+                        oCommon.fxshowCall();
+                    })
+                    .fail(function(jqXHR){
+                        oCommon.fnSendErrorToNelo("[da JS] 광고 script 호출 실패", jqXHR);
+                    });
+            
+    });
+</script>
+</body>
+</html>
