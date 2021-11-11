@@ -1,0 +1,1 @@
+C:\Users\kh\Github_Repositories\Code_Prac\rust\hello\target\debug\main.exe: C:\Users\kh\Github_Repositories\Code_Prac\rust\hello\src\bin\main.rs C:\Users\kh\Github_Repositories\Code_Prac\rust\hello\src\lib.rs
