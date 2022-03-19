@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+  </head>
+  <body>
+    <h1>Create An Account</h1>
+    <form>     
+        <div>
+          <label>
+            First name
+            <input required id="firstname" placeholder="First name" type="text"/> 
+          </label>
+        </div>
+
+      <div>
+        <label>
+          Last name
+          <input required id="lastname" placeholder="Last name" type="text"/>
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Email
+          <input required id="email" placeholder="Email" type="email"/>  
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Username
+          <input required id="username" placeholder="Username" type="text"/>    
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Password
+          <input minlength="10" id="password" required placeholder="Password" type="password"/>
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Birth date
+          <input required id="birthdate" type="date" placeholder="yyyy-mm-dd"/>    
+        </label>
+      </div>
+
+      <div>
+        <label>
+          How happy are you?
+          <input id="happy" required type="range" min="0" max="10" list="rangelist"/>      
+          <datalist id="rangelist">
+            <option value="0"></option>
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5"></option>
+            <option value="6"></option>
+            <option value="7"></option>
+            <option value="8"></option>
+            <option value="9"></option>
+            <option value="10"></option>
+          </datalist>
+        </label>
+      </div>
+
+      <div>
+        <label>
+          What is your fav.color?
+          <input id="happy" required type="color" />    
+        </label>
+      </div>
+      <input id="submit" type="submit" value="Create Account" />
+    </form>
+  </body>
+</html>
