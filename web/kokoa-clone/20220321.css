@@ -1,0 +1,31 @@
+body {
+    height: 100vh;
+    margin: 20px;
+}
+
+/* div {
+    width: 300px;
+    height: 300px;
+    color: white;
+    background-color: teal;
+}
+
+div:last-child {
+    background-color: black;
+}
+
+div:first-child{
+    background-color: tomato;
+} */
+
+p span {
+    color: teal;
+}
+
+span {
+    background-color: yellowgreen;
+}
+
+div span {
+    margin: 0 10px;
+}
