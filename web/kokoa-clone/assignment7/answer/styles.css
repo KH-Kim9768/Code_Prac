@@ -1,0 +1,56 @@
+
+body {
+    height:100vh;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  h1 {
+    margin-bottom: 50px;
+  }
+  
+  section {
+    width:50%;
+    margin:0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .color {
+    width: 48%;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .color:first-child .color__bg {
+    background-color: tomato;
+  }
+  
+  .color:nth-child(2) .color__bg {
+    background-color: teal;
+  }
+  
+  .color:nth-child(3) .color__bg {
+    background-color: burlywood;
+  }
+  
+  .color:last-child .color__bg {
+    background-color:thistle;
+  }
+  
+  .color__bg {
+    height: 300px;
+    border:5px solid white;
+  }
+  
+  .color__info {
+    position: absolute;
+    width:100%;
+    background-color:white;
+    top:20px;
+    padding:0px 10px;
+    box-sizing: border-box;
+  }
