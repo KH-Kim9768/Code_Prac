@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;600;700&display=swap');
+* {
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Baloo Tamma 2', cursive;
+  background-color:#00C6AD;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.wrapper {
+  background-color:white;
+  width:310px;
+  padding:50px 30px 15px 30px;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-bottom:50px;
+}
+
+header i {
+  position: absolute;
+  top:-5px;
+  left:0;
+  font-size:28px;
+}
+
+h1{ 
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.main-song {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-song__cover {
+  width:110px;
+  height:110px;
+  background-color: #FFBD11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:2px solid black;
+  border-radius:10px;
+  margin-right:0px;
+}
+
+.main-song__cover i {
+  color:white;
+}
+
+.main-song__data{
+  width: 50%;
+}
+
+.main-song__title {
+  font-size:32px;
+  font-weight: 700;
+  margin-bottom:10px;
+  line-height: 1.4;
+  
+}
+
+.main-song__author {
+  font-size:18px;
+  font-weight: 600;
+  opacity:0.7;
+}
+
+.btns {
+  display: flex;
+  justify-content: space-between;
+  margin-top:30px;
+  margin-bottom: 40px;
+}
+
+.btns__btn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:2px solid black;
+  border-bottom-width: 5px;
+  border-radius: 50%;
+  width:50px;
+  height:50px;
+}
+
+.btns__btn--big {
+  width: 50%;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 15px;
+}
+
+.btns__btn--big span {
+  margin-left: 5px;
+  font-size: 20px;
+}
+
+.song-list__song {
+  display: flex;
+  align-items: center;
+  margin-bottom:40px;
+}
+.song-list__cover {
+  width:50px;
+  height:50px;
+  background-color:#F85A2A;
+  border:2px solid black;
+  border-radius: 10px;
+  margin-right:10px;
+}
+
+.song-list__data h5 {
+  font-size:20px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.song-list__data h6 {
+  opacity: 0.8;
+}
+
+.song-list {
+  display: flex;
+  flex-direction: column;
+}
