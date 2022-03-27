@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color:#F7F7F7;
+  padding:20px;
+  font-size:14px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  color:#222222;
+  font-family: 'Nunito', sans-serif;
+}
+
+.phone {
+  width:320px;
+  background-color:white;
+  min-height: 60vh;
+  border-radius: 30px;
+  box-shadow: 0 19px 38px rgba(227, 226, 235, 0.3), 0 15px 12px rgba(227, 226, 235, 0.2);
+  position: relative;
+  padding:35px 25px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.artist {
+  margin-top:20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 45px;
+}
+
+.artist img {
+  width: 90px;
+  height:90px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom:30px;
+  box-shadow: 0 19px 38px rgba(220, 195, 205, 0.2), 0 15px 12px rgba(220, 195, 205, 0.3);
+}
+
+.artist h2 {
+  font-size:26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.artist h6 {
+font-weight: 700;
+opacity: 0.8;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+}
+
+.btns__btn {
+  padding:10px 25px;
+  border-radius:20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btns__btn:first-child {
+  background-color:#222222;
+  color:white;
+  margin-right: 5px;
+}
+
+.btns__btn:last-child {
+    box-shadow: 0 19px 38px rgba(227, 226, 235, 0.5), 0 -5px 12px rgba(227, 226, 235, 0.3);
+    margin-left: 5px;
+}
+
+.btns__btn:last-child i {
+  margin-right: 10px;
+}
+
+.songs {
+  margin-top:45px;
+}
+
+.songs__song,
+.songs__data {
+  display: flex;
+  justify-content: space-between;;
+  align-items: center;
+}
+
+.songs__song {
+  margin-bottom: 20px;
+}
+
+.songs__song img {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.songs__author {
+  display: block;
+  font-weight: 600;
+  opacity: 0.6;
+  margin-bottom: 5px;
+  font-size:12px;
+}
+
+.songs__title {
+  font-size:16px;
+  font-weight: 700;
+}
+
+.currently-playing {
+  margin-top:40px;
+  background-color:#222222;
+  width: 95%;
+  padding:20px 30px;
+  border-radius: 50px;
+  box-shadow:0 19px 38px rgba(34,34,34, 0.1), 0 15px 12px rgba(34,34,34, 0.2);
+  color:white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  bottom: 20px;
+}
+
+.current__author {
+  display: block;
+  opacity: 0.5;
+  margin-bottom:5px;
+  font-size: 12px;
+}
+
+.current__song {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size:16px;
+}
+
+.current__player {
+  display: flex;
+  align-items: center;
+}
+
+.current__player i:nth-child(2){
+  margin:0 10px;
+}
+
+
+.cover {
+  display: flex;
+  justify-content:center;
+  
+  margin-top:80px;
+}
+
+.cover img {
+  width:80%;
+  border-radius: 15px;
+  box-shadow: 0 19px 38px rgba(214, 42, 30, 0.1), 0 15px 12px rgba(214, 42, 30, 0.2);
+}
+
+.player {
+  margin-top: 50px;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+}
+
+.player h4 {
+  font-size:28px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.player h5 {
+  font-weight: 600;
+  font-size: 16px;
+  opacity: 0.5;
+}
+
+.progress {
+  margin-top:50px;
+}
+
+.progress__time {
+  display: flex;
+  justify-content: space-between;
+  font-size:12px;
+  font-weight: 600;
+  opacity: 0.5;
+} 
+
+.progress__bar {
+  position: relative;
+  margin-top:15px;
+}
+
+.progress__played {
+  height:4px;
+  border-radius: 5px;
+  background-color:#222222;
+  width: 60%;
+  position: absolute;
+}
+
+.progress__total {
+  background-color:#E9E9E9;
+  height:4px;
+  border-radius: 5px;
+}
+
+.progress__marker {
+  height: 10px;
+  width: 10px;
+  background-color:#222222;
+  border-radius: 50%;
+  position: absolute;
+  top:-3.5px;
+  left:58%;
+}
+
+.actions {
+  display: flex;
+  margin-top:30px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.actions i:first-child,
+.actions i:last-child{
+  opacity: 0.5;
+}
+
+.actions span{
+  background-color:#222222;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  opacity: 1;
+  box-shadow:0 19px 38px rgba(34,34,34, 0.1), 0 15px 12px rgba(34,34,34, 0.2);
+}
+
+.actions span i {
+  color:white;
+  opacity: 1!important;
+}
