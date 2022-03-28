@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./css/styles.css" rel="stylesheet" />
-    <title>Chat - ME - Kokoa</title>
+    <title>Chat - Nico T - Kokoa</title>
 </head>
 <body id="chat-screen">
     <div class="status-bar">
@@ -33,7 +33,7 @@
             </a>
         </div>
         <div class="alt-header__column">
-            <h1 class="alt-header__title">Me</h1>
+            <h1 class="alt-header__title">Nico T</h1>
         </div>
         <div class="alt-header__column">
             <span>
@@ -45,9 +45,47 @@
         </div>
     </header>
 
-    <main class="main-screen">
+    <main class="main-screen main-chat">
+        <div class="chat__timestamp">
+            Tuesday, June 30, 2020
+        </div>
+        <div class="message-row">
+            <img src="https://avatars3.githubusercontent.com/u/3612017" alt="">
+            <div class="message-row__content">
+                <span class="message__author">Nico T</span>
+                <div class="message__info">
+                    <span class="message__bubble">Hi!</span>
+                    <span class="message__time">21:27</span>
+                </div>
+            </div>
+        </div>
+        <div class="message-row message-row--own">
+            <div class="message-row__content">
+                <div class="message__info">
+                    <span class="message__bubble">Hi Nico T!</span>
+                    <span class="message__time">21:27</span>
+                </div>
+            </div>
+        </div>
     </main>
 
+    <form class="reply">
+        <div class="reply__column">
+            <i class="fa-regular fa-square-plus fa-lg"></i>
+        </div>
+        <div class="reply__column">
+            <input type="text" placeholder="Write a message">
+            <i class="fa-regular fa-face-smile fa-lg"></i>
+            <button>
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
+            
+        </div>
+    </form>
+
+    <div id="no-mobile">
+        <span>Your screen is too big</span>
+    </div>
     
     <!-- scripts -->
     <script src="https://kit.fontawesome.com/9713ba7e8a.js" crossorigin="anonymous"></script>
